@@ -91,7 +91,7 @@ const Footer = () => {
                 <FaFacebookSquare className={styles.facebook} />
               </Link>
 
-              <Link to="https://www.instagram.com/mobilewebgh/">
+              <Link to="https://instagram.com/mobilewebgh?igshid=OGQ5ZDc2ODk2ZA==">
                 {/* <FaInstagramSquare className={styles.instagram}/> */}
                 {/* <img src={require("../assets/Instagram-Logo.png")} className={styles.instagram}/> */}
                 <Icon icon={instagramIcon} width="20" height="20" />
@@ -132,6 +132,7 @@ const Footer = () => {
           sourceType="profile"
           screenName="MobileWebGhana"
           options={{ height: 300, width: 350 }}
+          className={styles.twitter_feed}
         />
         {/* <TwitterFeeds/> */}
 

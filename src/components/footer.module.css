@@ -203,5 +203,8 @@ text-align: left;
     justify-content: flex-start;
   }
 
+  .twitter_feed {
+    width: 100%!important;
+  }
 
 }

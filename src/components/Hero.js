@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import img1 from "../assets/mwg-swiper1.jpg";
 import styles from "../components/carousel.module.css";
 import { FaArrowRight, FaTimes } from "react-icons/fa";
+import { BsCoin } from "react-icons/bs"
 
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { ImageSwiper } from "./SwiperComp";
@@ -49,7 +50,7 @@ export default function Hero() {
                 IsModal(!modal);
               }}
             >
-              Make Donations <FaArrowRight />
+              Make Donations <BsCoin />
             </button>
           </div>
         </div>
@@ -57,9 +58,11 @@ export default function Hero() {
 
       {modal ? (
            <div className={styles.modal_div_screen}>
+           <div className={styles.svg_div}>
            <FaTimes onClick={() => {
                    IsModal(!modal);
                  }}/>
+           </div>
             <div className={styles.modal_div}>
               <Form/>
               </div>
@@ -75,7 +78,7 @@ export default function Hero() {
 
 const Form =()=> {
 
-  const [modal, IsModal] = useState(true);
+  const [modal, IsModal] = useState(false);
 
   /*Form states */
   const [name, setName] = useState("");
@@ -94,6 +97,14 @@ const Form =()=> {
           Join us in powering innovation and shaping the future by contributing to our mission. 
           Your donation will fuel technological advancements and drive positive change in the tech industry.
           </p>
+
+
+          {/* <div className={styles.svg_div}>
+          <FaTimes onClick={() => {
+                   IsModal(modal);
+                   console.log("ji");
+                 }}/>
+          </div> */}
 
 
           <CurrencyDropdown/>

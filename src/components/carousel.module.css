@@ -98,64 +98,74 @@
 
   display: flex;
   align-items: center;
+  transition: 0.3s ease-in-out;
 }
 
 .text_overlay button svg {
   margin-left: 10px;
+  color: #ffc107;
+
+  animation: bounce 1s ease .2s infinite both	;
 }
 
 .text_overlay button:hover {
   background-color: #ffc107;
 
-  transition: 0.3s ease-in-out;
 
   box-shadow: 5px 5px 10px #1a191989;
 }
 
 .text_overlay button:hover svg {
-  transition: 0.3s ease-in-out;
-  transform: translateX(10px);
+color: #232323;
 }
-
-
 
 /*Modal*/
 
-.modal_div_screen{
-    z-index: 999;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.463);
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 0 30px;
-    transition: 0.3s ease;
-
+.modal_div_screen {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.463);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 30px;
+  transition: 0.3s ease;
 }
 
-.modal_div_screen svg {
+
+.modal_div_screen .svg_div {
   position: absolute;
   top: 0;
   right: 0;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 2.3rem;
+  color: #232323;
+
+  /* border-radius: 50%; */
+  font-size: 1.5rem;
   margin: 20px 30px;
   cursor: pointer;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f9af1a;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.modal_div_screen .modal_div  {
+.modal_div_screen .modal_div {
   /* position: relative; */
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 5px 25px rgba(2,2,2,0.3);
+  box-shadow: 0 5px 25px rgba(2, 2, 2, 0.3);
   overflow: hidden;
   width: 900px;
   /* transform: scale(0.5); */
@@ -164,25 +174,18 @@
 
 .modal_div_screen .modal_div h2 {
   color: #222;
-    font-size: 1.1rem;
-    font-weight: 400;
-    padding: 5px 15px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  padding: 5px 15px;
 }
 
-
-
-
-
 .modal_div_screen .modal_div form {
-
   padding: 40px;
-  background-color: #F4F7FC;
+  background-color: #f4f7fc;
 
   width: 100%;
   height: auto;
-
 }
-
 
 .modal_div_screen .modal_div form .twoInone {
   display: flex;
@@ -190,11 +193,12 @@
   align-items: center;
 }
 
-.form_control, textarea {
+.form_control,
+textarea {
   height: 45px;
   background-color: #fff;
   border-color: transparent;
-  transition: .5s;
+  transition: 0.5s;
   border: 1px solid #e6e6e6;
   padding: 6px 20px;
   -webkit-box-shadow: none;
@@ -207,37 +211,34 @@
 }
 
 .form_control:focus {
-border: 1px solid #f9af1a ;
+  border: 1px solid #f9af1a;
 }
 
 #submit_btn {
-background: #f9af1a;
-transition: .3s ease-in-out;
-cursor: pointer;
-color: #fff;
-font-size: 20px;
-font-weight: 500;
+  background: #f9af1a;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 #submit_btn:hover {
-background: #232323;
-
+  background: #232323;
 }
 
 textarea {
-overflow: auto;
-resize: vertical;
-min-height:100px;
+  overflow: auto;
+  resize: vertical;
+  min-height: 100px;
 }
-
 
 /*Currency*/
 .currency_div {
-display: flex;
-justify-content: space-between;
-align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
 
 @media (max-width: 769px) {
   .section {
@@ -286,5 +287,58 @@ align-items: center;
     position: relative;
     width: 100%;
     height: 100vh;
+  }
+
+  .modal_div_screen .modal_div {
+    width: 100%;
+  }
+
+  
+.form_control, textarea {
+  height: 45px;
+  background-color: #fff;
+  border-color: transparent;
+  transition: 0.5s;
+  border: 1px solid #e6e6e6;
+  padding: 6px 20px;
+  box-shadow: none;
+  border-radius: 5px;
+  width: 100%;
+  margin: 9px 0;
+  outline: none;
+}
+
+.modal_div_screen .modal_div form .twoInone {
+  flex-direction: column;
+}
+
+.modal_div_screen .modal_div form {
+  padding: 32px;
+}
+
+.currency_div {
+  flex-direction: column;
+}
+
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
