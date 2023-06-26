@@ -3,22 +3,17 @@ import styles from "../components/contact.module.css";
 import img1 from "../assets/mwg-swiper1.jpg";
 import { BiMailSend, BiPhoneCall, BiWorld } from "react-icons/bi";
 import emailjs from "@emailjs/browser";
-import {
-  FaLinkedin,
-  FaFacebookSquare,
-  FaTwitter,
-} from "react-icons/fa";
-import { Icon } from "@iconify/react";
-import instagramIcon from "@iconify/icons-skill-icons/instagram";
+
 
 import Map from "./Map";
+import FollowUs from "./FollowUs";
 
 function ContactUs() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
-  const [sentmessage,setSentMessage] = useState(false)
+  const [sentmessage, setSentMessage] = useState(false);
 
   // const submit = (e) => {
   //   e.preventDefault();
@@ -34,10 +29,15 @@ function ContactUs() {
     const form = e.target;
 
     emailjs
-      .sendForm("service_ibep18s", "template_lxxs1s8", form, "UX2qzirfmkrZ_N-CG")
+      .sendForm(
+        "service_ibep18s",
+        "template_lxxs1s8",
+        form,
+        "UX2qzirfmkrZ_N-CG"
+      )
       .then((response) => {
         console.log("Email sent successfully!", response.status, response.text);
-        setSentMessage(!sentmessage)
+        setSentMessage(!sentmessage);
       })
       .catch((error) => {
         console.error("Error sending email:", error);
@@ -51,9 +51,6 @@ function ContactUs() {
     setMessage("");
   };
 
-  
-  
-  
   return (
     <>
       <div className={styles.banner}>
@@ -96,7 +93,6 @@ function ContactUs() {
               </div>
             </div>
 
-            
             <div className={styles.svgS_div}>
               <BiMailSend />
               <div className={styles.text_box}>
@@ -104,42 +100,6 @@ function ContactUs() {
                 <span>info[at]mobilewebghana.org</span>
               </div>
             </div>
-
-            <div className={styles.svgS_div}>
-            <FaFacebookSquare className={styles.facebook} />
-              <div className={styles.text_box}>
-                <h1>Our Facebook</h1>
-                <span>https://www.facebook.com/MobileWebGhana/</span>
-              </div>
-            </div>
-
-            <div className={styles.svgS_div}>
-            <Icon icon={instagramIcon} width="40" height="40" />
-              <div className={styles.text_box}>
-                <h1>Our Instagram</h1>
-                <span>https://www.instagram.com/mobilewebgh/</span>
-              </div>
-            </div>
-
-            <div className={styles.svgS_div}>
-            <FaLinkedin className={styles.linkedin} />
-              <div className={styles.text_box}>
-                <h1>Our Linkedin</h1>
-                <span>https://www.linkedin.com/company/mobile-web-ghana/</span>
-              </div>
-            </div>
-
-            <div className={styles.svgS_div} >
-            <FaTwitter className={styles.twitter} />
-              <div className={styles.text_box}>
-                <h1>Our Twitter</h1>
-                <span>https://twitter.com/MobileWebGhana</span>
-              </div>
-            </div>
-           
-            
-
-
           </div>
         </div>
 
@@ -150,8 +110,9 @@ function ContactUs() {
               <h1>We're ready to help you get started.</h1>
 
               <span>
-                We'd love to welcome your suggestions and other questions.<br/>
-                 All fields are required.
+                We'd love to welcome your suggestions and other questions.
+                <br />
+                All fields are required.
               </span>
             </div>
             <input
@@ -165,7 +126,6 @@ function ContactUs() {
               name="from_name"
               onChange={(e) => setName(e.target.value)}
               required
-
             />
 
             <input
@@ -179,7 +139,6 @@ function ContactUs() {
               name="from_email"
               onChange={(e) => setEmail(e.target.value)}
               required
-
             />
 
             <input
@@ -193,7 +152,6 @@ function ContactUs() {
               name="from_phone"
               onChange={(e) => setPhone(e.target.value)}
               required
-
             />
             <textarea
               cols="40"
@@ -205,7 +163,6 @@ function ContactUs() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
-
             ></textarea>
 
             <input
@@ -218,6 +175,8 @@ function ContactUs() {
           </form>
         </section>
       </div>
+
+      <FollowUs />
       <Map />
     </>
   );

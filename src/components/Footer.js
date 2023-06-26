@@ -45,31 +45,6 @@ const Footer = () => {
   };
   return (
     <footer>
-      {/* <div className={styles.talk_sec}>
-        <p>
-          Let's
-          <span> Talk</span>
-        </p>
-
-        <div className={styles.message_us}>
-          <FiMail className={styles.mail_svg} />
-          <input
-              size="40"
-              className={styles.form_control}
-              aria-required="true"
-              aria-invalid="false"
-              placeholder="Your Email"
-              value={email}
-              type="email"
-              name="from_email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          <button>
-            <FiArrowRight />
-          </button>
-        </div>
-      </div> */}
-
       <section className={styles.details}>
         <div className={styles.profile}>
           <div className={styles.logoDiv}>
@@ -108,35 +83,13 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Work enquiries */}
-        {/* <div className={styles.work_enquiries}>
-          <h2>Work enquiries</h2>
-          <p>
-            Do you have any ideas for us?
-            <br />
-            We would love to welcome your suggestions
-            <br/>
-              <span className=" font-bold">Email: </span>
-              <a href="#">mobilewebghana[at]gmail.com</a>
-            
-          </p>
-        </div> */}
-
-        {/* Address */}
-        {/* <div className={styles.address}>
-          <h2>My Address</h2>
-          <p>GA-0000 000,Dar es Salaam St.</p>
-          <p>Ghana</p>
-        </div> */}
+        
         <TwitterTimelineEmbed
           sourceType="profile"
           screenName="MobileWebGhana"
           options={{ height: 300, width: 350 }}
           className={styles.twitter_feed}
         />
-        {/* <TwitterFeeds/> */}
-
-        {/* Socials*/}
       </section>
 
       <hr />

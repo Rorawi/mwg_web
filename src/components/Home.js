@@ -9,6 +9,7 @@ import Team from "./Team";
 import Map from "./Map";
 import Blog from "./Blog";
 import Subscribe from "./Subscribe";
+import FollowUs from "./FollowUs";
 
 export default function Home() {
   return (
@@ -62,6 +63,7 @@ export default function Home() {
         </section>
       </main>
           <LogoSwiper />
+          <FollowUs/>
           <br/>
           <br/>
           <br/>
@@ -69,6 +71,7 @@ export default function Home() {
           <Map/>
           <Blog />
           <Subscribe />
+
           {/* <LogoSwiper/> */}
     </div>
   );

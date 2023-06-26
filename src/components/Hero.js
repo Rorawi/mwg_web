@@ -34,12 +34,14 @@ export default function Hero() {
           <div className={styles.glass_effect}>
             <div className={styles.text}>
               <h3>WE OFFER</h3>
+            <br/>
               <h1>
                 {" "}
-                <span>{text}</span>
+                <span className={styles.typing_text}>{text}</span>
                 <Cursor cursorColor="#f9af1a" />
               </h1>
             </div>
+            <br/>
             <p>
               Mobile Web Ghana is a technology and entrepreneurship hub that is
               dedicated to empowering the youth to develop mobile and web
