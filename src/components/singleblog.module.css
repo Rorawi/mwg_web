@@ -1,0 +1,175 @@
+/*Banner codes*/
+
+/* body {
+    background-color: #000;
+} */
+
+.banner img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.banner .banner_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.banner .banner_text {
+  color: #f2f3f7;
+}
+
+.banner_text h1 {
+  padding-right: 15px;
+  margin-right: 10px;
+
+  font-size: 34px;
+  border-bottom: 2px solid #ffc107;
+  padding-bottom: 15px;
+}
+
+.banner_text h3 {
+  font-size: 29px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  left: 0;
+  bottom: 0;
+  object-fit: contain;
+  width: 100%;
+  background-color: #00000067;
+  /* height: 60vh; */
+  height: 517.5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img_div {
+  /* height: 60vh; */
+  height: 517.5px;
+  overflow: hidden;
+}
+
+
+
+.flex_Div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+
+  margin: 150px 0px;
+}
+
+.content {
+  color: #232323;
+  line-height: 1.6;
+}
+
+.container {
+    width: 70%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  /* max-width: 1000px; */
+
+  margin:  0 0px 0 20px;
+  border: 1px solid #e0ddddb8;
+  white-space: pre-line;
+
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  color: #ffc107;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.profileImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.authorName {
+  color: #232323;
+}
+
+.date {
+  color: #232323;
+  font-size: 14px;
+}
+
+.content {
+  color: #232323;
+  line-height: 1.6;
+}
+
+.blogImage {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.commentSection {
+  margin-top: 30px;
+}
+
+.commentTitle {
+  color: #232323;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.socialMedia {
+  margin-top: 30px;
+}
+
+.socialMedia svg {
+    color: #232323;
+    transition: .3s;
+    margin:  10px;
+
+    font-size: 20px;
+}
+
+
+.socialMedia svg:hover {
+color: #ffc107;
+}
+/* Add additional styles for comments and social media icons/buttons */
+
+
+@media screen and (max-width: 890px) {
+    .flex_Div {
+      flex-wrap: wrap;
+      
+        margin: 150px 0px;
+      }
+
+      .container {
+        margin-bottom: 30px;
+        width: 100%;
+      }
+}

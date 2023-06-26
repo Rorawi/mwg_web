@@ -1,0 +1,80 @@
+.testimonial_sec {
+  background: #ffbf0040;
+    padding: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* .testimonial_sec .img_div {
+position: absolute;
+top: 0;
+left: 0;
+} */
+
+.testimonial_sec .img_div {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+.testimonial_sec .img_div_1 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    
+    rotate: 180deg;
+  }
+  
+  .testimonial_sec .img_div img , .testimonial_sec .img_div_1 img {
+    width: 100%;
+    object-fit: cover;
+    height: 450px;
+  }
+
+/*Text Box*/
+.testimonial_sec .text_box {
+text-align: center;
+}
+
+
+.testimonial_sec .text_box h2 {
+    color: #232323    ;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    margin: 0 0 5px;
+}
+
+
+.testimonial_sec .text_box h1 {
+    font-size: 45px;
+    color: #232323    ;
+    margin: 14px 0;
+
+    margin-bottom: 0px;
+    text-transform: capitalize;
+    margin-top: 0;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.testimonial_sec .text_box h1 span{
+    color: #f9af1a;
+}
+
+
+@media screen and (max-width: 414px) {
+  .testimonial_sec {
+    background: #ffbf0040;
+      padding: 25px;
+      position: relative;
+      overflow: hidden;
+  }
+
+  .testimonial_sec .img_div img , .testimonial_sec .img_div_1 img {
+    height: 190px;
+  }
+  
+}

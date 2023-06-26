@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* font-family: "Work Sans", sans-serif; */
+}
+
+.fixedHeader {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 10px 0;
+  background-color: transparent;
+  z-index: 10;
+  transition: 0.2s ease-in;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+}
+
+.navbar_brand {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar_brand img {
+  width: 50px;
+}
+
+.menu_btn {
+  display: none;
+}
+
+.menu_btn_svg {
+  color: #fff;
+  font-size: 25px;
+}
+
+ul {
+  z-index: 1;
+  display: flex;
+  justify-content: space-evenly;
+  flex-basis: 60%;
+}
+
+a,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+a {
+  color: white;
+  font-weight: 500;
+}
+
+.navbar_links a::before {
+  content: "";
+  box-sizing: inherit;
+
+  max-width: 50px;
+  height: 2px;
+  background-color: #fff;
+  display: inline-block;
+  position: absolute;
+  bottom: 58px;
+  width: 0%;
+  transition: 0.7s ease;
+}
+
+.navbar_links a:hover::before {
+  width: 100%;
+}
+
+
+/* Scrolled (Active) header */
+.scrolledHeader {
+  position: fixed;
+  background-color: #fff;
+  box-shadow: 10px 10px 5px #aab3d258;
+  z-index: 10;
+}
+
+.scrolledHeader a,
+.scrolledHeader .dropdownItem {
+  color: rgb(21, 21, 21);
+}
+
+.scrolledHeader a,
+.scrolledHeader .menu_btn_svg {
+  color: rgb(21, 21, 21);
+}
+
+.scrolledHeader .navbar_links a::before {
+  background-color: #232323;
+}
+
+/*DropDown*/
+.dropdownItem {
+  position: relative;
+  color: #f2f2f2;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+
+}
+
+.dropdownContent {
+  display: none;
+  
+}
+
+.dropdownContentVisible {
+  display: block;
+  position: absolute;
+  /* top: 160%;
+  left: 0;
+  background-color: #f2f2f2;
+  padding: 10px;
+  z-index: 1;
+  padding: 20px ;
+  width:200px; */
+  z-index: 999;
+  position: absolute;
+  top: 160%;
+  
+  width: 250px;
+  max-width: none;
+  padding: 15px 20px 15px 20px;
+  border: 0;
+  background: #fff;
+  border-radius: 5px;
+
+  box-shadow: 5px 5px 5px #3d3d3d68;
+}
+
+.dropdownContentVisible li, .dropdownContentVisible a {
+  color: #232323!important;
+  margin-bottom: 20px!important;
+  transition: .3s ease;
+}
+
+
+.dropdownContentVisible a:hover {
+  color: #ffc107!important;
+} 
+
+.navbar_links .dropdownContentVisible a::before {
+  content: "";
+  max-width: 50px;
+  height: 2px;
+  background-color: #000!important;
+  display: inline-block;
+  position: absolute;
+  bottom: 61px;
+  width: 0%;
+  transition: 0.7s ease;
+}
+
+@media screen and (max-width: 990px) {
+  .menu_btn {
+    display: block;
+  }
+
+  .navbar_links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    position: fixed;
+    top: 0px;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #f9af1a;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+    padding: 40px 40px 10px;
+    transition: right 0.3s ease-in-out;
+  }
+
+  .navbar_links.navbar_active {
+    right: 0px;
+  }
+
+  .navbar_links li {
+    margin-bottom: 25px;
+  }
+
+  .navbar_links a:hover {
+    color: #232323;
+    transition: 0.2s ease;
+  }
+
+  .navbar_links a:hover::before {
+    width: 0%;
+  }
+
+  .scrolledHeader .navbar_links a:hover {
+    color: #f2f2f2;
+    transition: 0.2s ease;
+  }
+  
+}

@@ -1,0 +1,20 @@
+.blog_section {
+    /* background-color: #ffc107; */
+    padding: 20px;
+
+    margin: 60px 20px;
+    /* display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap; */
+  }
+  
+
+  @media screen and (max-width: 674px) {
+
+.blog_section {
+  margin: 20px;
+
+}
+
+}

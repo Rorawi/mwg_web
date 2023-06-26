@@ -1,0 +1,235 @@
+/*Banner codes*/
+
+.banner img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.banner .banner_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.banner .banner_text {
+  color: #f2f3f7;
+}
+
+.banner_text h1 {
+  padding-right: 15px;
+  margin-right: 10px;
+
+  font-size: 34px;
+  border-bottom: 2px solid #ffc107;
+  padding-bottom: 15px;
+}
+
+.banner_text h3 {
+  font-size: 29px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  left: 0;
+  bottom: 0;
+  object-fit: contain;
+  width: 100%;
+  background-color: #00000067;
+  /* height: 60vh; */
+  height: 517.5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img_div {
+  /* height: 60vh; */
+  height: 517.5px;
+  overflow: hidden;
+}
+
+/*Text Box*/
+.event_sec {
+  padding: 80px 80px 10px;
+  position: relative;
+  overflow: hidden;
+  /* border: 2px solid red; */
+}
+
+.event_sec .text_box {
+  text-align: center;
+}
+
+.event_sec .text_box h2 {
+  color: #f9af1a;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  margin: 0 0 5px;
+}
+
+.event_sec .text_box h1 {
+  font-size: 45px;
+  color: #232323;
+  margin: 14px 0;
+
+  margin-bottom: 0px;
+  text-transform: capitalize;
+  margin-top: 0;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.event_sec .text_box h1 span {
+  color: #f9af1a;
+}
+
+.event_sec .text_box p {
+  margin: 30px 0 60px;
+  color: #ffffffd7;
+  background-image: url(../assets//abstract.png);
+  background-repeat: repeat;
+  background-size: contain;
+  padding: 30px;
+  background-color: #232323;
+  box-shadow: 0px 2px 6px rgba(109, 108, 108, 0.358); /* Example shadow effect */
+}
+
+
+
+
+/*Events Overviews */
+
+.events_div {
+    margin: 40px 80px;
+}
+
+
+.event_div .img_div_flyer {
+/* margin-right: 30px; */
+width: 800px;
+border-radius: 10px;
+overflow: hidden;
+}
+
+
+.event_div img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.event_div {
+  box-shadow: 0px 2px 6px rgba(109, 108, 108, 0.358); /* Example shadow effect */
+  display: flex;
+  /* justify-content: flex-start; */
+  align-items: center;
+  margin: 40px 0;
+  padding: 40px 20px;
+  transition: .3s ease-in-out;
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+
+.event_div:hover {
+    box-shadow: 0px 2px 40px rgba(255, 187, 0, 0.532); /* Example shadow effect */
+}
+
+.event_div .details {
+  margin-left: 40px;
+  width: 50%;
+}
+
+
+.event_div h2 {
+    color: #f9af1a;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-align: left;
+    width: 100%;
+}
+
+.event_div p {
+  width: 80%;
+}
+
+
+/*Button*/
+
+.event_div  button {
+    display: inline-block;
+    background: #f9af1a;
+    box-shadow: 5px 5px 5px rgba(25, 30, 44, 0.192);
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: .5s;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    border: transparent;
+
+    margin: 15px 0 0;
+    padding: 10px 30px 10px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+
+  .event_div  button::before {
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    z-index: -1;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    background: #232323;
+    cursor: pointer;
+
+  }
+
+  .event_div  button .svg_div {
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    background: #fff;
+    color: #232323;
+    border-radius: 100%;
+    position: relative;
+    left: 17px;
+    transition: 0.5s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  
+  .event_div  button:hover::before {
+    width: 100%;
+  }
+
+  .event_div  button:hover .svg_div{
+    background: #f9af1a;
+    color: #fff;
+  }

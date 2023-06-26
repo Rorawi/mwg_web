@@ -1,0 +1,126 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 160px 50px 100px;
+}
+
+.subscribe_container {
+  /* background-image: linear-gradient(to right, #f7b718, #fbc65d, #ffc022); */
+  padding: 30px;
+  width: 100%;
+  max-width: 700px;
+
+  position: relative;
+
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #ffd700, #f9af1a, #ffd700);
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: 0 0;
+  animation: gradientAnimation 4s ease-in-out infinite;
+
+  text-align: center;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.132);
+}
+
+.subscribe_container .logo_div {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  align-self: center;
+  background: #232323;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: -37px;
+}
+
+.subscribe_container .logo_div svg {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.subscribe_container h2 {
+  margin-top: 50px;
+}
+
+.twoInone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subscribe_container form input {
+  height: 54px;
+  background-color: #fff;
+  border-color: transparent;
+  transition: 0.5s;
+  border: 1px solid #e6e6e6;
+  padding: 6px 20px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 5px;
+  width: 100%;
+
+  margin: 20px 10px;
+  outline: none;
+}
+
+.subscribe_container form #subscribe_button {
+  height: 54px;
+  border-color: transparent;
+  transition: 0.5s;
+  padding: 6px 20px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 5px;
+  width: 100%;
+
+  margin: 20px 0;
+  outline: none;
+
+  background: #232323;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.subscribe_container form #subscribe_button:hover {
+  /* opacity: 0.9; */
+  box-shadow: 5px 9px 10px rgba(0, 0, 0, 0.352);
+
+}
+
+
+@media screen and (max-width: 720px) {
+  .twoInone {
+    flex-direction: column;
+  }
+
+  .subscribe_container form input {
+    margin: 20px 0px;
+
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
