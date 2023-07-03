@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "../components/project.module.css";
-import img1 from "../assets/mwg-swiper1.jpg";
+import img1 from "../assets/project.png";
 import youth from "../assets/Youth-Media.jpg";
 import robotics from "../assets/Coding-and-Robotics.jpg"
 import project_vfg from "../assets/project-vfg.jpg"
@@ -31,7 +31,7 @@ const Projects = () => {
           </div>
         </div>
         <div className={styles.img_div}>
-          <img src={robotics} />
+          <img src={img1} />
         </div>
       </div>
 

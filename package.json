@@ -53,5 +53,10 @@
     "@iconify/icons-skill-icons": "^1.2.1",
     "@iconify/react": "^4.1.0",
     "concurrently": "^8.2.0"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "twitterfetch.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

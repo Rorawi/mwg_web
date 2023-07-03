@@ -13,13 +13,14 @@ const Subscribe = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("your-api-endpoint", {
+      const response = await fetch("/subscribe", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
-      });
+        body: JSON.stringify({ email, js: true }),
+        
+      })
 
       if (response.ok) {
         setSuccessMessage("Thank you for subscribing!");
@@ -43,7 +44,7 @@ const Subscribe = () => {
           <CiMail />
         </div>
         <h2 className={styles.subscribe}>GET UPDATES FROM MOBILE WEB GHANA</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} action="/subscribe" method="POST">
           <div className={styles.twoInone}>
             <input
               type="text"
