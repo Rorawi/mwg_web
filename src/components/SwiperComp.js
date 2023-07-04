@@ -469,6 +469,8 @@ export const LogoSwiper = () => {
         // onSlideChange={() => console.log("slide change")}
         className={[styles.swiper, styles.logo_swiper]}
       >
+        <div className={[styles.logo_swiper,]}>
+
         <SwiperSlide className={styles.logo_swiperslide}>
           <img src={mastercard} className={styles.logo} />
         </SwiperSlide>
@@ -476,17 +478,18 @@ export const LogoSwiper = () => {
           <img src={odc_logo} className={styles.logo1} />
         </SwiperSlide>
         <SwiperSlide className={styles.logo_swiperslide}>
-          <img src={amspaces_logo} className={styles.logo} />
+          <img src={amspaces_logo} className={styles.logo2} />
         </SwiperSlide>
         <SwiperSlide className={styles.logo_swiperslide}>
-          <img src={gdc_logo} className={styles.logo} />
+          <img src={gdc_logo} className={styles.logo3} />
         </SwiperSlide>
         <SwiperSlide className={styles.logo_swiperslide}>
-          <img src={us_embasy_logo} className={styles.logo} />
+          <img src={us_embasy_logo} className={styles.logo4} />
         </SwiperSlide>
         <SwiperSlide className={styles.logo_swiperslide}>
-          <img src={mwg_logo} className={styles.logo} />
+          <img src={mwg_logo} className={styles.logo5} />
         </SwiperSlide>
+        </div>
         {/* edit swiper */}
       </Swiper>
     </div>
@@ -537,9 +540,7 @@ export const TestimonialSwiper = () => {
               </div>
 
               <div className={styles.text_box}>
-                <p>
-                  {review.content}
-                </p>
+                <p>{review.content}</p>
                 <div className={styles.stars}>
                   <FaStar />
                   <FaStar />

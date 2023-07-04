@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../components/career.module.css";
-import img1 from "../assets/mwg-swiper1.jpg";
+import img1 from "../assets/career.jpg";
 import { FaBook, FaHandshake } from "react-icons/fa";
 import { BiMessage, BiWorld } from "react-icons/bi";
 import { AiOutlineArrowRight } from "react-icons/ai";
@@ -10,27 +10,27 @@ const Career = () => {
   const jobs = [
     {
       id: 1,
-      jobName: "Content Creator Intern",
+      jobName: "National Service Personnel",
       jobOverview:
-        "We're looking for an intern well abreast with communication skills.",
-        signUpLink: "https://tailwindcss.com/docs/box-shadow"
+      "We are currently seeking National Service personnel to fill vacancies within our organization." ,
+       signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSfE3hhIEr5sT2Z_4_9fMFXG_by2ubMepgngmWKiC2UP7ok4Vw/viewform"
     },
-    {
-      id: 2,
-      jobName: "Backend Developer",
-      jobOverview:
-        "We're looking for a well versed backend developer well abreast with languages like Python,Django,MongoDb and so on",
-        signUpLink: "https://www.youtube.com/watch?v=pEy-wOiMJps"
+    // {
+    //   id: 2,
+    //   jobName: "Backend Developer",
+    //   jobOverview:
+    //     "We're looking for a well versed backend developer well abreast with languages like Python,Django,MongoDb and so on",
+    //     signUpLink: "https://www.youtube.com/watch?v=pEy-wOiMJps"
 
-    },
-    {
-      id: 3,
-      jobName: "UI/UX Designer",
-      jobOverview:
-        "We're looking for a well versed UI/UX designer with experience in Figma,Adode XD,PhotoShop,Adobe Illustrator",
-        signUpLink: "https://www.youtube.com/watch?v=pEy-wOiMJps"
+    // },
+    // {
+    //   id: 3,
+    //   jobName: "UI/UX Designer",
+    //   jobOverview:
+    //     "We're looking for a well versed UI/UX designer with experience in Figma,Adode XD,PhotoShop,Adobe Illustrator",
+    //     signUpLink: "https://www.youtube.com/watch?v=pEy-wOiMJps"
 
-    },
+    // },
   ];
   return (
     <>

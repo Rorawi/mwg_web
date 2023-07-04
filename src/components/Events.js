@@ -1,33 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../components/event.module.css";
-import img1 from "../assets/mwg-swiper1.jpg";
-import mcare from "../assets/mcare.jpg"
+import img1 from "../assets/projects.jpg";
+import img2 from "../assets/flyer.jpeg";
 
+import mcare from "../assets/mcare.jpg";
+import { FaArrowRight, FaTimes } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 function Events() {
+  const [modal, setModal] = useState(false);
+  const [selectedImg, setSelectedImg] = useState(null);
+
   const events = [
     {
       id: 1,
       eventName: "Education U.S.A",
-      img: img1,
+      img: img2,
       time: "10AM GMT",
-      eventOverview:
-        `This is an event mainly for the youth which seeks to increase the capacity 
+      eventOverview: `This is an event mainly for the youth which seeks to increase the capacity 
         of youths to consume and disseminate media contents responsibly.`,
-        signUpLink: "https://tailwindcss.com/docs/box-shadow"
+      // signUpLink: "https://tailwindcss.com/docs/box-shadow",
     },
     {
       id: 2,
       eventName: "Education U.S.A",
-      img: mcare,
+      img: img2,
       time: "10AM GMT",
-      eventOverview:
-        `This is an event mainly for the youth which seeks to increase the
+      eventOverview: `This is an event mainly for the youth which seeks to increase the
          capacity of youths to consume and disseminate media contents responsibly.`,
-        signUpLink: "https://tailwindcss.com/docs/box-shadow"
+      // signUpLink: "https://tailwindcss.com/docs/box-shadow",
     },
     // {
     //   id: 2,
@@ -39,6 +42,18 @@ function Events() {
 
     // },
   ];
+
+  const openModal = (selectedModal) => {
+    setSelectedImg(selectedModal);
+    setModal(true);
+  };
+  
+  const closeModal = () => {
+    setSelectedImg(null);
+    setModal(false);
+  };
+  
+
   return (
     <>
       <div className={styles.banner}>
@@ -70,35 +85,45 @@ function Events() {
         {events.map((event) => {
           return (
             <>
-            <div className={styles.event_div} key={event.id}>
+              <div className={styles.event_div} key={event.id}>
+                {modal ? (
+                  <div className={styles.modal_div_screen}>
+                    <div
+                      className={styles.svg_div}
+                      onClick={closeModal}
+                    >
+                      <FaTimes />
+                    </div>
+                    <div className={styles.modal_div}>
+                      <img src={event.img} />
+                    </div>
+                  </div>
+                ) : (
+                  false
+                )}
 
-              <div className={styles.img_div_flyer}>
-                <img src={event.img}/>
-              </div>
-              <div className={styles.details}>
-                <div>
-                  <h2>{event.eventName}</h2>
-                  <p>{event.eventOverview}</p>
-                  <br/>
-                  <h2>
-                  {event.time}
-                  </h2>
+                <div className={styles.img_div_flyer}>
+                  <img src={event.img} />
                 </div>
-                
-                <Link to={event.signUpLink}>
-          <button>
-            Sign UP
-            <div className={styles.svg_div}>
-              {" "}
-              <AiOutlineArrowRight />
-            </div>
-          </button>
-          </Link>
+                <div className={styles.details}>
+                  <div>
+                    <h2>{event.eventName}</h2>
+                    <p>{event.eventOverview}</p>
+                    <br />
+                    <h2>{event.time}</h2>
+                  </div>
 
-            
-              
+                  <Link to={event.signUpLink} onClick={() => openModal(event)}>
+                    <button>
+                      View
+                      <div className={styles.svg_div}>
+                        {" "}
+                        <AiOutlineArrowRight />
+                      </div>
+                    </button>
+                  </Link>
+                </div>
               </div>
-            </div>
             </>
           );
         })}

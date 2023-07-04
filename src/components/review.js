@@ -20,8 +20,7 @@ export const Reviews = [
     },
     {
         content: `I was there for a virtual program and the team gave us excellent
-         support throughout the successful event. They have a partnership to promote 
-         learning and preps for American  College and University education. Well resourced
+         support throughout the successful event. Well resourced
           and a congenial environment for students. Great job.`,
          id: 4,
          name: "Augustine Adams"

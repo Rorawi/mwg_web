@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import BlogSection from "./BlogSection";
 import BlogPost from "./BlogPost";
 import styles from "../components/mainblog.module.css";
-import img1 from "../assets/mwg-swiper1.jpg";
+import img1 from "../assets/blog.jpg";
 import director from "../assets/director.jpg";
 import blogImg2 from "../assets/code-for-ghana.jpg";
 import blogImg1 from "../assets/fime.jpg";

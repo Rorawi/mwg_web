@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import img1 from "../assets/mwg-swiper1.jpg";
 import mtn from "../assets/mtnlogo.png";
-import stan from "../assets/Stan.png";
+import stan from "../assets/standardchartered.png";
 import styles from "../components/carousel.module.css";
 import { FaArrowRight, FaTimes } from "react-icons/fa";
 import { BsCoin } from "react-icons/bs";
@@ -88,65 +88,59 @@ const Form = () => {
   const [lastname, setLastname] = useState("");
   const [message, setMessage] = useState("");
   const [sentmessage, setSentMessage] = useState(false);
+
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopy = (text) => {
+    // Copy logic here
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 2000);
+  };
+
   return (
     <>
-      <form id="contactForm">
+      <form id={styles.contactForm}>
         <h1>Donate</h1>
-
         <p>
-          Join us in powering innovation and shaping the future by contributing
-          to our mission. Your donation will fuel technological advancements and
-          drive positive change in the tech industry.
+          Fuel innovation and drive positive change in the tech industry through
+          your donation.
         </p>
 
-        {/* <div className={styles.svg_div}>
-          <FaTimes onClick={() => {
-                   IsModal(modal);
-                   console.log("ji");
-                 }}/>
-          </div> */}
-
-        {/* <CurrencyDropdown /> */}
-        <div className={styles.twoInone}>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={name}
-            placeholder="Your Name..."
-            onChange={(e) => setName(e.target.value)}
-            className={styles.form_control}
-            required
-          />
-
-          <input
-            type="text"
-            id="lastname"
-            name="lastname"
-            value={lastname}
-            placeholder="Your Lastname..."
-            onChange={(e) => setLastname(e.target.value)}
-            className={styles.form_control}
-            required
-          />
-        </div>
-
-        <input
-          size="40"
-          className={styles.form_control}
-          aria-required="true"
-          aria-invalid="false"
-          placeholder="Your Email"
-          value={email}
-          type="email"
-          name="from_email"
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+        <br />
+        <hr />
+        <br />
 
         <div>
           <div className={styles.accountDetails}>
-            <div className={styles.money_div}>
+            {isCopied && (
+              <span
+                style={{
+                  float: "right",
+                  boxShadow: "0px 2px 10px  rgba(26, 26, 25, 0.12)",
+                  padding: "10px",
+                  borderRadius: "5px 10px",
+                  width: "250px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  position: "absolute",
+                  left: "42%",
+                  top: "45px",
+                  margin: "30px 0",
+                  background: "#fff",
+                  transition: ".3s",
+                }}
+                className={styles.copied}
+              >
+                Copied!
+              </span>
+            )}
+            <div
+              className={styles.money_div}
+              onClick={() => handleCopy("0244 809 550")}
+            >
               <div className={styles.img_div}>
                 <img src={mtn} />
               </div>
@@ -160,12 +154,48 @@ const Form = () => {
               </div>
 
               <div>
-                <div><span>Cedis</span> </div>
-                <div>Talika +233 55 312 4613</div>
+                <div onClick={() => handleCopy("0101010101010101")}>
+                  <span>₵ 0101010101010101</span>
+                  {/* {isCopied && <span>Copied!</span>} */}
+                </div>
+
+                <div onClick={() => handleCopy("0101010101010101")}>
+                  <span>$ 0101010101010110</span>
+                  {/* {isCopied && <span>Copied!</span>} */}
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Rest of the form */}
+        {/* ... */}
+
+        <input
+          size="40"
+          className={styles.form_control}
+          aria-required="true"
+          aria-invalid="false"
+          placeholder="Your Name"
+          value={name}
+          type="text"
+          name="from_name"
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+
+        <input
+          size="40"
+          className={styles.form_control}
+          aria-required="true"
+          aria-invalid="false"
+          placeholder="Your Email"
+          value={email}
+          type="email"
+          name="from_email"
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
 
         <input
           type="submit"

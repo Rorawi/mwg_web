@@ -43,7 +43,7 @@ const Subscribe = () => {
         <div className={styles.logo_div}>
           <CiMail />
         </div>
-        <h2 className={styles.subscribe}>GET UPDATES FROM MOBILE WEB GHANA</h2>
+        <h2 className={styles.subscribe}> Sign up to our newsletter.</h2>
         <form onSubmit={handleSubmit} action="/subscribe" method="POST">
           <div className={styles.twoInone}>
             <input

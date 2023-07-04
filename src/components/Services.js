@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../components/services.module.css";
-import img1 from "../assets/mwg-swiper1.jpg";
+import img1 from "../assets/handshake.jpg";
 import { FaPause } from "react-icons/fa";
 import { GiHouse } from "react-icons/gi";
 import Testimonial from "./Testimonial";

@@ -191,8 +191,42 @@
   margin-top: 20px;
 }
 
+.logo2 {
+  /* filter: grayscale(80%);
+  opacity: 0.5; */
+  width: 100%;
+  max-width: 100px;
+  margin-top: 20px;
+}
+.logo3 {
+  /* filter: grayscale(80%);
+  opacity: 0.5; */
+  width: 100%;
+  max-width: 150px;
+  margin-top: 20px;
+}
+
+.logo4 {
+  /* filter: grayscale(80%);
+  opacity: 0.5; */
+  width: 100%;
+  max-width: 110px;
+  margin-top: 20px;
+}
+
+.logo5 {
+  /* filter: grayscale(80%);
+  opacity: 0.5; */
+  width: 100%;
+  max-width: 130px;
+  margin-top: 20px;
+}
+
 .logo_swiper {
   background-color: #f9af1a;
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 /*TESTIMONIAL*/

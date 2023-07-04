@@ -71,13 +71,6 @@
   font-weight: 600;
 }
 
-/* hr {
-  background-color: #ffc107;
-  border-color: #ffc107;
-  width: 122px;
-  height: 4px;
-} */
-
 .text_overlay p {
   color: aliceblue;
   font-size: 18px;
@@ -171,7 +164,7 @@ color: #232323;
   border-radius: 10px;
   box-shadow: 0 5px 25px rgba(2, 2, 2, 0.3);
   overflow: hidden;
-  width: 900px;
+  width: 600px;
   /* transform: scale(0.5); */
   transition: transform 0.5 ease;
 }
@@ -237,6 +230,10 @@ textarea {
   min-height: 100px;
 }
 
+#contact_form hr {
+border: 1px solid gray;
+}
+
 /*Currency*/
 .currency_div {
   display: flex;
@@ -245,19 +242,28 @@ textarea {
 }
 
 .accountDetails {
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  justify-content: flex-start;
   align-items: center;
 }
 
 .money_div {
   display: flex;
+  width: 45%;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img_div {
+  width: 70px;
+  height: 40px;
+  
 }
 
 .img_div img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: 100%;
+  border-radius: 10px;
 }
 
 
@@ -343,6 +349,13 @@ textarea {
 }
 
 
+.accountDetails .copiedDiv {
+  float: right;
+
+  box-shadow: 0px 2px 40px rgba(255, 187, 0, 0.532); /* Example shadow effect */
+
+}
+
 
 
   @keyframes bounce {
@@ -366,3 +379,34 @@ textarea {
     transform: translateY(-10px);
   }
 }
+
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.copiedMessage {
+  float: right;
+  box-shadow: 0px 2px 10px rgba(26, 26, 25, 0.12);
+  padding: 10px;
+  border-radius: 5px 10px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 39%;
+  top: 45px;
+  margin: 30px 0;
+  background: #fff;
+  transition: 0.3s;
+}
+
