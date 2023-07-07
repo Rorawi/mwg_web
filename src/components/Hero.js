@@ -8,6 +8,7 @@ import { BsCoin } from "react-icons/bs";
 
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { ImageSwiper } from "./SwiperComp";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   /*Modal States */
@@ -47,13 +48,15 @@ export default function Hero() {
               dedicated to empowering the youth to develop mobile and web
               applications and open data solutions to solve local problems.
             </p>
-            <button
+           <Link to="/donate">
+           <button
               onClick={() => {
                 IsModal(!modal);
               }}
             >
               Make Donations <BsCoin />
             </button>
+           </Link>
           </div>
         </div>
       </div>

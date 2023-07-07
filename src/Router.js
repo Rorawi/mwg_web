@@ -16,6 +16,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Testimonial from "./components/Testimonial";
 import Events from "./components/Events";
 import OverView from "./components/OverView";
+import Donate from "./components/Donate";
 
 
 const Router = () => {
@@ -37,6 +38,7 @@ const Router = () => {
           <Route path="/contact" element={<ContactUs/>} />
           <Route path="/career" element={<Career/>} />
           <Route path="/blog" element={<MainBlog/>}/>
+          <Route path="/donate" element={<Donate/>}/>
           {/* <Route path="/singleblog" element={<SingleBlogPost/>} /> */}
         </Routes>
         <Footer/>

@@ -578,22 +578,6 @@ export const TestimonialSwiper = () => {
             className={styles.paginationButton}
             onClick={() => handlePaginationClick(6)}
           ></button>
-          {/* <button
-            className={styles.paginationButton}
-            onClick={() => handlePaginationClick(8)}
-          ></button>
-          <button
-            className={styles.paginationButton}
-            onClick={() => handlePaginationClick(10)}
-          ></button>
-          <button
-            className={styles.paginationButton}
-            onClick={() => handlePaginationClick(12)}
-          ></button>
-          <button
-            className={styles.paginationButton}
-            onClick={() => handlePaginationClick(0)}
-          ></button> */}
         </div>
         {/* edit swiper */}
       </Swiper>
