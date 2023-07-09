@@ -1,6 +1,6 @@
 import React from "react";
 import img from "../assets/img3.jpg";
-import img1 from "../assets/img2.jpg";
+import img1 from "../assets/img2.avif";
 import styles from "../components/home.module.css";
 import Hero from "./Hero";
 import { HiOutlineHomeModern } from "react-icons/hi2";

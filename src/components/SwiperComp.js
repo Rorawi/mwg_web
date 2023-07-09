@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import img from "../assets/mwg.hub.png";
 import profile from "../assets/profile.jpg";
 
-import mastercard from "../assets/Mastercard-logo.png";
+import mastercard from "../assets/Mastercard-logo.avif";
 import amspaces_logo from "../assets/amspaces_logo.png";
 import odc_logo from "../assets/odc.png";
 import us_embasy_logo from "../assets/us_embasy_logo.jpg";
