@@ -17,6 +17,7 @@ import Testimonial from "./components/Testimonial";
 import Events from "./components/Events";
 import OverView from "./components/OverView";
 import Donate from "./components/Donate";
+import DonateSteps from "./components/DonateSteps";
 
 
 const Router = () => {
@@ -38,7 +39,8 @@ const Router = () => {
           <Route path="/contact" element={<ContactUs/>} />
           <Route path="/career" element={<Career/>} />
           <Route path="/blog" element={<MainBlog/>}/>
-          <Route path="/donate" element={<Donate/>}/>
+          <Route path="/donate" element={<Donate/>} />
+            {/* <Route path="/steps" element={<DonateSteps/>} /> */}
           {/* <Route path="/singleblog" element={<SingleBlogPost/>} /> */}
         </Routes>
         <Footer/>

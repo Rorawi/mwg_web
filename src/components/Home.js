@@ -1,6 +1,6 @@
 import React from "react";
-import img from "../assets/mwg.hub.png";
-import img1 from "../assets/mwg-swiper1.jpg";
+import img from "../assets/img3.jpg";
+import img1 from "../assets/img2.jpg";
 import styles from "../components/home.module.css";
 import Hero from "./Hero";
 import { HiOutlineHomeModern } from "react-icons/hi2";
@@ -22,7 +22,7 @@ export default function Home() {
               <img src={img1} alt="Our image" />
             </div>
             <div className={styles.img2}>
-              <img src={img1} alt="Our image" />
+              <img src={img} alt="Our image" />
             </div>
           </div>
 
@@ -69,7 +69,7 @@ export default function Home() {
           <br/>
           {/* <Team/> */}
           <Map/>
-          <Blog />
+          {/* <Blog /> */}
           <Subscribe />
 
           {/* <LogoSwiper/> */}

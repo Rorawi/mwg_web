@@ -74,7 +74,9 @@ const Donate = () => {
           <div className={styles.img_div}>
             <br />
             <br />
-            <Link>
+            <Link 
+            // to="/steps"
+            >
               <button>
                 Donate <BsCoin />
               </button>

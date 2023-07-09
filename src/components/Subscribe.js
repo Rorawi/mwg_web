@@ -40,9 +40,9 @@ const Subscribe = () => {
       {errorMessage && <p>{errorMessage}</p>}
 
       <div className={styles.subscribe_container}>
-        <div className={styles.logo_div}>
+        {/* <div className={styles.logo_div}>
           <CiMail />
-        </div>
+        </div> */}
         <h2 className={styles.subscribe}> Sign up to our newsletter.</h2>
         <form onSubmit={handleSubmit} action="/subscribe" method="POST">
           <div className={styles.twoInone}>

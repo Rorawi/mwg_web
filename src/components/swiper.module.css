@@ -229,16 +229,20 @@
   align-items: center !important;
 }
 
+.logo_swiper .swiper-wrapper {
+  align-items: center!important;
+}
+
 /*TESTIMONIAL*/
 
 .testimonial_card_box {
   border: 2px solid white;
   padding: 25px 20px;
   /* width: 336px!important; */
-  height: 400px!important;
+  height: 220px!important;
 
   background-color: #fff;
-  border-radius: 30px;
+  border-radius: 10px;
   transition: .3s ease-in-out;
   
   display: flex;
@@ -319,5 +323,9 @@
     background: #fff;
     border-radius: 10px;
     height: 350px;
+  }
+
+  .testimonial_card_box {
+    height: 100%!important;
   }
 }

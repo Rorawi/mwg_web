@@ -9,16 +9,16 @@
   /* background-image: linear-gradient(to right, #f7b718, #fbc65d, #ffc022); */
   padding: 30px;
   width: 100%;
-  max-width: 700px;
+  max-width: 1000px;
 
   position: relative;
 
-  border-radius: 10px;
-  background-image: linear-gradient(to right, #ffd700, #f9af1a, #ffd700);
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #232323, #363635, #464646);
   background-repeat: no-repeat;
   background-size: 200% 100%;
   background-position: 0 0;
-  animation: gradientAnimation 4s ease-in-out infinite;
+  animation: gradientAnimation 4s ease-in-out normal forwards infinite;
 
   text-align: center;
   color: #fff;
@@ -49,7 +49,9 @@
 }
 
 .subscribe_container h2 {
-  margin-top: 50px;
+  margin: 50px 0;
+
+  font-size: 2rem;
 }
 
 .twoInone {
@@ -69,7 +71,6 @@
   box-shadow: none;
   border-radius: 5px;
   width: 100%;
-
   margin: 20px 10px;
   outline: none;
 }
@@ -87,7 +88,7 @@
   margin: 20px 0;
   outline: none;
 
-  background: #232323;
+  background: #f5bb0a;
   transition: 0.3s ease-in-out;
   cursor: pointer;
   color: #fff;
@@ -97,7 +98,7 @@
 
 .subscribe_container form #subscribe_button:hover {
   /* opacity: 0.9; */
-  box-shadow: 5px 9px 10px rgba(0, 0, 0, 0.352);
+  box-shadow: 5px 9px 10px rgba(28, 28, 28, 0.352);
 
 }
 

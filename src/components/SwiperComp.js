@@ -12,9 +12,11 @@ import gdc_logo from "../assets/gdc_logo.png";
 import mwg_logo from "../assets/mwg-logo.png";
 
 import img1 from "../assets/mwg-swiper1.jpg";
-import director from "../assets/director.jpg";
-import blogImg2 from "../assets/code-for-ghana.jpg";
-import blogImg1 from "../assets/fime.jpg";
+import webdev from "../assets/webdev.png";
+import workspace from "../assets/our-workspace.png";
+import opencities from "../assets/opencities.png";
+import itconsultancy from "../assets/abt.jpg";
+
 
 import styles from "../components/swiper.module.css";
 // Import Swiper styles
@@ -59,7 +61,7 @@ export const SwiperComp = () => {
       >
         <SwiperSlide className={styles.card_box}>
           <div className={styles.img_div}>
-            <img src={img} />
+            <img src={webdev} />
           </div>
           <div className={styles.text_box}>
             <h2>Web & Software development</h2>
@@ -77,7 +79,7 @@ export const SwiperComp = () => {
 
         <SwiperSlide className={styles.card_box}>
           <div className={styles.img_div}>
-            <img src={img} />
+            <img src={workspace} />
           </div>
           <div className={styles.text_box}>
             <h2>Technology Hub</h2>
@@ -94,7 +96,7 @@ export const SwiperComp = () => {
         </SwiperSlide>
         <SwiperSlide className={styles.card_box}>
           <div className={styles.img_div}>
-            <img src={img} />
+            <img src={opencities} />
           </div>
           <div className={styles.text_box}>
             <h2>Open data Projects</h2>
@@ -112,7 +114,7 @@ export const SwiperComp = () => {
 
         <SwiperSlide className={styles.card_box}>
           <div className={styles.img_div}>
-            <img src={img} />
+            <img src={itconsultancy} />
           </div>
           <div className={styles.text_box}>
             <h2>IT consultancy</h2>
@@ -469,26 +471,25 @@ export const LogoSwiper = () => {
         // onSlideChange={() => console.log("slide change")}
         className={[styles.swiper, styles.logo_swiper]}
       >
-        <div className={[styles.logo_swiper,]}>
-
-        <SwiperSlide className={styles.logo_swiperslide}>
-          <img src={mastercard} className={styles.logo} />
-        </SwiperSlide>
-        <SwiperSlide className={styles.logo_swiperslide}>
-          <img src={odc_logo} className={styles.logo1} />
-        </SwiperSlide>
-        <SwiperSlide className={styles.logo_swiperslide}>
-          <img src={amspaces_logo} className={styles.logo2} />
-        </SwiperSlide>
-        <SwiperSlide className={styles.logo_swiperslide}>
-          <img src={gdc_logo} className={styles.logo3} />
-        </SwiperSlide>
-        <SwiperSlide className={styles.logo_swiperslide}>
-          <img src={us_embasy_logo} className={styles.logo4} />
-        </SwiperSlide>
-        <SwiperSlide className={styles.logo_swiperslide}>
-          <img src={mwg_logo} className={styles.logo5} />
-        </SwiperSlide>
+        <div className={[styles.logo_swiper]}>
+          <SwiperSlide className={styles.logo_swiperslide}>
+            <img src={mastercard} className={styles.logo} />
+          </SwiperSlide>
+          <SwiperSlide className={styles.logo_swiperslide}>
+            <img src={odc_logo} className={styles.logo1} />
+          </SwiperSlide>
+          <SwiperSlide className={styles.logo_swiperslide}>
+            <img src={amspaces_logo} className={styles.logo2} />
+          </SwiperSlide>
+          <SwiperSlide className={styles.logo_swiperslide}>
+            <img src={gdc_logo} className={styles.logo3} />
+          </SwiperSlide>
+          <SwiperSlide className={styles.logo_swiperslide}>
+            <img src={us_embasy_logo} className={styles.logo4} />
+          </SwiperSlide>
+          <SwiperSlide className={styles.logo_swiperslide}>
+            <img src={mwg_logo} className={styles.logo5} />
+          </SwiperSlide>
         </div>
         {/* edit swiper */}
       </Swiper>
@@ -508,7 +509,7 @@ export const TestimonialSwiper = () => {
 
   const responsiveOptions = {
     1024: {
-      slidesPerView: 3,
+      slidesPerView: 2,
     },
 
     320: {
@@ -525,7 +526,7 @@ export const TestimonialSwiper = () => {
         ref={swiperRef}
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={25}
-        slidesPerView={3}
+        slidesPerView={2}
         loop={true}
         breakpoints={responsiveOptions}
         pagination={{ clickable: false }}
@@ -535,9 +536,9 @@ export const TestimonialSwiper = () => {
         {Reviews.map((review) => {
           return (
             <SwiperSlide className={styles.testimonial_card_box}>
-              <div className={styles.img_div}>
+              {/* <div className={styles.img_div}>
                 <img src={profile} alt="our image" />
-              </div>
+              </div> */}
 
               <div className={styles.text_box}>
                 <p>{review.content}</p>
