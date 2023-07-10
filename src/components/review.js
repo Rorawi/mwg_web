@@ -13,7 +13,7 @@ export const Reviews = [
          name: "ibrahimh halidu"
     },
     {
-        content: `Thereceptionist was very polite and welcomed me. You can
+        content: `The receptionist was very polite and welcomed me. You can
          contact them for all your events and meetings.`,
          id: 3,
          name: "Faisal Ali (da Supremo)"

@@ -35,7 +35,7 @@ export default function Hero() {
           <div className={styles.glass_effect}>
             <div className={styles.text}>
               <h3>WE OFFER</h3>
-              <br />
+              {/* <br /> */}
               <h1>
                 {" "}
                 <span className={styles.typing_text}>{text}</span>

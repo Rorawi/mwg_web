@@ -18,6 +18,9 @@ import Events from "./components/Events";
 import OverView from "./components/OverView";
 import Donate from "./components/Donate";
 import DonateSteps from "./components/DonateSteps";
+import Payment from "./components/Payment";
+import Completion from "./components/Completion";
+
 
 
 const Router = () => {
@@ -40,6 +43,8 @@ const Router = () => {
           <Route path="/career" element={<Career/>} />
           <Route path="/blog" element={<MainBlog/>}/>
           <Route path="/donate" element={<Donate/>} />
+          <Route path="/payment" element={<Payment/>} />
+          <Route path="/completion" element={<Completion/>} />
             {/* <Route path="/steps" element={<DonateSteps/>} /> */}
           {/* <Route path="/singleblog" element={<SingleBlogPost/>} /> */}
         </Routes>

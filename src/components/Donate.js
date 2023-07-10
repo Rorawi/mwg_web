@@ -45,7 +45,7 @@ const Donate = () => {
             <img src={img3} />
             <br />
             <br />
-            <Link>
+            <Link to="/payment">
               <button>
                 Make Donations <BsCoin />
               </button>
@@ -75,7 +75,7 @@ const Donate = () => {
             <br />
             <br />
             <Link 
-            // to="/steps"
+            to="/payment"
             >
               <button>
                 Donate <BsCoin />

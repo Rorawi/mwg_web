@@ -55,8 +55,7 @@ export default function Home() {
             <p>
               Mobile Web Ghana is a technology and entrepreneurship hub that is
               dedicated to empowering the youth to develop mobile and web
-              applications and open data solutions to solve local problems. Our
-              goal is to
+              applications and open data solutions to solve local problems.
             </p>
           </div>
           <SwiperComp />

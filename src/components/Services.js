@@ -1,11 +1,36 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import styles from "../components/services.module.css";
 import img1 from "../assets/handshake.avif";
+import workspace from "../assets/our-workspace.avif";
 import { FaPause } from "react-icons/fa";
 import { GiHouse } from "react-icons/gi";
 import Testimonial from "./Testimonial";
 
+
+
+// import img1 from "../assets/mwg-swiper1.avif";
+import webdev from "../assets/webdev.avif";
+import opencities from "../assets/opencities.avif";
+import itconsultancy from "../assets/abt.avif";
+import startupinc from "../assets/startupinc.avif";
+import girlsInIt from "../assets/girlsinit.avif";
+
+
+
 function Services() {
+  const [backendData,setBackendData] = useState([{}]);
+
+
+
+  useEffect(()=> {
+    fetch("/api").then(res=> {
+      res.json()
+    }).then(data => {
+      setBackendData(data)
+    })
+  },[])
+
+
   return (
     <>
       <div className={styles.banner}>
@@ -28,10 +53,15 @@ function Services() {
             What <span>We</span> Do
           </h1>
         </div>
-
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
         <div className={styles.services_div}>
           <div className={styles.service_div}>
-            <img src={img1}/>
+            <img src={workspace}/>
 
             {/* <div className={styles.svg_div}>
               <GiHouse />
@@ -48,7 +78,7 @@ function Services() {
           </div>
 
           <div className={styles.service_div}>
-            <img src={img1}/>
+            <img src={itconsultancy}/>
 
             {/* <div className={styles.svg_div}>
               <GiHouse />
@@ -64,7 +94,7 @@ function Services() {
 
         <div className={styles.services_div}>
           <div className={styles.service_div}>
-            <img src={img1}/>
+            <img src={opencities}/>
 
             {/* <div className={styles.svg_div}>
               <GiHouse />
@@ -84,7 +114,7 @@ function Services() {
           </div>
 
           <div className={styles.service_div}>
-            <img src={img1}/>
+            <img src={startupinc}/>
 
             {/* <div className={styles.svg_div}>
               <GiHouse />
@@ -102,7 +132,7 @@ function Services() {
         </div>
         <div className={styles.services_div}>
           <div className={styles.service_div}>
-            <img src={img1}/>
+            <img src={girlsInIt}/>
 
             {/* <div className={styles.svg_div}>
               <GiHouse />
