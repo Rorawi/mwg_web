@@ -112,6 +112,26 @@
     margin: 20px 0px;
 
   }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 20px 60px;
+  }
+
+
+  .subscribe_container {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .subscribe_container h2 {
+    margin: 20px 0;
+  
+    font-size: 1.5rem;
+  }
+  
 }
 
 @keyframes gradientAnimation {
