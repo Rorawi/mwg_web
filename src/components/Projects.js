@@ -1,20 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "../components/project.module.css";
-import img1 from "../assets/project.png";
-import youth from "../assets/Youth-Media.jpg";
-import robotics from "../assets/Coding-and-Robotics.jpg"
-import project_vfg from "../assets/project-vfg.jpg"
-import cfg from "../assets/code-for-ghana.jpg"
-import oca from "../assets/after-11.png"
-import aca from "../assets/american-corner-agbogba.jpg"
-import adsc from "../assets/ADSC-11.jpg"
-import csa from "../assets/CSA.jpg"
-import tawep from "../assets/TaWEP.jpg"
-import microsoft from "../assets/apps-factory.jpg"
-import mcare from "../assets/mcare.jpg"
-import fime from "../assets/fime.jpg"
-import advocacy from "../assets/advocacy.jpg"
+import img1 from "../assets/project.avif";
+import youth from "../assets/Youth-Media.avif";
+import robotics from "../assets/Coding-and-Robotics.avif"
+import project_vfg from "../assets/project-vfg.avif"
+import cfg from "../assets/code-for-ghana.avif"
+import oca from "../assets/after-11.avif"
+import aca from "../assets/american-corner-agbogba.avif"
+import adsc from "../assets/ADSC-11.avif"
+import csa from "../assets/CSA.avif"
+import tawep from "../assets/TaWEP.avif"
+import microsoft from "../assets/apps-factory.avif"
+import mcare from "../assets/mcare.avif"
+import fime from "../assets/fime.avif"
+import advocacy from "../assets/advocacy.avif"
 import { FaPause } from "react-icons/fa";
 import { AiOutlineArrowRight } from "react-icons/ai";
 

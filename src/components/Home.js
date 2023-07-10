@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../assets/img3.jpg";
+import img from "../assets/img3.avif";
 import img1 from "../assets/img2.avif";
 import styles from "../components/home.module.css";
 import Hero from "./Hero";

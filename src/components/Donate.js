@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./donate.module.css";
-import img2 from "../assets/aboutUs.jpg";
-import img3 from "../assets/img3.jpg";
-import img4 from "../assets/img4.jpg";
+import img2 from "../assets/aboutUs.avif";
+import img3 from "../assets/img3.avif";
+import img4 from "../assets/img4.avif";
 import { Link } from "react-router-dom";
 
 import { BsCoin } from "react-icons/bs";

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styles from "../components/event.module.css";
-import img1 from "../assets/projects.jpg";
-import img2 from "../assets/flyer.jpeg";
+import img1 from "../assets/projects.avif";
+import img2 from "../assets/flyer.avif";
 
-import mcare from "../assets/mcare.jpg";
+import mcare from "../assets/mcare.avif";
 import { FaArrowRight, FaTimes } from "react-icons/fa";
 
 import { Link } from "react-router-dom";

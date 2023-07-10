@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import BlogSection from "./BlogSection";
 import BlogPost from "./BlogPost";
 import styles from "../components/mainblog.module.css";
-import img1 from "../assets/blog.jpg";
-import director from "../assets/director.jpg";
-import blogImg2 from "../assets/code-for-ghana.jpg";
-import blogImg1 from "../assets/fime.jpg";
-import blogImg3 from "../assets/Mobile-Web-Ghana-Tech-3.png";
+import img1 from "../assets/blog.avif";
+import director from "../assets/director.avif";
+import blogImg2 from "../assets/code-for-ghana.avif";
+import blogImg1 from "../assets/fime.avif";
+import blogImg3 from "../assets/Mobile-Web-Ghana-Tech-3.avif";
 import SingleBlogPost from "./SingleBlogPost";
 
 const MainBlog = () => {

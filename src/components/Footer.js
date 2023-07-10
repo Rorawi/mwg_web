@@ -10,7 +10,7 @@ import {
 import { SiGmail } from "react-icons/si";
 import styles from "../components/footer.module.css";
 import { Link } from "react-router-dom";
-import mwgLogo from "../assets/mwg-logo.png";
+import mwgLogo from "../assets/mwg-logo.avif";
 import { Timeline } from "react-twitter-widgets";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 

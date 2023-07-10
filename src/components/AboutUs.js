@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "../components/about.module.css";
-import img1 from "../assets/mwg-swiper1.jpg";
-import group from "../assets/group_img.jpg";
-import group1 from "../assets/aboutUs.jpg"
+import img1 from "../assets/mwg-swiper1.avif";
+import group from "../assets/group_img.avif";
+import group1 from "../assets/aboutUs.avif"
 import { FaPause } from "react-icons/fa";
 import TeamSection from "./Team";
 import { BlogSwiper, LogoSwiper, TestimonialSwiper } from "./SwiperComp";

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../components/testimonial.module.css";
 import { TestimonialSwiper } from "./SwiperComp";
 
-import design from "../assets/abstract.png";
+import design from "../assets/abstract.avif";
 
 const Testimonial = () => {
   return (

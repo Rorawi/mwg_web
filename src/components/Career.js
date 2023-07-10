@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../components/career.module.css";
-import img1 from "../assets/career.jpg";
+import img1 from "../assets/career.avif";
 import { FaBook, FaHandshake } from "react-icons/fa";
 import { BiMessage, BiWorld } from "react-icons/bi";
 import { AiOutlineArrowRight } from "react-icons/ai";

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import mwgLogo from "../assets/mwg-logo.png";
+import mwgLogo from "../assets/mwg-logo.avif";
 import styles from "../components/navbar.module.css";
 import { FaTimes } from "react-icons/fa";
 import { AiOutlineMenu } from "react-icons/ai";

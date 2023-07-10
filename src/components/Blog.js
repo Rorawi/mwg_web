@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "../components/blog.module.css";
 import { BlogSwiper } from "./SwiperComp";
-import img1 from "../assets/mwg-swiper1.jpg"
+import img1 from "../assets/mwg-swiper1.avif"
 
-import design from "../assets/abstract.png";
+import design from "../assets/abstract.avif";
 
 const Blog = () => {
   return (

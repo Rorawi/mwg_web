@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import img1 from "../assets/mwg-swiper1.jpg";
-import mtn from "../assets/mtnlogo.png";
-import stan from "../assets/standardchartered.png";
+import img1 from "../assets/mwg-swiper1.avif";
+import mtn from "../assets/mtnlogo.avif";
+import stan from "../assets/standardchartered.avif";
 import styles from "../components/carousel.module.css";
 import { FaArrowRight, FaTimes } from "react-icons/fa";
 import { BsCoin } from "react-icons/bs";

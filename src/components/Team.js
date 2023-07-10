@@ -7,9 +7,9 @@ import {
   FaFacebookSquare,
   FaTwitter
 } from "react-icons/fa";
-import img1 from "../assets/mwg-swiper1.jpg";
-import director from "../assets/director.jpg";
-import profile from "../assets/profile.jpg"
+import img1 from "../assets/mwg-swiper1.avif";
+import director from "../assets/director.avif";
+import profile from "../assets/profile.avif"
 import { Link } from "react-router-dom";
 
 const TeamSection = () => {

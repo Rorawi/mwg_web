@@ -1,21 +1,21 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Navigation, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import img from "../assets/mwg.hub.png";
-import profile from "../assets/profile.jpg";
+import img from "../assets/mwg.hub.avif";
+import profile from "../assets/profile.avif";
 
 import mastercard from "../assets/Mastercard-logo.avif";
-import amspaces_logo from "../assets/amspaces_logo.png";
-import odc_logo from "../assets/odc.png";
-import us_embasy_logo from "../assets/us_embasy_logo.jpg";
-import gdc_logo from "../assets/gdc_logo.png";
-import mwg_logo from "../assets/mwg-logo.png";
+import amspaces_logo from "../assets/amspaces_logo.avif";
+import odc_logo from "../assets/odc.avif";
+import us_embasy_logo from "../assets/us_embasy_logo.avif";
+import gdc_logo from "../assets/gdc_logo.avif";
+import mwg_logo from "../assets/mwg-logo.avif";
 
-import img1 from "../assets/mwg-swiper1.jpg";
-import webdev from "../assets/webdev.png";
-import workspace from "../assets/our-workspace.png";
-import opencities from "../assets/opencities.png";
-import itconsultancy from "../assets/abt.jpg";
+import img1 from "../assets/mwg-swiper1.avif";
+import webdev from "../assets/webdev.avif";
+import workspace from "../assets/our-workspace.avif";
+import opencities from "../assets/opencities.avif";
+import itconsultancy from "../assets/abt.avif";
 
 
 import styles from "../components/swiper.module.css";

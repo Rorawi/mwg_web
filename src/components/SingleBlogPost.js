@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styles from "./singleblog.module.css";
 import style from './recentblog.module.css';
-import profileImage from "../assets/profile.jpg";
-import blogImage from "../assets/mcare.jpg";
-import img1 from "../assets/mwg-swiper1.jpg";
+import profileImage from "../assets/profile.avif";
+import blogImage from "../assets/mcare.avif";
+import img1 from "../assets/mwg-swiper1.avif";
 import { FaGithub, FaInstagram, FaLinkedin,FaFacebookSquare,FaTwitter, FaSearch} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import CommentBlock from "./Comment";

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../components/contact.module.css";
-import img1 from "../assets/phone.jpg";
+import img1 from "../assets/phone.avif";
 import { BiMailSend, BiPhoneCall, BiWorld } from "react-icons/bi";
 import emailjs from "@emailjs/browser";
 

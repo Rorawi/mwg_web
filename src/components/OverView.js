@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "../components/overview.module.css";
-import img1 from "../assets/mwg-swiper1.jpg";
-import experience from "../assets/experience.png";
-import path from "../assets/path.png";
+import img1 from "../assets/mwg-swiper1.avif";
+import experience from "../assets/experience.avif";
+import path from "../assets/path.avif";
 import { FaPeopleCarry, FaBullseye, FaLightbulb } from "react-icons/fa";
 
 function OverView() {
