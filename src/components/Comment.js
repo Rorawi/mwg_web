@@ -2,24 +2,24 @@ import React, { useState } from 'react';
 import styles from './comment.module.css';
 
 const CommentBlock = () => {
-//   const [comments, setComments] = useState([]);
-//   const [newComment, setNewComment] = useState('');
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState('');
 
-//   const handleInputChange = (e) => {
-//     setNewComment(e.target.value);
-//   };
+  const handleInputChange = (e) => {
+    setNewComment(e.target.value);
+  };
 
-//   const handleAddComment = () => {
-//     if (newComment.trim() !== '') {
-//       const comment = {
-//         id: Date.now(),
-//         content: newComment,
-//       };
+  const handleAddComment = () => {
+    if (newComment.trim() !== '') {
+      const comment = {
+        id: Date.now(),
+        content: newComment,
+      };
 
-//       setComments((prevComments) => [...prevComments, comment]);
-//       setNewComment('');
-//     }
-//   };
+      setComments((prevComments) => [...prevComments, comment]);
+      setNewComment('');
+    }
+  };
 
   return (
     <div className={styles.commentBlock}>
@@ -36,11 +36,11 @@ const CommentBlock = () => {
         <textarea
           className={styles.commentInput}
           placeholder="Add a comment..."
-        //   value={newComment}
-        //   onChange={handleInputChange}
+          value={newComment}
+          onChange={handleInputChange}
         />
         <button className={styles.commentButton} 
-        // onClick={handleAddComment}
+        onClick={handleAddComment}
         >
           Add Comment
         </button>

@@ -357,6 +357,17 @@ border: 1px solid gray;
 }
 
 
+@media (max-width: 909px) {
+  .text_overlay {
+    width: 100%;
+    padding: 10px;
+    top: 20px;
+    height: 100%;
+  }
+
+}
+
+
 
   @keyframes bounce {
     0%,

@@ -7,50 +7,6 @@ footer a {
   color: #232323;
 }
 
-.talk_sec {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.talk_sec p {
-  font-size: 40px;
-  font-weight: bold;
-  color: #232323;
-  text-align: left;
-}
-
-.talk_sec span {
-  color: #ffc107;
-}
-
-.message_us {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid black;
-}
-
-.message_us svg {
-  color: #ffc107;
-  font-weight: 800;
-  font-size: 20px;
-}
-
-.message_us .mail_svg {
-  margin-right: 10px;
-}
-
-.message_us input {
-  border: none;
-  outline: none !important;
-}
-
-.message_us button {
-  background-color: transparent;
-  border: none;
-}
-
 .details {
   display: flex;
   justify-content: space-around;
@@ -75,48 +31,7 @@ footer a {
   /* text-align: center; */
 }
 
-/* Work enquiries */
 
-.work_enquiries {
-  /* margin-top: 20px; */
-}
-
-.work_enquiries h2 {
-  font-weight: bold;
-  text-align: center;
-}
-
-.work_enquiries p {
-  font-size: 14px;
-  text-align: center;
-}
-
-.work_enquiries span {
-  font-weight: bold;
-}
-
-.work_enquiries a {
-  color: #000;
-}
-
-.work_enquiries a:hover {
-  border-bottom: 2px solid #ffc107;
-  transition: 0.3s ease-in-oout;
-}
-
-/* .address {
-    margin-top: 50px;
-} */
-
-.address h2 {
-  font-weight: bold;
-  text-align: center;
-}
-
-.address p {
-  font-size: 14px;
-  text-align: center;
-}
 
 /*Socials*/
 .socials {
@@ -199,5 +114,13 @@ footer hr {
 
   .twitter_feed {
     width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .details .profile p {
+    font-size: 14px;
+    max-width: 100%;
+    /* text-align: center; */
   }
 }

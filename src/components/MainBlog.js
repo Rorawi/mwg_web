@@ -4,6 +4,12 @@ import BlogPost from "./BlogPost";
 import styles from "../components/mainblog.module.css";
 import img1 from "../assets/blog.avif";
 import director from "../assets/director.avif";
+import bridging from "../assets/bridgingdigiskills.avif";
+import girlscancode from "../assets/girlscancode.avif";
+import whatyouneedtoknow from "../assets/whatyouneedtoknowtoland.avif";
+import firstmedlit from "../assets/mobilewebmedialiteracy.avif";
+import trashtotreasure from "../assets/trashtotreasure.avif";
+import tiktok from "../assets/tiktokandracism.avif";
 import blogImg2 from "../assets/code-for-ghana.avif";
 import blogImg1 from "../assets/fime.avif";
 import blogImg3 from "../assets/Mobile-Web-Ghana-Tech-3.avif";
@@ -17,6 +23,34 @@ const MainBlog = () => {
   };
 
   const blogPosts = [
+    {
+      title:
+        "Empowering Small Businesses with Digital Marketing: Mobile Web Ghana Shares Insights from Hopeline Institute’s Workshop",
+      content:
+        "On Tuesday 18th and Wednesday 19th April, Hopeline Institute hosted a digital marketing...",
+      blogImg: blogImg3,
+      day: "15th",
+      month: "May",
+      year: "2023",
+      onClick: () =>
+        handleBlogPostClick({
+          title:
+            "Empowering Small Businesses with Digital Marketing: Mobile Web Ghana Shares Insights from Hopeline Institute’s Workshop",
+          name: "mobileweb_",
+          day: "29th",
+          month: "May",
+          year: "2023",
+          img: director,
+          blogImg: blogImg3,
+          content: `On Tuesday 18th and Wednesday 19th April, Hopeline Institute hosted a digital marketing workshop for SMEs aimed at equipping small business owners with the skills necessary to succeed in today’s digital landscape. Mobile Web Ghana attended the workshop as a participant, to gain valuable insights and share expertise in digital marketing.
+    
+          The workshop ran from 10:00 am to 2:00 pm and featured a mix of in-person and online attendees, making it a hybrid session. The workshop covered a range of topics, from basic marketing concepts to advanced digital strategies. The facilitator, an experienced digital marketer, shared valuable insights on how to reach and engage with customers online, build a strong brand, and drive sales.
+          
+          As a participant, Mobile Web Ghana gained valuable insights into the importance of having a well-defined digital marketing strategy. Small businesses must be intentional about their online presence and take the time to understand their target audience, competition, and market trends. By leveraging social media, email marketing, and search engine optimization (SEO), small businesses can effectively connect with customers and build brand awareness.
+          
+          `,
+        }),
+    },
     {
       title:
         "Enhancing Media Literacy: A Recap of the Second Youth Media Literacy Twitter Spaces Session",
@@ -230,23 +264,245 @@ Conclusion: The Africa Digital Skills Conference 2023 represents an invaluable o
           `,
         }),
     },
+
+    {
+      title:
+        "Girls Can Code: A Story of Empowerment and Education at American Corner, Agbogba",
+      content:
+        "Since the 1990s, fewer women have been employed in STEM (science, technology,...",
+      blogImg: girlscancode,
+      day: "18th",
+      month: "May",
+      year: "2023",
+      onClick: () =>
+        handleBlogPostClick({
+          title:
+            "The Role of Mobile Technology in Agriculture: Revolutionizing Farming Practices",
+          name: "Talika Bernard",
+          day: "18th",
+          month: "May",
+          year: "2023",
+          img: director,
+          blogImg: girlscancode,
+          content: `Since the 1990s, fewer women have been employed in STEM (science, technology, engineering, and mathematics) professions, according to information from Accenture.
+          Computer coding is still overwhelmingly a male-dominated field in today’s tech-driven environment. According to Statistics, only 28.7% of people with coding abilities are women, compared to 71.3% of men. The US Embassy Ghana and Mobile is determined to bridge this wide gap in every possible way.  
+          
+          On the 12th May.2023, twelve  girls from Preset Pacesetters Senior High School, a private day and boarding senior secondary institution, gathered at the American Corner, Agbogba, to learn about R Studio. 
+          
+          The facilitator for the session  – Jaylexia Clark, a Fullbright scholar and PHD candidate from the University of Notre Dame, began by introducing R Studio as a statistical computing and graphics platform used by data analysts, statisticians, and scientists to analyze and visualize data. The girls were curious and eager to learn more about the tool and how it could be useful to them. She  went on to explain how R Studio could be used for data analysis, including analyzing emotions in photos, creating graphs and maps, and understanding patterns and trends. The girls were fascinated by the possibilities and eager to start coding.
+          
+          
+          At first, some of the girls were coiled in their shell  by the idea of coding, especially those who had previously expressed fear of mathematics. However, as they began working with RStudio, they quickly discovered that coding was not as difficult as they had imagined. With the help of the facilitator, the girls gained a firm grip on the basics of R Studio and started writing their first lines of code.
+          
+           
+          After learning the basics of R Studio, the girls were given a questionnaire on gender cyberbully harassment online to explore in R Studio. The questionnaire was designed to help the girls understand the prevalence and impact of gender cyberbullying and harassment online. They were encouraged to use their newfound coding skills to analyze and visualize the data in new and interesting ways. Over the course of the day, the girls continued to work on their coding projects, and by the end of the workshop, they had all gained a newfound confidence in their abilities. They had learned that girls can code, and that with the right tools and guidance, anyone can learn to code.
+          
+          The girls left feeling inspired and empowered. They had learned a new skill that could be used in a wide range of industries, and they had discovered the many benefits of using RStudio for data analysis and visualization. Overall, the workshop was an excellent example of how education can empower young girls and help them to develop the skills they need to succeed in the future.
+          
+          `,
+        }),
+    },
+    {
+      title:
+        "What You Need to Know to Land Your Dream Job: CV Reviews at American Corner Agbogba",
+      content:
+        "Attending CV reviews is important because it provides an opportunity to get expert feedback, keep up with trends in CV writing, get inspiration, build confidence, and network with professionals from different fields and industries",
+      blogImg: whatyouneedtoknow,
+      day: "8th",
+      month: "May",
+      year: "2023",
+      onClick: () =>
+        handleBlogPostClick({
+          title:
+            "What You Need to Know to Land Your Dream Job: CV Reviews at American Corner Agbogba",
+          name: "mobileweb_",
+          day: "18th",
+          month: "May",
+          year: "2023",
+          img: director,
+          blogImg: whatyouneedtoknow,
+          content: `Attending CV reviews is important because it provides an opportunity to get expert feedback, keep up with trends in CV writing, get inspiration, build confidence, and network with professionals from different fields and industries.
+
+          The American Spaces & Support Programming initiative from The US Embassy Ghana in partnership with Mobile Web Ghana is providing work-ready programs as a great step towards addressing unemployment and improving job readiness skills.
+          
+          As part of the project, A CV review was hosted at American Corner Agbogba on the 3rd May,2023. The session brought together participants to learn about new trends in CV writing and how to improve their resumes.
+          
+          The session started with the facilitator, Mr Joseph Sam an HR Practitioner from Elidel Prestige Ltd emphasizing the importance of tailoring your CV to the specific job you’re applying for. He highlighted that customizing your CV shows the hiring manager that you’re a serious candidate who has taken the time to understand the job requirements. The facilitator then went on to talk about the importance of a clear and concise summary statement, the use of action verbs, and the need to quantify your accomplishments.
+          
+          The facilitator then projected selected CVs from the participants for the group to critique. This exercise was particularly useful as it gave attendees an opportunity to apply what they had learned and see firsthand how to improve their own CVs. The group gave constructive feedback, pointing out areas that needed improvement and offering suggestions on how to make the CVs more compelling.
+          
+           
+          
+          After the session, the participants commended the program with positive feedback. They appreciated the interactive nature of the session and the practical approach used to demonstrate how to write an effective CV. They also appreciated the facilitator’s professionalism and willingness to provide personalized feedback on their individual CVs.
+          
+          Overall, the CV review session at the American Corner was highly informative and engaging. The use of real-world examples and interactive exercises made the session more practical and relevant. Attendees left with a deeper understanding of how to improve their CVs and the confidence to apply what they had learned in their job search. The positive feedback from the participants is a testament to the success of the program, and we look forward to future sessions.        
+          `,
+        }),
+    },
+
+    {
+      title:
+        "Bridging the Digital Skills Gap in Africa: The Need for Partnership",
+      content:
+        "This digital skills gap in Africa is a major concern as the world becomes increasingly reliant on technology...",
+      blogImg: bridging,
+      day: "8th",
+      month: "May",
+      year: "2023",
+      onClick: () =>
+        handleBlogPostClick({
+          title:
+            "Bridging the Digital Skills Gap in Africa: The Need for Partnership",
+          name: "mobileweb_",
+          day: "18th",
+          month: "May",
+          year: "2023",
+          img: director,
+          blogImg: bridging,
+          content: `This digital skills gap in Africa is a major concern as the world becomes increasingly reliant on technology. Without access to digital skills and knowledge, individuals and communities in Africa will struggle to compete in the global economy. This could lead to further economic inequality and social exclusion. To address this issue, it is important for governments, businesses, and educational institutions to invest in digital education and training programs. These programs should be accessible to all, regardless of their socioeconomic status or location. In addition, there needs to be a focus on developing local talent and creating job opportunities within the digital sector. This will not only help bridge the skills gap but also boost economic growth and development in Africa.
+
+          Ultimately, closing the digital skills gap in Africa is crucial for ensuring that everyone has an equal opportunity to participate in the digital economy and benefit from its potential rewards. According to the African Development Bank, Africa’s digital skills gap is estimated to be around 230 million people by 2030. This means that more than half of Africa’s population is at risk of being left behind in the digital economy. Economic Implications: The digital skills gap in Africa has significant economic implications. The World Bank estimates that the digital economy could contribute up to $180 billion to Africa’s GDP by 2025, but this is only possible if Africa’s workforce has the necessary digital skills.
+          
+          Addressing the digital skills gap in Africa requires a collaborative effort between governments, the private sector, and civil society organizations. Partnerships between these different stakeholders are crucial in ensuring that digital skills development programs are effective and sustainable. Mobile Web Ghana is a leading African technology and entrepreneurship hub that is dedicated to empowering the youth and specializes in developing digital skills training programs for youth, entrepreneurs, and  professionals. The organization has a proven track record of successfully delivering digital skills training to thousands of learners across the continent. 
+          
+          As a leading organization in promoting digital skills and entrepreneurship in Africa, Mobile Web Ghana recognizes the importance of collaboration and partnership in achieving its mission. The Africa Digital Skills Conference is an annual event that brings together stakeholders, knowledge sharers and knowledge seekers to connect and learn to build, empower, upskill and reskill human resources in the area of digital skills across Africa. The focus is to build the capacity of the youth, SMEs, government agencies, organizations, and professionals to make them more competitive on the job market, more efficient in their fields of work, and equip them to apply digital skills to solve problems. As well as to discuss the latest trends, innovations, and challenges in the digital space.
+          
+          Hosting this conference requires significant resources, expertise, and support from various partners. We are calling on like-minded organizations, businesses, governments, and individuals to join us in this endeavor. By working together, we can create a platform that will empower young people with the necessary skills to thrive in the digital economy. The 2023 Africa Digital Skills Conference will focus on emerging technologies such as Digital Literacy, artificial intelligence, blockchain, Coding, Data Analysis, Digital Marketing , cybersecurity and more. It will also explore ways to bridge the digital divide and promote inclusive growth across Africa. With your support, we can make this conference a success and contribute to building a brighter future for our continent.
+          
+          Let us come together to share knowledge, exchange ideas, and inspire action towards bridging the digital gap in Africa. join us today and take the first step towards achieving the digital skills and knowledge gap in Africa.                  
+          `,
+        }),
+    },
+    {
+      title:
+        "Mobile Web Ghana Presents: First Youth Media Literacy Twitter Spaces Event",
+      content:
+        "This digital skills gap in Africa is a major concern as the world becomes increasingly reliant on technology...",
+      blogImg: firstmedlit,
+      day: "28th",
+      month: "April",
+      year: "2023",
+      onClick: () =>
+        handleBlogPostClick({
+          title:
+            "Mobile Web Ghana Presents: First Youth Media Literacy Twitter Spaces Event",
+          name: "Talika",
+          day: "28th",
+          month: "April",
+          year: "2023",
+          img: director,
+          blogImg: firstmedlit,
+          content: `Mobile Web Ghana is excited to announce its first Youth Media Literacy Twitter Spaces event. This event is part of the Youth Media Literacy Project, an initiative supported by the US Embassy in Ghana which is aimed at improving media literacy among Ghanaian youth.
+
+          As young people today are increasingly exposed to different forms of media, it has become more important than ever for them to develop strong media literacy skills. The ability to analyze and understand media messages and the influence they have on our thoughts and behaviors is critical to becoming informed and engaged citizens.
+          
+          This Twitter Spaces event will take place on Friday, 28th April, 2023 at 3:00 pm GMT, and will feature a panel of expert speakers who will discuss the importance of media literacy in today’s digital world. Participants will have the opportunity to engage with the speakers and ask questions on the topic. 
+          
+          Our esteemed panel of speakers includes Precious Oluwadunsin Akinlolu, Lukman Mahami Adams, Emelia Aryee and Efo Korku Mawutor, who will bring a wealth of experience and knowledge to the discussion. From understanding the impact of social media on mental health to analyzing fake news and misinformation, our speakers will touch on a wide range of topics to help young people become more media-literate.
+          
+          To participate, simply follow Mobile Web Ghana on Twitter and join the conversation using the hashtag #YouthMediaLiteracy.
+          
+          Participants are encouraged to type their questions ahead of time, so that they can be addressed during the event.
+          
+           
+          
+          We hope that this event will be the first of many in our ongoing efforts to promote media literacy among Ghanaian youth. 
+          
+          Join us and be part of the conversation! For more information on the Youth Media Literacy Project, follow Mobile Web Ghana on all social media platforms.                 
+          `,
+        }),
+    },
+    {
+      title:
+        "From Trash to Treasure: Turning Old Clothes into Earth Day Tote Bags",
+      content:
+        "Did you know that  first Earth Day was celebrated on April 22, 1970, as a response to growing c...",
+      blogImg: trashtotreasure,
+      day: "26th",
+      month: "April",
+      year: "2023",
+      onClick: () =>
+        handleBlogPostClick({
+          title:
+            "From Trash to Treasure: Turning Old Clothes into Earth Day Tote Bags",
+          name: "mobileweb_",
+          day: "28th",
+          month: "April",
+          year: "2023",
+          img: director,
+          blogImg: trashtotreasure,
+          content: `Did you know that  first Earth Day was celebrated on April 22, 1970, as a response to growing concerns about pollution and environmental degradation? Since then, it has become a global event, with millions of people coming together to participate in events, activities, and initiatives aimed at promoting environmental awareness and sustainability
+
+          On April 21st, 2023, the US Embassy  Ghana  and  Mobile Web Ghana hosted a special Earth Day event in collaboration with Reusable Bags GH Company. The event brought together students from Kwabenya Senior High School, Ghana Education Service officers, and teachers to celebrate Earth Day and learn about sustainable living. The program was aimed at raising awareness about the impact of plastic waste and offering a sustainable solution to reduce its use.
+          
+              
+          The participants were taken through an interactive discussion on the problem of plastic waste and the importance of adopting sustainable practices. They were introduced to the 7 Rs of sustainability: Reduce, Reuse, Recycle, Rethink, Refuse, Repair, and Repurpose. The discussion also highlighted the United Nations Sustainable Development Goals (SDGs) and the role individuals can play in achieving them
+          
+          .      
+          
+          Following the discussion, the participants were taught how to create their own tote bags from old t-shirts. This was a creative and fun way to promote sustainable living and reduce the use of plastic bags. The team from Reusable Bags GH Company provided guidance and support to the participants as they designed and created their own tote bags.
+          
+               
+          The participants were enthusiastic about the activity and showcased their tote bag designs at the end of the session. It was inspiring to see their creativity and commitment to sustainability.
+          
+          The event was a great success, and it demonstrated the importance of community engagement in promoting sustainable living. By creating their own tote bags, the participants gained practical skills that they can use to promote sustainability in their daily lives. They also learned about the impact of plastic waste on the environment and the importance of taking action to reduce it.
+          
+             
+          The partners of American Corner Agbogba are committed to promoting sustainable practices and will continue to organize events and activities that raise awareness about environmental issues. We appreciate the efforts of Reusable Bags GH Company in facilitating this event, and we encourage everyone to adopt sustainable practices and join us in protecting our planet.  `,
+        }),
+    },
+    {
+      title:
+        "Creating an Inclusive and Safe Online Community: Tiktok Algorithm and Racism Workshop",
+      content:
+        "Did you know that  first Earth Day was celebrated on April 22, 1970, as a response to growing c...",
+      blogImg: tiktok,
+      day: "20th",
+      month: "April",
+      year: "2023",
+      onClick: () =>
+        handleBlogPostClick({
+          title:
+            "Creating an Inclusive and Safe Online Community: Tiktok Algorithm and Racism Workshop",
+          name: "mobileweb_",
+          day: "20th",
+          month: "April",
+          year: "2023",
+          img: director,
+          blogImg: tiktok,
+          content: `TikTok Algorithm and Racism are two interconnected issues that have been gaining attention in recent years. As one of the most popular social media platforms, TikTok’s algorithm plays a significant role in determining what content is seen by its users. However, this algorithm has been accused of perpetuating racism and discrimination, often unintentionally.
+
+
+          The American Corner Agbogba hosted an event on “TikTok and Algorithmic Racism”. The event aimed to educate students on the impact of algorithmic bias and discrimination on social media platforms, with a specific focus on TikTok.
+          
+          
+          The workshop was led by Jaylexia Clark , a PhD Candidate and 2022 – 2023 Fulbright recipient in the Department of Sociology. Her primary research interests are, structural racial and gender inequality, platform work and digital entrepreneurship. Co-leading with her was Kenya Lee, a doctoral candidate in sociology at University of Notre Dame. Her research specializes in race, ethnicity and schools. She is an alumna of The University of North Carolina at Chapel Hill
+          
+          The event began with a discussion on social science, data, and social problems. Students were encouraged to define these terms and think about how they relate to the issues of bias and discrimination on social media platforms. This was followed by a group task where students were divided into groups and asked to focus on a particular social problem. The groups were asked to identify a plan that would address shadow-banning and bias in the algorithm, or cultural appropriation and credit/internet clout.
+          
+          
+          After working in groups, the students presented their case studies on TikTok, Snapchat, and Instagram. They shared their findings on how these platforms perpetuate bias and discrimination, and offered suggestions for how these issues could be addressed.
+          
+           
+          The students demonstrated a strong understanding of the issues of algorithmic bias and discrimination, and were able to apply this understanding to real-world social problems. The group task and case studies allowed students to think critically and creatively about these issues, and to come up with concrete solutions. The event provided a valuable opportunity for students to engage in meaningful discussion and reflection on the role of social media in perpetuating bias and discrimination. The American Corner plans to host similar events in the future to continue promoting digital literacy and creating a safe and inclusive online space for all..  `,
+        }),
+    },
+
     // Add more blog posts as needed
   ];
 
-
-const fetchData =()=> {
-  fetch('https://mobilewebghana.org/blog/')
-  .then(response => response.json())
-  .then(data => {
-    // Use the fetched data in your application
-    console.log(data);
-  })
-  .catch(error => {
-    // Handle any errors that occurred during the fetch request
-    console.error(error);
-  });
-}
-
+  const fetchData = () => {
+    fetch("https://mobilewebghana.org/blog/")
+      .then((response) => response.json())
+      .then((data) => {
+        // Use the fetched data in your application
+        console.log(data);
+      })
+      .catch((error) => {
+        // Handle any errors that occurred during the fetch request
+        console.error(error);
+      });
+  };
 
   return (
     <div>
@@ -289,7 +545,7 @@ const fetchData =()=> {
             />
           </div>
 
-{/* <button onClick={fetchData}>Click me</button> */}
+          {/* <button onClick={fetchData}>Click me</button> */}
           <BlogSection>
             {blogPosts
               .filter((blog) => {

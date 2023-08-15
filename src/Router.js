@@ -11,7 +11,7 @@ import Career from "./components/Career";
 import BlogLinkComponent from "./components/BlogSection";
 // import TeamSection from "./components/Team";
 import MainBlog from "./components/MainBlog";
-// import SingleBlogPost from "./components/SingleBlogPost";
+import SingleBlogPost from "./components/SingleBlogPost";
 import ScrollToTop from "./components/ScrollToTop";
 import Testimonial from "./components/Testimonial";
 import Events from "./components/Events";
@@ -20,6 +20,7 @@ import Donate from "./components/Donate";
 import DonateSteps from "./components/DonateSteps";
 import Payment from "./components/Payment";
 import Completion from "./components/Completion";
+import BlogApi from "./components/BlogApi";
 
 
 
@@ -42,11 +43,12 @@ const Router = () => {
           <Route path="/contact" element={<ContactUs/>} />
           <Route path="/career" element={<Career/>} />
           <Route path="/blog" element={<MainBlog/>}/>
+          <Route path="/blogapi" element={<BlogApi/>}/>
           <Route path="/donate" element={<Donate/>} />
           <Route path="/payment" element={<Payment/>} />
           <Route path="/completion" element={<Completion/>} />
             {/* <Route path="/steps" element={<DonateSteps/>} /> */}
-          {/* <Route path="/singleblog" element={<SingleBlogPost/>} /> */}
+          <Route path="/singlepost" element={<SingleBlogPost/>} />
         </Routes>
         <Footer/>
       </BrowserRouter>

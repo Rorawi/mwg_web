@@ -5,15 +5,16 @@ import { FaBook, FaHandshake } from "react-icons/fa";
 import { BiMessage, BiWorld } from "react-icons/bi";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import {v4 as uuid} from "uuid";
 
 const Career = () => {
   const jobs = [
     {
-      id: 1,
+      id: uuid(),
       jobName: "National Service Personnel",
       jobOverview:
       "We are currently seeking National Service personnel to fill vacancies within our organization." ,
-       signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSfE3hhIEr5sT2Z_4_9fMFXG_by2ubMepgngmWKiC2UP7ok4Vw/viewform"
+       signUpLink: `https://docs.google.com/forms/d/e/1FAIpQLSfE3hhIEr5sT2Z_4_9fMFXG_by2ubMepgngmWKiC2UP7ok4Vw/viewform?vc=0&c=0&w=1&flr=0`
     },
     // {
     //   id: 2,

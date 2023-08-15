@@ -83,8 +83,8 @@ const Footer = () => {
           </div>
         </div>
 
-        
         <TwitterTimelineEmbed
+          nofooter
           sourceType="profile"
           screenName="MobileWebGhana"
           options={{ height: 300, width: 350 }}

@@ -11,6 +11,7 @@ import img1 from "../assets/mwg-swiper1.avif";
 import director from "../assets/director.avif";
 import profile from "../assets/profile.avif";
 import { Link } from "react-router-dom";
+import {v4 as uuid} from "uuid";
 
 const TeamSection = () => {
   const team = [
