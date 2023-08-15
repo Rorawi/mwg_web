@@ -7,6 +7,8 @@ function Payment() {
   const [amount, setAmount] = useState("");
   const [firstName, setFirstname] = useState("");
   const [lastName, setLastname] = useState("");
+  const publicKey = process.env.REACT_APP_PAYSTACK_PUBLIC_KEY;
+
 
   //   const payWithPaystack = async (e) => {
   //     e.preventDefault();
@@ -49,7 +51,7 @@ function Payment() {
     e.preventDefault();
     const paystack = new PaystackPop();
     paystack.newTransaction({
-      key: "pk_test_de9b93599c675d18a6a2821698bc38bff286d174",
+      key: publicKey,
       amount: amount * 100,
       email,
       firstName,
