@@ -17,7 +17,6 @@ import Testimonial from "./components/Testimonial";
 import Events from "./components/Events";
 import OverView from "./components/OverView";
 import Donate from "./components/Donate";
-import DonateSteps from "./components/DonateSteps";
 import Payment from "./components/Payment";
 import Completion from "./components/Completion";
 import BlogApi from "./components/BlogApi";

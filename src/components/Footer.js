@@ -19,6 +19,8 @@ import emailjs from "@emailjs/browser";
 import { Icon } from "@iconify/react";
 import instagramIcon from "@iconify/icons-skill-icons/instagram";
 
+import { Tweet } from 'react-tweet'
+
 const Footer = () => {
   const [email, setEmail] = useState("");
 
@@ -90,6 +92,8 @@ const Footer = () => {
           options={{ height: 300, width: 350 }}
           className={styles.twitter_feed}
         />
+
+{/* <Tweet className="light" id="1628832338187636740" /> */}
       </section>
 
       <hr />

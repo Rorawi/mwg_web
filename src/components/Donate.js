@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./donate.module.css";
 import img2 from "../assets/aboutUs.avif";
 import img3 from "../assets/img3.avif";
@@ -7,8 +7,11 @@ import { Link } from "react-router-dom";
 
 import { BsCoin } from "react-icons/bs";
 import FollowUs from "./FollowUs";
+import Payment from "./Payment";
 
 const Donate = () => {
+  const [open, isOpen] = useState(false);
+
   return (
     <>
       <div className={styles.banner}>
@@ -22,6 +25,41 @@ const Donate = () => {
           <img src={img2} />
         </div>
       </div>
+      <section className={styles.experience_div}>
+        <div className={styles.experience}>
+          <div className={styles.text_box}>
+            <div>
+              <h2>// DONATE</h2>
+              <h1>
+                How <span>Donations</span> are used
+              </h1>
+            </div>
+
+            <p>
+              At Mobile Web Ghana, we believe in transparency and accountability
+              when it comes to utilizing your generous donations.
+              <br /> Here's how your contributions make a meaningful difference:
+            </p>
+          </div>
+
+          <div className={styles.img_div}>
+            <br />
+            <br />
+            {/* <Link to="/payment"> */}
+              <button>
+                Donate <BsCoin />
+              </button>
+            {/* </Link> */}
+          </div>
+        </div>
+      </section>
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
 
       <section className={styles.experience_div}>
         <div className={styles.experience}>
@@ -43,47 +81,13 @@ const Donate = () => {
 
           <div className={styles.img_div}>
             <img src={img3} />
-            <br />
-            <br />
-            <Link to="/payment">
-              <button>
-                Make Donations <BsCoin />
-              </button>
-            </Link>
           </div>
         </div>
+        <Payment/>
+
       </section>
 
-      <section className={styles.experience_div}>
-        <div className={styles.experience}>
-          <div className={styles.text_box}>
-            <div>
-              <h2>// DONATE</h2>
-              <h1>
-                How <span>Donations</span> are used
-              </h1>
-            </div>
-
-            <p>
-              At Mobile Web Ghana, we believe in transparency and accountability
-              when it comes to utilizing your generous donations.<br/> Here's how
-              your contributions make a meaningful difference:
-            </p>
-          </div>
-
-          <div className={styles.img_div}>
-            <br />
-            <br />
-            <Link 
-            to="/payment"
-            >
-              <button>
-                Donate <BsCoin />
-              </button>
-            </Link>
-          </div>
-        </div>
-      </section>
+     
 
       <FollowUs />
     </>

@@ -1,149 +1,173 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import PaystackPop from "@paystack/inline-js";
+import React, { useState, useEffect } from "react";
+// import Circle from "./Circle";
+import styles from "../components/payment.module.css"; // Import your styles here
+import style from "../components/stepprogress.module.css"; // Import your styles here
 
-function Payment() {
-  const [email, setEmail] = useState("");
-  const [amount, setAmount] = useState("");
-  const [firstName, setFirstname] = useState("");
-  const [lastName, setLastname] = useState("");
-  const publicKey = process.env.REACT_APP_PAYSTACK_PUBLIC_KEY;
+function ProgressBar() {
+  const [circle] = useState(3);
+  const [active, setActive] = useState(0);
+  const [width, setWidth] = useState();
 
+  useEffect(() => {
+    setWidth((100 / (circle - 1)) * active);
+  }, [circle, active]);
 
-  //   const payWithPaystack = async (e) => {
-  //     e.preventDefault();
+  const arr = [];
 
-  //     try {
-  //       const response = await axios.post('/api/payments', {
-  //         email,
-  //         amount,
-  //         firstName,
-  //         lastName,
-  //       });
+  for (let i = 0; i < circle; i++) {
+    arr.push(
+      <Circle
+        className={`${style.circle} ${i <= active ? style.active : ""}`}
+        key={i}
+      >
+        {i}
+      </Circle>
+    );
+  }
 
-  //       const paymentData = response.data.payment;
-
-  //       const paystack = new PaystackPop();
-  //       paystack.newTransaction({
-  //         key: 'pk_test_de9b93599c675d18a6a2821698bc38bff286d174',
-  //         amount: paymentData.amount * 100,
-  //         email: paymentData.email,
-  //         firstName: paymentData.firstName,
-  //         lastName: paymentData.lastName,
-  //         ref: paymentData.reference, // Use the reference from the backend
-  //         onClose: () => {
-  //           // Handle closure of Paystack payment form
-  //           console.log('Payment form closed');
-  //         },
-  //         callback: (response) => {
-  //           // Handle successful payment response
-  //           console.log('Payment successful', response);
-
-  //           // You can perform additional actions here, such as updating the payment status
-  //         },
-  //       });
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-
-  const paywithpaystack = (e) => {
-    e.preventDefault();
-    const paystack = new PaystackPop();
-    paystack.newTransaction({
-      key: publicKey,
-      amount: amount * 100,
-      email,
-      firstName,
-      lastName,
-      onSuccess(transaction) {
-        let message = `Payment Complete Reference ${transaction.reference}`;
-        alert(message);
-        setEmail("");
-        setAmount("");
-        setFirstname("");
-        setLastname("");
-      },
-      onCancel() {
-        alert("You have cancelled the transaction");
-      },
-    });
+  const renderForm = () => {
+    switch (active) {
+      case 0:
+        return <FormStep1 setActive={setActive} />;
+      case 1:
+        return <FormStep2 setActive={setActive} />;
+      case 2:
+        return <FormStep3 />;
+      default:
+        return null;
+    }
   };
+
+  return (
+    <div className={style.container}>
+      <div className={style.content}>
+        <div className={style.progressbar}>
+          <div
+            className={`${style.progress}`}
+            style={{ width: `${width}%` }}
+          ></div>
+          {arr}
+        </div>
+
+        <div className={style.button}>
+          <button
+            className={`${style.prev} ${style.btn}`}
+            disabled={active > 0 ? false : true}
+            onClick={() => {
+              setActive((prevActive) => Math.max(prevActive - 1, 0));
+            }}
+          >
+            Prev
+          </button>
+          <button
+            className={`${style.next} ${style.btn}`}
+            disabled={active >= circle - 1 ? true : false}
+            onClick={() => {
+              setActive((prevActive) => Math.min(prevActive + 1, circle - 1));
+            }}
+          >
+            Next
+          </button>
+        </div>
+      </div>
+
+      <div className={style["form-container"]}>{renderForm()}</div>
+    </div>
+  );
+}
+
+export default ProgressBar;
+
+
+
+
+const Circle = ({className,children}) => {
+  return (
+    <div className={className}>{children}</div>
+  )
+}
+
+function FormStep1({ setActive }) {
+  const [amount, setAmount] = useState(0); // Initialize with 0
+  const amounts = [20, 40, 60, 100];
+
   return (
     <>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <div>
-        <h1>I'm about to integrate paystack.</h1>
-        <form id="paymentForm">
-          <div className="form-group">
-            <label>Email Address</label>
-            <input
-              type="email"
-              value={email}
-              id="email-address"
-              required
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <br />
-          <br />
-
-          <div className="form-group">
-            <label>Amount</label>
-            <input
-              type="tel"
-              value={amount}
-              id="amount"
-              required
-              onChange={(e) => setAmount(e.target.value)}
-            />
-          </div>
-          <br />
-          <br />
-
-          <div className="form-group">
-            <label>First Name</label>
-            <input
-              type="text"
-              value={firstName}
-              id="first-name"
-              onChange={(e) => setFirstname(e.target.value)}
-            />
-          </div>
-          <br />
-          <br />
-
-          <div className="form-group">
-            <label>Last Name</label>
-            <input
-              type="text"
-              value={lastName}
-              id="last-name"
-              onChange={(e) => setLastname(e.target.value)}
-            />
-          </div>
-          <br />
-          <br />
-
-          <div className="form-submit">
+      <h1>Form step one</h1>
+      <section className={styles.formDiv}>
+        <div className={styles.amount_buttons}>
+          {amounts.map((amt) => (
             <button
-              type="submit"
-              onClick={paywithpaystack}
-              // onClick={payWithPaystack}
+              key={amt}
+              className={styles.amount_button}
+              onClick={() => setAmount(amt)}
+              disabled={amount === amt}
             >
-              Pay
+              {amt}
             </button>
-          </div>
-        </form>
-      </div>
+          ))}
+        </div>
+        <button
+          className={styles.next_btn}
+          onClick={() => setActive(1)}
+          disabled={amount === 0}
+        >
+          Next
+        </button>
+      </section>
     </>
   );
 }
 
-export default Payment;
+function FormStep2({ setActive }) {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+
+  return (
+    <>
+      <h1>Form step two</h1>
+      <section className={styles.formDiv}>
+        <input
+          type="text"
+          placeholder="First Name"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Last Name"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <button
+          className={styles.next_btn}
+          onClick={() => setActive(2)}
+          disabled={!firstName || !lastName || !email}
+        >
+          Next
+        </button>
+      </section>
+    </>
+  );
+}
+
+function FormStep3() {
+  return (
+    <>
+      <h1>Form step three</h1>
+      <section className={styles.formDiv}>
+        <p>Review your information:</p>
+        {/* Display summary of selected amount, name, and email */}
+        {/* You can use the context API or Redux to pass the data from previous steps */}
+        <button className={styles.submit_btn}>Confirm</button>
+      </section>
+    </>
+  );
+}
