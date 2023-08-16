@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from "react";
-// import Circle from "./Circle";
 import styles from "../components/payment.module.css"; // Import your styles here
 import style from "../components/stepprogress.module.css"; // Import your styles here
+
+/*Payment form imports */
+import axios from "axios";
+import PaystackPop from "@paystack/inline-js";
+import img1 from "../assets/phone.avif";
+import { BsCashCoin } from "react-icons/bs";
+import { BiRename, BiMailSend } from "react-icons/bi";
+import { GiReceiveMoney } from "react-icons/gi";
 
 function ProgressBar() {
   const [circle] = useState(3);
   const [active, setActive] = useState(0);
   const [width, setWidth] = useState();
+  const [amount, setAmount] = useState(0); // Initialize with 0
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     setWidth((100 / (circle - 1)) * active);
@@ -28,11 +39,37 @@ function ProgressBar() {
   const renderForm = () => {
     switch (active) {
       case 0:
-        return <FormStep1 setActive={setActive} />;
+        return (
+          <FormStep1
+            amount={amount}
+            setAmount={setAmount}
+            setActive={setActive}
+          />
+        );
       case 1:
-        return <FormStep2 setActive={setActive} />;
+        return (
+          <FormStep2
+            firstName={firstName}
+            lastName={lastName}
+            email={email}
+            setFirstName={setFirstName}
+            setLastName={setLastName}
+            setEmail={setEmail}
+            setActive={setActive}
+          />
+        );
       case 2:
-        return <FormStep3 />;
+        return (
+          <FormStep3
+            amount={amount}
+            firstName={firstName}
+            lastName={lastName}
+            email={email}
+            onConfirm={() => {
+              /* Implement logic for confirmation */
+            }}
+          />
+        );
       default:
         return null;
     }
@@ -48,6 +85,7 @@ function ProgressBar() {
           ></div>
           {arr}
         </div>
+        <div className={style["form-container"]}>{renderForm()}</div>
 
         <div className={style.button}>
           <button
@@ -71,24 +109,17 @@ function ProgressBar() {
         </div>
       </div>
 
-      <div className={style["form-container"]}>{renderForm()}</div>
     </div>
   );
 }
 
 export default ProgressBar;
 
+const Circle = ({ className, children }) => {
+  return <div className={className}>{children}</div>;
+};
 
-
-
-const Circle = ({className,children}) => {
-  return (
-    <div className={className}>{children}</div>
-  )
-}
-
-function FormStep1({ setActive }) {
-  const [amount, setAmount] = useState(0); // Initialize with 0
+function FormStep1({ amount, setAmount, setActive }) {
   const amounts = [20, 40, 60, 100];
 
   return (
@@ -107,66 +138,114 @@ function FormStep1({ setActive }) {
             </button>
           ))}
         </div>
-        <button
+        {/* <button
           className={styles.next_btn}
           onClick={() => setActive(1)}
           disabled={amount === 0}
         >
           Next
-        </button>
+        </button> */}
       </section>
     </>
   );
 }
 
-function FormStep2({ setActive }) {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-
+function FormStep2({
+  firstName,
+  lastName,
+  email,
+  setFirstName,
+  setLastName,
+  setEmail,
+  setActive,
+}) {
   return (
     <>
       <h1>Form step two</h1>
       <section className={styles.formDiv}>
         <input
-          type="text"
-          placeholder="First Name"
+          size="40"
+          className={styles.form_control}
+          aria-required="true"
+          aria-invalid="false"
+          placeholder="Your First Name"
           value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-        <input
           type="text"
-          placeholder="Last Name"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
+          onChange={(e) => setFirstName(e.target.value)}
+          required
         />
         <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          size="40"
+          className={styles.form_control}
+          aria-required="true"
+          aria-invalid="false"
+          placeholder="Your Last Name"
+          value={lastName}
+          type="text"
+          onChange={(e) => setLastName(e.target.value)}
+          required
         />
-        <button
+        <input
+          size="40"
+          className={styles.form_control}
+          aria-required="true"
+          aria-invalid="false"
+          placeholder="Your Email"
+          value={email}
+          type="email"
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        {/* <button
           className={styles.next_btn}
           onClick={() => setActive(2)}
           disabled={!firstName || !lastName || !email}
         >
           Next
-        </button>
+        </button> */}
       </section>
     </>
   );
 }
 
-function FormStep3() {
+function FormStep3({ amount, firstName, lastName, email, onConfirm }) {
+  const publicKey = process.env.REACT_APP_PAYSTACK_PUBLIC_KEY;
+
+  const paywithpaystack = (e) => {
+    e.preventDefault();
+    const paystack = new PaystackPop();
+    paystack.newTransaction({
+      key: publicKey,
+      amount: amount * 100,
+      email,
+      firstName,
+      lastName,
+      onSuccess(transaction) {
+        let message = `Payment Complete Reference ${transaction.reference}`;
+        alert(message);
+        // setEmail("");
+        // setAmount("");
+        // setFirstname("");
+        // setLastname("");
+      },
+      onCancel() {
+        alert("You have cancelled the transaction");
+      },
+    });
+  };
   return (
     <>
       <h1>Form step three</h1>
       <section className={styles.formDiv}>
         <p>Review your information:</p>
-        {/* Display summary of selected amount, name, and email */}
-        {/* You can use the context API or Redux to pass the data from previous steps */}
-        <button className={styles.submit_btn}>Confirm</button>
+        <p>Amount: {amount}</p>
+        <p>
+          Name: {firstName} {lastName}
+        </p>
+        <p>Email: {email}</p>
+        <button className={styles.submit_btn} onClick={paywithpaystack}>
+          Donate {amount}
+        </button>
       </section>
     </>
   );
