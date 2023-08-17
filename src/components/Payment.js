@@ -19,6 +19,17 @@ function ProgressBar() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
 
+  const handleNextClick = () => {
+    if (!firstName || !lastName || !email ||!amount) {
+      // Show an alert or warning message
+      alert("Please fill in all required fields.");
+    } else {
+      // Proceed to the next step
+      setActive(active);
+    }
+  };
+
+
   useEffect(() => {
     setWidth((100 / (circle - 1)) * active);
   }, [circle, active]);
@@ -99,8 +110,9 @@ function ProgressBar() {
           </button>
           <button
             className={`${style.next} ${style.btn}`}
-            disabled={active >= circle - 1 ? true : false}
+            disabled={[!firstName || !lastName || !email, active >= circle - 1].every(Boolean)}
             onClick={() => {
+              // handleNextClick
               setActive((prevActive) => Math.min(prevActive + 1, circle - 1));
             }}
           >
