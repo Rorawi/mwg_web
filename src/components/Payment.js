@@ -221,7 +221,8 @@ function FormStep2({
 }
 
 function FormStep3({ amount, firstName, lastName, email, onConfirm }) {
-  const publicKey = process.env.REACT_APP_PAYSTACK_PUBLIC_KEY;
+  // const publicKey = process.env.REACT_APP_PAYSTACK_PUBLIC_KEY;
+  const publicKey = pk_test_de9b93599c675d18a6a2821698bc38bff286d174
 
 const paywithpaystack = (e) => {
   e.preventDefault();
@@ -248,7 +249,7 @@ const paywithpaystack = (e) => {
       <h1>Form step three</h1>
       <section className={styles.formDiv}>
         <p>Review your information:</p>
-        <p>Amount: {amount}</p>
+        <p>Amount paid: {amount}</p>
         <p>
           Name: {firstName} {lastName}
         </p>
