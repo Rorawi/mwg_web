@@ -223,28 +223,26 @@ function FormStep2({
 function FormStep3({ amount, firstName, lastName, email, onConfirm }) {
   const publicKey = process.env.REACT_APP_PAYSTACK_PUBLIC_KEY;
 
-  const paywithpaystack = (e) => {
-    e.preventDefault();
-    const paystack = new PaystackPop();
-    paystack.newTransaction({
-      key: publicKey,
-      amount: amount * 100,
-      email,
-      firstName,
-      lastName,
-      onSuccess(transaction) {
-        let message = `Payment Complete Reference ${transaction.reference}`;
-        alert(message);
-        // setEmail("");
-        // setAmount("");
-        // setFirstname("");
-        // setLastname("");
-      },
-      onCancel() {
-        alert("You have cancelled the transaction");
-      },
-    });
-  };
+const paywithpaystack = (e) => {
+  e.preventDefault();
+  const paystack = new PaystackPop();
+  paystack.newTransaction({
+    key: publicKey,
+    amount: amount * 100,
+    email,
+    firstName,
+    lastName,
+    ref,
+    onSuccess(transaction) {
+      let message = `Payment Complete Reference ${transaction.reference}`;
+      alert(message);
+    },
+    onCancel() {
+      alert("You have cancelled the transaction");
+    },
+  });
+};
+
   return (
     <>
       <h1>Form step three</h1>
