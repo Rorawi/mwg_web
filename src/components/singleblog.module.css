@@ -172,4 +172,12 @@ color: #ffc107;
         margin-bottom: 30px;
         width: 100%;
       }
+
+      .container {
+    
+      margin:  0 10px 20px;
+      border: 1px solid #e0ddddb8;
+      white-space: pre-line;
+    
+    }
 }

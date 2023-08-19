@@ -56,8 +56,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
+    /* height: 100vh; */
+    width: 100%;
+    max-width: 500px;
+      /* border: 1px solid #ccc; */
+    /* background-color: #fffdfd; */
+
+    
+    border-radius: 4px;
+    box-shadow: 6px 6px 40px rgba(76, 68, 107, 0.194);
+    margin: 0 30px;
+    padding: 20px;
   }
   
   .content {
@@ -70,6 +79,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+    z-index: 1;
   }
   
   .progressbar::before {
@@ -125,9 +135,9 @@
   }
   
   .btn {
-      padding: 5px 20px;
+      padding: 12px 30px;
       font-weight: bold;
-      background-color: green;
+      background-color: #dfb924;
       outline-style: none;
       color: #fff;
       cursor: pointer;
@@ -153,3 +163,8 @@
   
   }
   
+  @media screen and (max-width: 980px) {
+    .container {
+        margin-top: 80px;
+    }
+}

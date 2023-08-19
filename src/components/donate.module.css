@@ -80,7 +80,8 @@
 }
 
 .experience .text_box {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   text-align: center;
 }
 

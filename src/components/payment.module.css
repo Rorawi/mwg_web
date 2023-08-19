@@ -1,138 +1,158 @@
-  /*
+/*
   _____________
   PAYMENT FORM
   _____________
   */
-    .contact_details h2 {
-      color: #f9af1a;
-      font-size: 16px;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
-      margin: 0 0 5px;
-    }
-    
-    .contact_details h1 {
-      font-size: 26px;
-      color: #232323;
-      margin: 14px 0;
-    
-      margin-bottom: 0px;
-      text-transform: capitalize;
-      margin-top: 0;
-      line-height: 1.2;
-      font-weight: 700;
-    }
-    
-    .contact_details h1 span {
-      color: #f9af1a;
-    }
+.contact_details h2 {
+  color: #f9af1a;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  margin: 0 0 5px;
+}
 
-  
-    .formDiv {
-      padding: 0px 20px;
-    }
-  
-    .formDiv form {
-      width: 500px;
-      /* max-width: 500px; */
-      padding: 40px;
-      background-color: #F4F7FC;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.contact_details h1 {
+  font-size: 26px;
+  color: #232323;
+  margin: 14px 0;
+
+  margin-bottom: 0px;
+  text-transform: capitalize;
+  margin-top: 0;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.contact_details h1 span {
+  color: #f9af1a;
+}
+
+.formDiv {
+  padding: 0px 20px;
+}
+
+.formDiv form {
+  width: 500px;
+  /* max-width: 500px; */
+  padding: 40px;
+  background-color: #f4f7fc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
   /* height: 100%; */
-  
-    }
-  
-    .form_control, textarea {
-      height: 54px;
-      background-color: #fff;
-      border-color: transparent;
-      transition: .5s;
-      border: 1px solid #e6e6e6;
-      padding: 6px 20px;
-      -webkit-box-shadow: none;
-      box-shadow: none;
-      border-radius: 5px;
-      width: 100%;
-  
-      margin: 20px 0 1px;
-      outline: none;
-  }
-  
-  .form_control:focus {
-    border: 1px solid #f9af1a ;
-  }
-  
-  .submit_btn {
-    background: #f9af1a;
-    transition: .3s ease-in-out;
-    cursor: pointer;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 500;
-    padding:15px 20px;
+}
 
+.form_control,
+textarea {
+  height: 54px;
+  background-color: #fff;
+  border-color: transparent;
+  transition: 0.5s;
+  border: 1px solid #e6e6e6;
+  padding: 6px 20px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 5px;
+  width: 100%;
+
+  margin: 20px 0 1px;
+  outline: none;
+}
+
+.form_control:focus {
+  border: 1px solid #f9af1a;
+}
+
+.submit_btn {
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    background: #232323;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 15px 20px;
+    
     border-radius: 20px;
     border: none !important;
     margin-top: 20px;
-  }
-  
-  .submit_btn:hover {
-    background: #232323;
-  }
+}
 
+.submit_btn:hover {
+    background: #f9af1a;
+}
 
-  /* payment.module.css */
+/* payment.module.css */
 .formDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    border: 1px solid #ccc;
-    background-color: #f7f7f7;
-    margin-top: 20px;
-  }
-  
-  .form_control {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-  }
-  
-  .amount_buttons {
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #e5e3e3;
+  background-color: #f9f9fb;
+  margin-top: 20px;
+}
+
+.form_control {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.amount_buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.amount_button {
+  padding: 10px 20px;
+
+  width: 150px;
+  height: 70px;
+
+  margin: 0 10px 30px;
+
+  background-color: #ffffff;
+  box-shadow: 6px 6px 20px rgba(76, 68, 107, 0.114);
+  color: #36343f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  transform: .3s;
+}
+
+.amount_button_selected {
+    background-color: #f9af1a;
+    box-shadow: inset 6px 6px 20px rgba(76, 68, 107, 0.114);
+    color: #f9f9fb;
+}
+
+.review p {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .amount_button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .next_btn {
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  /* stepprogress.module.css */
-  /* Your existing styles for the step progress bar */
-  
-  
+    align-items: center;
+}
+
+.review p svg {
+color: #f9af1a;
+margin-right: 5px;
+font-size: 15px;
+}
+
+.review p span{
+color: #232323;
+font-weight: 600;
+font-size: 16px;
+}
+
+/* stepprogress.module.css */
+/* Your existing styles for the step progress bar */
+
+

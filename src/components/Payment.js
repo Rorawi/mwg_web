@@ -14,13 +14,13 @@ function ProgressBar() {
   const [circle] = useState(3);
   const [active, setActive] = useState(0);
   const [width, setWidth] = useState();
-  const [amount, setAmount] = useState(0); // Initialize with 0
+  const [amount, setAmount] = useState(null); // Initialize with 0
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
 
   const handleNextClick = () => {
-    if (!firstName || !lastName || !email ||!amount) {
+    if (!firstName || !lastName || !email || !amount) {
       // Show an alert or warning message
       alert("Please fill in all required fields.");
     } else {
@@ -28,7 +28,6 @@ function ProgressBar() {
       setActive(active);
     }
   };
-
 
   useEffect(() => {
     setWidth((100 / (circle - 1)) * active);
@@ -122,7 +121,10 @@ function ProgressBar() {
           </button>
           <button
             className={`${style.next} ${style.btn}`}
-            disabled={[!firstName || !lastName || !email, active >= circle - 1].every(Boolean)}
+            disabled={[
+              !firstName || !lastName || !email,
+              active >= circle - 1,
+            ].every(Boolean)}
             onClick={() => {
               // handleNextClick
               setActive((prevActive) => Math.min(prevActive + 1, circle - 1));
@@ -132,7 +134,6 @@ function ProgressBar() {
           </button>
         </div>
       </div>
-
     </div>
   );
 }
@@ -145,22 +146,42 @@ const Circle = ({ className, children }) => {
 
 function FormStep1({ amount, setAmount, setActive }) {
   const amounts = [20, 40, 60, 100];
+  const [selectedButton, setSelectedButton] = useState(null);
+
+  const handleButtonClick = (amt) => {
+    setAmount(amt); // Update the amount state with the selected amount
+    setSelectedButton(amt);
+  };
 
   return (
     <>
-      <h1>Form step one</h1>
+      <h1 className={styles.title}>Choose an amount</h1>
       <section className={styles.formDiv}>
         <div className={styles.amount_buttons}>
           {amounts.map((amt) => (
             <button
               key={amt}
-              className={styles.amount_button}
-              onClick={() => setAmount(amt)}
+              className={`${styles.amount_button} ${
+                selectedButton === amt ? styles.amount_button_selected : ""
+              }`}
+              onClick={() => handleButtonClick(amt)}
               disabled={amount === amt}
             >
               {amt}
             </button>
           ))}
+
+          <input
+            size="40"
+            className={styles.form_control}
+            aria-required="true"
+            aria-invalid="false"
+            placeholder="Your custom amount"
+            value={amount}
+            type="text"
+            onChange={(e) => setAmount(e.target.value)}
+            required
+          />
         </div>
         {/* <button
           className={styles.next_btn}
@@ -185,7 +206,7 @@ function FormStep2({
 }) {
   return (
     <>
-      <h1>Form step two</h1>
+      <h1 className={styles.title}>Your details</h1>
       <section className={styles.formDiv}>
         <input
           size="40"
@@ -273,9 +294,6 @@ function FormStep2({
 //   );
 // }
 
-
-
-
 function Payment({ amount, firstName, lastName, email, onConfirm }) {
   // const [email, setEmail] = useState("");
   // const [amount, setAmount] = useState("");
@@ -283,53 +301,51 @@ function Payment({ amount, firstName, lastName, email, onConfirm }) {
   // const [lastName, setLastname] = useState("");
   const publicKey = process.env.REACT_APP_PAYSTACK_PUBLIC_KEY;
 
-
   const paywithpaystack = (e) => {
     e.preventDefault();
-const paystack = new PaystackPop()
-paystack.newTransaction({
-    key: publicKey,
-    amount: amount * 100,
-    email,
-    firstName,
-    lastName,
-  onSuccess(transaction){
-    let message = `Payment Complete Reference ${transaction.reference}`
-    alert(message)
-    // setEmail("");
-    // setAmount("");
-    // setFirstname("");
-    // setLastname("");
-  } ,
-onCancel() {
-alert("You have cancelled the transaction")
-}
-})
-   };
+    const paystack = new PaystackPop();
+    paystack.newTransaction({
+      key: publicKey,
+      amount: amount * 100,
+      email,
+      firstName,
+      lastName,
+      onSuccess(transaction) {
+        let message = `Payment Complete Reference ${transaction.reference}`;
+        alert(message);
+        // setEmail("");
+        // setAmount("");
+        // setFirstname("");
+        // setLastname("");
+      },
+      onCancel() {
+        alert("You have cancelled the transaction");
+      },
+    });
+  };
   return (
     <>
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <div>
-        <h1>I'm about to integrate paystack.</h1>
-        <section className={styles.formDiv}>
-        <p>Review your information:</p>
-        <p>Amount paid: {amount}</p>
-        <p>
-          Name: {firstName} {lastName}
-        </p>
-        <p>Email: {email}</p>
-        <button className={styles.submit_btn} onClick={paywithpaystack}>
-          Donate {amount}
-        </button>
-      </section>
+        <h1 className={styles.title}>Review your information:</h1>
+        <section className={`${styles.formDiv} ${styles.review}`}>
+          <p>
+            <BsCashCoin />
+            <span>Amount paid: </span> {amount}
+          </p>
+          <p>
+            <BiRename />
+            <span>Name: </span> {firstName} {lastName}
+          </p>
+          <p>
+            <BiMailSend />
+            <span>Email: </span> {email}
+          </p>
+          <button className={styles.submit_btn} onClick={paywithpaystack}>
+            Donate {amount}
+          </button>
+        </section>
       </div>
     </>
   );
 }
-
