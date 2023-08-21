@@ -25,7 +25,7 @@ const Donate = () => {
           <img src={img2} />
         </div>
       </div>
-      <section className={styles.experience_div}>
+      {/* <section className={styles.experience_div}>
         <div className={styles.experience}>
           <div className={styles.text_box}>
             <div>
@@ -44,15 +44,15 @@ const Donate = () => {
 
           <div className={styles.img_div}>
             <br />
-            <br />
+            <br /> */}
             {/* <Link to="/payment"> */}
-              <button>
+              {/* <button>
                 Donate <BsCoin />
-              </button>
+              </button> */}
             {/* </Link> */}
-          </div>
+          {/* </div>
         </div>
-      </section>
+      </section> */}
 
       <br />
       <br />

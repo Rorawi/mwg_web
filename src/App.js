@@ -4,7 +4,7 @@ import Router from './Router';
 import  axios from 'axios';
 import "./Styles.css"
 function App() {
-// const [data, setData] = useState("");
+const [data, setData] = useState("");
 
 // const getData = async() => {
 //   const response = await axios.post("http://localhost:5000/payments");

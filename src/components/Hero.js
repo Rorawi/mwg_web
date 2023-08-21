@@ -9,6 +9,7 @@ import { BsCoin } from "react-icons/bs";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { ImageSwiper } from "./SwiperComp";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   /*Modal States */
@@ -43,20 +44,24 @@ export default function Hero() {
               </h1>
             </div>
             <br />
-            <p>
+            <motion.p
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.9 }}
+            >
               Mobile Web Ghana is a technology and entrepreneurship hub that is
               dedicated to empowering the youth to develop mobile and web
               applications and open data solutions to solve local problems.
-            </p>
-           <Link to="/donate">
-           <button
-              onClick={() => {
-                IsModal(!modal);
-              }}
-            >
-              Make Donations <BsCoin />
-            </button>
-           </Link>
+            </motion.p>
+            <Link to="/donate">
+              <button
+                onClick={() => {
+                  IsModal(!modal);
+                }}
+              >
+                Make Donations <BsCoin />
+              </button>
+            </Link>
           </div>
         </div>
       </div>
