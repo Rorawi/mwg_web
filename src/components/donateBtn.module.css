@@ -1,0 +1,42 @@
+
+ .floatbtn {
+    background-color: #141414;
+    padding: 12px 20px;
+  
+    border-radius: 40px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-size: 1rem;
+  
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+    float: right;
+    margin-right: 20px;
+    position: fixed;
+    bottom: 40px;
+    right: 0;
+    z-index: 1;
+    transition: .3s ease-in-out;
+  }
+  
+  button svg {
+    margin-left: 10px;
+    color: #ffc107;
+  
+    animation: bounce 1s ease .2s infinite both	;
+  }
+  
+  button:hover {
+    background-color: #ffc107;
+  
+  
+    box-shadow: 5px 5px 10px #1a191989;
+  }
+  
+  button:hover svg {
+  color: #232323;
+  }

@@ -20,6 +20,7 @@ import Donate from "./components/Donate";
 import Payment from "./components/Payment";
 import Completion from "./components/Completion";
 import BlogApi from "./components/BlogApi";
+import DonateBtn from "./components/donateBtn";
 
 
 
@@ -49,6 +50,7 @@ const Router = () => {
             {/* <Route path="/steps" element={<DonateSteps/>} /> */}
           <Route path="/singlepost" element={<SingleBlogPost/>} />
         </Routes>
+      <DonateBtn />
         <Footer/>
       </BrowserRouter>
     </div>
