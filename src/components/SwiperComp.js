@@ -473,19 +473,29 @@ export const LogoSwiper = () => {
       >
         <div className={[styles.logo_swiper]}>
           <SwiperSlide className={styles.logo_swiperslide}>
+            <a href="https://mastercardfdn.org/">
             <img src={mastercard} className={styles.logo} />
+            </a>
           </SwiperSlide>
           <SwiperSlide className={styles.logo_swiperslide}>
-            <img src={odc_logo} className={styles.logo1} />
+          <a href="https://www.opendatacollaboratives.com/">
+   <img src={odc_logo} className={styles.logo1} />
+</a>
           </SwiperSlide>
           <SwiperSlide className={styles.logo_swiperslide}>
+            <a href="https://gh.usembassy.gov/education-culture/american-corners/">
             <img src={amspaces_logo} className={styles.logo2} />
+            </a>
           </SwiperSlide>
           <SwiperSlide className={styles.logo_swiperslide}>
+            <a href="https://ghana.com/">
             <img src={gdc_logo} className={styles.logo3} />
+            </a>
           </SwiperSlide>
           <SwiperSlide className={styles.logo_swiperslide}>
+          <a href="https://gh.usembassy.gov/education-culture/american-corners/">
             <img src={us_embasy_logo} className={styles.logo4} />
+</a>
           </SwiperSlide>
           <SwiperSlide className={styles.logo_swiperslide}>
             <img src={mwg_logo} className={styles.logo5} />
