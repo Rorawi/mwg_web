@@ -63,6 +63,7 @@ const Footer = () => {
 
           <div className={styles.socials}>
             <h2>Follow Us</h2>
+            <br/>
             <div>
               <Link to="https://www.facebook.com/MobileWebGhana/">
                 <FaFacebookSquare className={styles.facebook} />

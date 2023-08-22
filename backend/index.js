@@ -1,20 +1,17 @@
 const express = require('express');
 const bodyParser = require("body-parser")
 const path = require("path")
-
 const server = express();
 const mongoose = require('mongoose');
 const cors = require("cors")
-
-
-const paymentRoutes = require("./routes/payment")
+const blogRoutes = require("./routes/blog")
 
 //middlewares
 server.use(bodyParser.json())
 server.use(cors())
 
 //routes
-server.use("/payments",paymentRoutes);
+server.use("/blog",blogRoutes);
 
 
 

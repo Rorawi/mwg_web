@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "../components/project.module.css";
-import img1 from "../assets/project.avif";
+import img1 from "../assets/image5.jpg";
 import youth from "../assets/Youth-Media.avif";
 import robotics from "../assets/Coding-and-Robotics.avif"
 import project_vfg from "../assets/project-vfg.avif"

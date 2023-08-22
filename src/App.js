@@ -6,18 +6,17 @@ import "./Styles.css"
 function App() {
 const [data, setData] = useState("");
 
-// const getData = async() => {
-//   const response = await axios.post("http://localhost:5000/payments");
-//   setData(response.data)
-// }
+const getData = async() => {
+  const response = await axios.post("http://localhost:5000/blog/api/posts");
+  setData(response.data)
+}
 
-// useEffect(()=> {
-//   getData()
-// },[]);
+useEffect(()=> {
+  getData()
+},[]);
 
   return (
     <div className="App">
-       {/* <div>content:{data}</div> */}
        <Router/>
 
     </div>

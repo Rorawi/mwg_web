@@ -3,6 +3,7 @@ import styles from "../components/overview.module.css";
 import img1 from "../assets/image2.avif";
 import experience from "../assets/experience.avif";
 import path from "../assets/path.avif";
+import girls from "../assets/image6.png";
 import { FaPeopleCarry, FaBullseye, FaLightbulb } from "react-icons/fa";
 
 function OverView() {
@@ -64,7 +65,7 @@ function OverView() {
           <div className={styles.overview_statement_div}>
             <div className={styles.overview_statement}>
             <div>
-            <h1>Path to start-up creation</h1>
+            {/* <h1>Path to start-up creation</h1> */}
               <br/>
               <p>
                 Our goal is to build the capacity of young tech-enthusiasts to
@@ -112,7 +113,7 @@ function OverView() {
                 <br />
             <div className={styles.overview_statement}>
            <div>
-           <h1>Path to start-up creation</h1>
+           <h1>Outreach programs</h1>
             <br/>
               <p>
                 We undertake projects that involve educating the general public
@@ -134,7 +135,7 @@ function OverView() {
            </div>
 
               <div className={styles.img_div}>
-                <img src={experience} />
+                <img src={girls} />
               </div>
             </div>
           </div>

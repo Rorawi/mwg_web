@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../components/event.module.css";
-import img1 from "../assets/projects.avif";
+import img1 from "../assets/image4.jpg";
 import img2 from "../assets/flyer.avif";
 
 import mcare from "../assets/mcare.avif";

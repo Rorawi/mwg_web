@@ -282,6 +282,13 @@
 
 
 @media screen and (max-width: 674px) {
+  .event_sec {
+    padding: 80px 15px 10px;
+    position: relative;
+    overflow: hidden;
+    /* border: 2px solid red; */
+}
+
 .event_div {
   display: flex;
   flex-direction: column;
@@ -304,5 +311,9 @@
 .event_div .img_div_flyer {
   /* margin-right: 30px; */
   width: 100%;
+}
+
+.events_div {
+  margin: 40px 24px;
 }
 }

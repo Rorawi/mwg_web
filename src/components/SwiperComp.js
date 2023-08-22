@@ -15,7 +15,7 @@ import img1 from "../assets/mwg-swiper1.avif";
 import webdev from "../assets/webdev.avif";
 import workspace from "../assets/our-workspace.avif";
 import opencities from "../assets/opencities.avif";
-import itconsultancy from "../assets/abt.avif";
+import itconsultancy from "../assets/image3.avif";
 
 
 import styles from "../components/swiper.module.css";
