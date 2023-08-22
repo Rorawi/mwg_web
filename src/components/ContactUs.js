@@ -66,7 +66,7 @@ function ContactUs() {
       </div>
       <div className={styles.contact_container}>
         <div className={styles.contact_details}>
-          <h2>// Our Projects</h2>
+          <h2>// Get in Touch</h2>
           <h1>Contact Us</h1>
 
           <p>

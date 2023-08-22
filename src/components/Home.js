@@ -73,6 +73,7 @@ export default function Home() {
               animate={controls}
               transition={{ duration: 0.7 }}
             >
+              <br/>
               Mobile Web Ghana is a technology and entrepreneurship hub that is
               dedicated to empowering the youth to develop mobile and web
               applications and open data solutions to solve local problems. Our
@@ -95,7 +96,7 @@ export default function Home() {
             <div>
               <h2>// Our Services</h2>
               <h1>
-                We empower the <span>youth</span> to solve local problems
+                We empower the <span>youth</span><br/> to solve local problems
               </h1>
             </div>
             <motion.p

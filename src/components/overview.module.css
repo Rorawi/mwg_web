@@ -159,7 +159,7 @@ margin-top: 70px;
 .overview_statement,.overview_statement_reverse {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 
   flex-wrap: wrap;
 

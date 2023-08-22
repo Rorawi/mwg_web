@@ -63,6 +63,9 @@ function OverView() {
 
           <div className={styles.overview_statement_div}>
             <div className={styles.overview_statement}>
+            <div>
+            <h1>Path to start-up creation</h1>
+              <br/>
               <p>
                 Our goal is to build the capacity of young tech-enthusiasts to
                 be able to meet the demands of the tech industry in Ghana and
@@ -73,6 +76,7 @@ function OverView() {
                 our priority and this we ensure by offering them co-working
                 space, offices and start-up mentoring.
               </p>
+            </div>
 
               <div className={styles.img_div}>
                 <img src={experience} />
@@ -85,6 +89,7 @@ function OverView() {
             <div className={styles.overview_statement_reverse}>
               <div>
               <h1>Path to start-up creation</h1>
+              <br/>
               <p>
                 Mobile Web Ghana endeavors to enhance the skills and broaden the
                 technological knowledge of people to be great leaders, achievers
@@ -106,6 +111,9 @@ function OverView() {
                 <br /> <br />
                 <br />
             <div className={styles.overview_statement}>
+           <div>
+           <h1>Path to start-up creation</h1>
+            <br/>
               <p>
                 We undertake projects that involve educating the general public
                 on their Sexual and Reproductive Health and Rights – with
@@ -123,6 +131,7 @@ function OverView() {
                 Schools to educate them about their rights and sometimes donate
                 items to the students there.
               </p>
+           </div>
 
               <div className={styles.img_div}>
                 <img src={experience} />

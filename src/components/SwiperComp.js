@@ -65,6 +65,7 @@ export const SwiperComp = () => {
           </div>
           <div className={styles.text_box}>
             <h2>Web & Software development</h2>
+            <br/>
             <p>
               Web Development made easy. We develop responsive and device-ready
               websites in HTML5, CSS3, JavaScript, Php and other known
@@ -83,6 +84,7 @@ export const SwiperComp = () => {
           </div>
           <div className={styles.text_box}>
             <h2>Technology Hub</h2>
+            <br/>
             <p>
               Mobile Web Ghana as a hub offers services to startups and
               individuals to aid them their formative years up on till when they
@@ -100,6 +102,7 @@ export const SwiperComp = () => {
           </div>
           <div className={styles.text_box}>
             <h2>Open data Projects</h2>
+            <br/>
             <p>
               We undertake a number of projects that seek to open up government
               data to the general public, establish a data
@@ -118,6 +121,7 @@ export const SwiperComp = () => {
           </div>
           <div className={styles.text_box}>
             <h2>IT consultancy</h2>
+            <br/>
             <p>
               Mobile Web Ghana as a hub offers services to startups and
               individuals to aid them their formative years up on till when they

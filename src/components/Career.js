@@ -52,6 +52,7 @@ const Career = () => {
           <h1>
             We'd <span>love</span> to have you in our team
           </h1>
+          <br/>
           <p>
           Mobile Web Ghana is inviting applications for graduates who wish to do their national service with the organization to apply for the year 2022 – 2023 period.<br/>
           {/* Are you a

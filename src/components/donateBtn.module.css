@@ -23,20 +23,30 @@
     transition: .3s ease-in-out;
   }
   
-  button svg {
+ .floatbtn svg {
     margin-left: 10px;
     color: #ffc107;
   
     animation: bounce 1s ease .2s infinite both	;
   }
   
-  button:hover {
+ .floatbtn:hover {
     background-color: #ffc107;
   
   
     box-shadow: 5px 5px 10px #1a191989;
   }
   
-  button:hover svg {
+ .floatbtn:hover svg {
   color: #232323;
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
   }

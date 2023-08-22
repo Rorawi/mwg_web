@@ -17,7 +17,7 @@ function Events() {
     {
       id: 1,
       eventName: "Education U.S.A",
-      img: img2,
+      img: mcare,
       time: "10AM GMT",
       eventOverview: `This is an event mainly for the youth which seeks to increase the capacity 
         of youths to consume and disseminate media contents responsibly.`,
@@ -76,7 +76,7 @@ function Events() {
           </h1>
 
           <p className={styles.text_box}>
-            Mobile Web Ghana always bring up exciting programs for Lorem Ispium
+            Mobile Web Ghana always bring up exciting programs for you!
           </p>
         </div>
       </section>
