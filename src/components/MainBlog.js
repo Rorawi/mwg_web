@@ -576,9 +576,7 @@ const MainBlog = () => {
   const [allPosts, setAllPosts] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(null); // Add currentIndex state
 
-  SingleBlogPost.defaultProps = {
-    recentPosts: [], // Provide an empty array as the default value
-  };
+
 
   console.log("allPosts:", allPosts);
   console.log("selectedBlogPost:", selectedBlogPost);
