@@ -47,8 +47,9 @@
 
 
 .typing_text {
-  line-height: 3rem;
+  line-height: 1em;
 }
+
 .text {
   color: white;
   font-size: 50px;

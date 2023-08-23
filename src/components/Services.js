@@ -56,9 +56,6 @@ function Services() {
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
         <div className={styles.services_div}>
           <div className={styles.service_div}>
             <img src={workspace}/>
@@ -160,10 +157,8 @@ function Services() {
             <FaPause />
           </div>
           <h2>We Deliver Solution with the Goal of A Trusting Relationships</h2>
-          <p>
-            Appropriate for your specific business, making it easy for you to
-            have quality IT services.
-          </p>
+          <br/>
+          <p>Explore our captivating videos showcasing the exceptional services we provide at Mobile Web Ghana.</p>
           <a href="https://www.youtube.com/@MobileWebGhana">Watch More</a>
         </div>
       </section>

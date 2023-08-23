@@ -1,49 +1,46 @@
-
-  /*Text Box*/
-  .contact_sec {
-    margin: 150px 0px;
-    padding: 50px 0;
-    background-color: #F4F7FC;
-    /* background-image: url(../assets//abstract.png);
+/*Text Box*/
+.contact_sec {
+  margin: 24px 0px;
+  padding: 20px 0 10px;
+  background-color: #f4f7fc;
+  /* background-image: url(../assets//abstract.png);
     background-repeat: repeat;
     background-size: contain; */
+}
 
-  }
+.contact_sec .text_box {
+  text-align: center;
+}
 
+.contact_sec .text_box h2 {
+  color: #f9af1a;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  margin: 0 0 5px;
+}
 
-  .contact_sec .text_box {
-    text-align: center;
-  }
-  
-  .contact_sec .text_box h2 {
-    color: #f9af1a;
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-    margin: 0 0 5px;
-  }
-  
-  .contact_sec .text_box h1 {
-    font-size: 45px;
-    color: #232323;
-    margin: 14px 0;
-  
-    margin-bottom: 0px;
-    text-transform: capitalize;
-    margin-top: 0;
-    line-height: 1.2;
-    font-weight: 700;
-    text-align: center;
-  }
-  
-  .contact_sec .text_box h1 span {
-    color: #f9af1a;
-  }
-  
-  .contact_sec .text_box .svgS {
-  margin:30px 0 60px;
+.contact_sec .text_box h1 {
+  font-size: 45px;
+  color: #232323;
+  margin: 14px 0 10px;
+
+  margin-bottom: 0px;
+  text-transform: capitalize;
+  margin-top: 0;
+  line-height: 1.2;
+  font-weight: 700;
+  text-align: center;
+}
+
+.contact_sec .text_box h1 span {
+  color: #f9af1a;
+}
+
+.contact_sec .text_box .svgS {
+  margin: 10px 0 10px;
   /* color: #ffffffd7;
   background-image: url(../assets//abstract.png); */
   background-repeat: repeat;
@@ -52,7 +49,7 @@
   /* background-color: #fffdf9f2; */
 }
 
-.contact_sec .text_box .svgS  {
+.contact_sec .text_box .svgS {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,83 +60,75 @@
   height: 80px;
   border-radius: 50%;
   background-color: #fff;
-  box-shadow: 0px 2px 6px rgba(109, 108, 108, 0.358); 
+  box-shadow: 0px 2px 6px rgba(109, 108, 108, 0.358);
   margin: 0 20px;
 
-  transition: .3s;  
+  transition: 0.3s;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
 .contact_sec .text_box .svgS svg {
-    font-size: 35px;
+  font-size: 35px;
 }
-
 
 .contact_sec .text_box .svgS .svg_div:hover {
-    transform:  translateY(-10px);
-	;
+  transform: translateY(-10px);
 }
-
 
 .contact_sec .text_box .svgS svg.twitter {
   color: #00acee !important;
-  }
-  .contact_sec .text_box .svgS svg.instagram {
-    color: #3b5998 !important;
-  }
-  .contact_sec .text_box .svgS svg.facebook {
-    color: #3b5998 !important;
-  }
-  .contact_sec .text_box .svgS svg.linkedin {
-    color: #0072b1 !important;
-  }
-  
-  
-  .contact_div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  
-  .contact_div .project_div {
-    padding: 0px 30px 58px;
-    margin: 0 10px 20px;
-    position: relative;
-    background: #fff;
-    transition: 0.5s;
-    z-index: 1;
-    box-shadow: 0px 0 6px rgba(26, 46, 85, 0.1);
-    cursor: pointer;
-    width: 500px;
-    height: 650px;
-    display: flex; /* Added */
-    align-items: center; /* Added */
-    flex-direction: column;
-    border-radius: 10px;
+}
+.contact_sec .text_box .svgS svg.instagram {
+  color: #3b5998 !important;
+}
+.contact_sec .text_box .svgS svg.facebook {
+  color: #3b5998 !important;
+}
+.contact_sec .text_box .svgS svg.linkedin {
+  color: #0072b1 !important;
+}
 
-    overflow: hidden;
-  }
-  
-  @media screen and (max-width: 990px) {
+.contact_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
 
-  
-    .contact_sec .text_box .svgS .svg_div {
-      width: 50px;
-      height: 50px;
-    }
-  
-    .contact_sec .text_box .svgS .svg_div svg {
-      font-size: 20px;
-    }
-    
+.contact_div .project_div {
+  padding: 0px 30px 58px;
+  margin: 0 10px 20px;
+  position: relative;
+  background: #fff;
+  transition: 0.5s;
+  z-index: 1;
+  box-shadow: 0px 0 6px rgba(26, 46, 85, 0.1);
+  cursor: pointer;
+  width: 500px;
+  height: 650px;
+  display: flex; /* Added */
+  align-items: center; /* Added */
+  flex-direction: column;
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+@media screen and (max-width: 990px) {
+  .contact_sec .text_box .svgS .svg_div {
+    width: 50px;
+    height: 50px;
   }
 
-  @keyframes bounce {
+  .contact_sec .text_box .svgS .svg_div svg {
+    font-size: 20px;
+  }
+}
+
+@keyframes bounce {
   0% {
     transform: translateY(0);
   }

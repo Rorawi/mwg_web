@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styles from "../components/event.module.css";
 import img1 from "../assets/image4.jpg";
-import img2 from "../assets/flyer.avif";
+import img2 from "../assets/event2.jpeg";
 
-import mcare from "../assets/mcare.avif";
+import event from "../assets/event1.jpeg";
 import { FaArrowRight, FaTimes } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
@@ -16,43 +16,31 @@ function Events() {
   const events = [
     {
       id: 1,
-      eventName: "Education U.S.A",
-      img: mcare,
-      time: "10AM GMT",
-      eventOverview: `This is an event mainly for the youth which seeks to increase the capacity 
-        of youths to consume and disseminate media contents responsibly.`,
+      eventName: "U.S Embassy Ghana",
+      img: event,
+      time: "10:30 AM GMT",
+      eventOverview: `Beyond Likes and Clicks: Essentials for Secure Online Information Sharing`,
       // signUpLink: "https://tailwindcss.com/docs/box-shadow",
     },
     {
       id: 2,
-      eventName: "Education U.S.A",
+      eventName: "GET-READY FOR WORK SERIES",
       img: img2,
-      time: "10AM GMT",
-      eventOverview: `This is an event mainly for the youth which seeks to increase the
-         capacity of youths to consume and disseminate media contents responsibly.`,
+      time: "11AM GMT",
+      eventOverview: `Job Rententation Strategies - Part 2`,
       // signUpLink: "https://tailwindcss.com/docs/box-shadow",
     },
-    // {
-    //   id: 2,
-    //   eventName: "U.S Embassy",
-    //   time: "9AM GMT",
-    //   eventOverview:
-    //     "This is an event mainly for  which seeks to increase the capacity of youths to consume and disseminate media contents responsibly.",
-    //     signUpLink: "https://www.youtube.com/watch?v=pEy-wOiMJps"
-
-    // },
   ];
 
-  const openModal = (selectedModal) => {
-    setSelectedImg(selectedModal);
+  const openModal = (selectedEvent) => {
+    setSelectedImg(selectedEvent.img);
     setModal(true);
   };
-  
+
   const closeModal = () => {
     setSelectedImg(null);
     setModal(false);
   };
-  
 
   return (
     <>
@@ -88,14 +76,11 @@ function Events() {
               <div className={styles.event_div} key={event.id}>
                 {modal ? (
                   <div className={styles.modal_div_screen}>
-                    <div
-                      className={styles.svg_div}
-                      onClick={closeModal}
-                    >
+                    <div className={styles.svg_div} onClick={closeModal}>
                       <FaTimes />
                     </div>
                     <div className={styles.modal_div}>
-                      <img src={event.img} />
+                      <img src={selectedImg} />
                     </div>
                   </div>
                 ) : (
@@ -108,7 +93,9 @@ function Events() {
                 <div className={styles.details}>
                   <div>
                     <h2>{event.eventName}</h2>
-                    <p>{event.eventOverview}</p>
+                    <p>
+                      <b>Topic:</b> {event.eventOverview}
+                    </p>
                     <br />
                     <h2>{event.time}</h2>
                   </div>
