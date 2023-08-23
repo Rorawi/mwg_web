@@ -79,7 +79,7 @@ const Footer = () => {
               </Link>
 
               <Link to="https://twitter.com/MobileWebGhana">
-                <FaTwitter className={styles.twitter} />
+              <Icon icon="fa6-brands:x-twitter" width="20" height="20"/>
               </Link>
               {/* <SiGmail className="mx-2.5 text-[17px] mb-[5px] " /> */}
             </div>
