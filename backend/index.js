@@ -5,6 +5,7 @@ const server = express();
 const mongoose = require('mongoose');
 const cors = require("cors")
 const blogRoutes = require("./routes/blog")
+const imageRoutes = require("./routes/image")
 
 //middlewares
 server.use(bodyParser.json())
@@ -12,6 +13,7 @@ server.use(cors())
 
 //routes
 server.use("/blog",blogRoutes);
+server.use("/image",imageRoutes);
 
 
 

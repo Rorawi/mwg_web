@@ -8,7 +8,7 @@ import { FaGithub, FaInstagram, FaLinkedin,FaFacebookSquare,FaTwitter, FaSearch}
 import { Link } from "react-router-dom";
 import CommentBlock from "./Comment";
 
-const SingleBlogPost = ({title,content,name,img,day,month,year,blogImg}) => {
+const SingleBlogPost = ({topic,content,name,img,date,blogImg}) => {
 
   return (
     <>
@@ -16,7 +16,7 @@ const SingleBlogPost = ({title,content,name,img,day,month,year,blogImg}) => {
       <div className={styles.flex_Div}>
         <div className={styles.container}>
           <div className={styles.header}>
-            <h1 className={styles.title}>{title}</h1>
+            <h1 className={styles.title}>{topic}</h1>
             <div className={styles.author}>
               <img
                 src={img}
@@ -25,7 +25,7 @@ const SingleBlogPost = ({title,content,name,img,day,month,year,blogImg}) => {
               />
               <span className={styles.authorName}>{name}</span>
             </div>
-            <p className={styles.date}>Published on {month} {day}, {year}</p>
+            <p className={styles.date}>Published on {date}</p>
           </div>
           <div className={styles.content}>
             <img src={blogImg} alt="Blog" className={styles.blogImage} />
@@ -70,10 +70,12 @@ export default SingleBlogPost;
 
 
 
-export const RecentBlogSection = () => {
+export const RecentBlogSection = ({allPosts}) => {
   const [search,setSearch] = useState("")
   const input =document.querySelector("input")
   // const value = input.value
+
+  console.log(allPosts);
 
   const Search =()=> {
     // {value== value.toLowerCase()? "Hi": "no"}

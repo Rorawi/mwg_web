@@ -560,7 +560,7 @@ import BlogSection from "./BlogSection";
 import BlogPost from "./BlogPost";
 import styles from "../components/mainblog.module.css";
 import img1 from "../assets/blog.avif";
-import SingleBlogPost from "./SingleBlogPost";
+import SingleBlogPost, { RecentBlogSection } from "./SingleBlogPost";
 const MainBlog = () => {
   // const getAllblog = () => {
   //   try{
@@ -574,11 +574,34 @@ const MainBlog = () => {
   const [selectedBlogPost, setSelectedBlogPost] = useState(null);
   const [search, setSearch] = useState("");
   const [allPosts, setAllPosts] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(null); // Add currentIndex state
 
-    const handleBlogPostClick = (blogPost) => {
-    setSelectedBlogPost(blogPost);
+  SingleBlogPost.defaultProps = {
+    recentPosts: [], // Provide an empty array as the default value
   };
 
+  console.log("allPosts:", allPosts);
+  console.log("selectedBlogPost:", selectedBlogPost);
+
+  const handleBlogPostClick = (blogPost, index) => {
+    setSelectedBlogPost(blogPost);
+    setCurrentIndex(index); // Update currentIndex when a blog post is clicked
+  };
+
+  function getRandomRecentPosts(allPosts, selectedBlogPost, numPosts = 3) {
+    const recentPosts = allPosts.filter(
+      (post) => post._id !== selectedBlogPost._id
+    );
+    const randomPosts = [];
+
+    for (let i = 0; i < numPosts; i++) {
+      const randomIndex = Math.floor(Math.random() * recentPosts.length);
+      randomPosts.push(recentPosts[randomIndex]);
+      recentPosts.splice(randomIndex, 1);
+    }
+
+    return randomPosts;
+  }
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -594,9 +617,7 @@ const MainBlog = () => {
   }, []);
 
   return (
-
     <div>
-
       <div className={styles.banner}>
         <div className={styles.overlay}>
           <div className={styles.banner_text}>
@@ -610,18 +631,22 @@ const MainBlog = () => {
       </div>
 
       {selectedBlogPost ? (
-        <SingleBlogPost
-          title={selectedBlogPost.title}
-          content={selectedBlogPost.content}
-          name={selectedBlogPost.name}
-          img={selectedBlogPost.img}
-          day={selectedBlogPost.day}
-          month={selectedBlogPost.month}
-          year={selectedBlogPost.year}
-          blogImg={selectedBlogPost.blogImg}
-        />
+        <>
+          <SingleBlogPost
+            topic={selectedBlogPost.topic}
+            content={selectedBlogPost.content}
+            name={selectedBlogPost.name}
+            img={selectedBlogPost.img}
+            date={selectedBlogPost.date}
+            blogImg={selectedBlogPost.blogImg}
+          />
+
+          <RecentBlogSection
+            recentPosts={getRandomRecentPosts(allPosts, selectedBlogPost)}
+          />
+        </>
       ) : (
-    <>
+        <>
           <div className={styles.inputDiv}>
             <h2>// Our Blogs</h2>
             <h1>Search for blog posts</h1>
@@ -637,31 +662,52 @@ const MainBlog = () => {
           </div>
 
           <BlogSection>
-          {allPosts
-          .filter((blog) => {
-            if (search == "") {
-              return blog;
-            } else if (
-              blog.topic.toLowerCase().includes(search.toLowerCase())
-            ) {
-              return blog;
-            }
-          })
-          .map((post) => (
-            <BlogPost 
-            key={post._id}
-            topic = {post.topic}
-            content={post.content}
-            date={post.date}
-            />
-          ))}
+            {allPosts
+              .filter((blog) => {
+                if (search == "") {
+                  return blog;
+                } else if (
+                  blog.topic.toLowerCase().includes(search.toLowerCase())
+                ) {
+                  return blog;
+                }
+              })
+              .map((post) => (
+                <BlogPost
+                  key={post._id}
+                  topic={post.topic}
+                  content={post.content}
+                  date={post.date}
+                  onClick={handleBlogPostClick(post)}
+                />
+              ))}
           </BlogSection>
-      
+        </>
+      )}
 
-    </>
-  )}
-  </div>
-)};
-
+      {currentIndex !== null && allPosts.length > 0 && (
+        <div className={styles.navigationButtons}>
+          <button
+            onClick={() => {
+              const newIndex =
+                (currentIndex - 1 + allPosts.length) % allPosts.length;
+              handleBlogPostClick(allPosts[newIndex], newIndex);
+            }}
+          >
+            Previous
+          </button>
+          <button
+            onClick={() => {
+              const newIndex = (currentIndex + 1) % allPosts.length;
+              handleBlogPostClick(allPosts[newIndex], newIndex);
+            }}
+          >
+            Next
+          </button>
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default MainBlog;
