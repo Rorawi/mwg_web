@@ -4,8 +4,8 @@ import styles from "../components/blogpost.module.css";
 const BlogPost = ({ topic, content, onClick, blogImg,date, maxContent }) => {
   const [length, setLength] = useState(false);
 
-  // const truncatedTopic = length ? topic : `${topic.slice(0, maxContent)}...`;
-  // const truncatedContent = length ? content : `${content.slice(0, maxContent)}...`;
+  const truncatedTopic = length ? topic : `${topic.slice(0, maxContent)}...`;
+  const truncatedContent = length ? content : `${content.slice(0, maxContent)}...`;
 
   return (
     <div className={styles.blog_post} onClick={onClick}>
@@ -14,8 +14,8 @@ const BlogPost = ({ topic, content, onClick, blogImg,date, maxContent }) => {
       </div>
 
       <div className={styles.text_box}>
-        <h2 className={styles.blog_title}>{topic}</h2>
-        <p className={styles.blog_content}>{content}</p>
+        <h2 className={styles.blog_title}>{truncatedTopic}</h2>
+        <p className={styles.blog_content}>{truncatedContent}</p>
         <p className={styles.date}>
           Published on {date}
         </p>

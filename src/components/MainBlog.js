@@ -634,6 +634,7 @@ const MainBlog = () => {
             key={post._id}
             topic = {post.topic}
             content={post.content}
+            date={post.date}
             />
           ))}
       </ul>
