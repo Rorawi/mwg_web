@@ -561,7 +561,6 @@ import BlogPost from "./BlogPost";
 import styles from "../components/mainblog.module.css";
 import img1 from "../assets/blog.avif";
 import SingleBlogPost from "./SingleBlogPost";
-
 const MainBlog = () => {
   // const getAllblog = () => {
   //   try{
@@ -575,6 +574,11 @@ const MainBlog = () => {
   const [selectedBlogPost, setSelectedBlogPost] = useState(null);
   const [search, setSearch] = useState("");
   const [allPosts, setAllPosts] = useState([]);
+
+    const handleBlogPostClick = (blogPost) => {
+    setSelectedBlogPost(blogPost);
+  };
+
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -590,10 +594,10 @@ const MainBlog = () => {
   }, []);
 
   return (
-    
+
     <div>
 
-<div className={styles.banner}>
+      <div className={styles.banner}>
         <div className={styles.overlay}>
           <div className={styles.banner_text}>
             <h1>Mobile Web Ghana</h1>
@@ -605,26 +609,40 @@ const MainBlog = () => {
         </div>
       </div>
 
-      <div className={styles.inputDiv}>
-        <h2>// Our Blogs</h2>
-        <h1>Search for blog posts</h1>
-        <input
-          type="search"
-          value={search}
-          className={styles.input}
-          name="search"
-          onChange={(e) => {
-            setSearch(e.target.value);
-          }}
+      {selectedBlogPost ? (
+        <SingleBlogPost
+          title={selectedBlogPost.title}
+          content={selectedBlogPost.content}
+          name={selectedBlogPost.name}
+          img={selectedBlogPost.img}
+          day={selectedBlogPost.day}
+          month={selectedBlogPost.month}
+          year={selectedBlogPost.year}
+          blogImg={selectedBlogPost.blogImg}
         />
-      </div>
-      <ul>
-        {allPosts
+      ) : (
+    <>
+          <div className={styles.inputDiv}>
+            <h2>// Our Blogs</h2>
+            <h1>Search for blog posts</h1>
+            <input
+              type="search"
+              value={search}
+              className={styles.input}
+              name="search"
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
+            />
+          </div>
+
+          <BlogSection>
+          {allPosts
           .filter((blog) => {
             if (search == "") {
               return blog;
             } else if (
-              blog.title.toLowerCase().includes(search.toLowerCase())
+              blog.topic.toLowerCase().includes(search.toLowerCase())
             ) {
               return blog;
             }
@@ -637,9 +655,13 @@ const MainBlog = () => {
             date={post.date}
             />
           ))}
-      </ul>
-    </div>
-  );
-};
+          </BlogSection>
+      
+
+    </>
+  )}
+  </div>
+)};
+
 
 export default MainBlog;
