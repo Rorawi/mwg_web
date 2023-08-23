@@ -11,7 +11,7 @@ import Testimonial from "./Testimonial";
 // import img1 from "../assets/mwg-swiper1.avif";
 import webdev from "../assets/webdev.avif";
 import opencities from "../assets/opencities.avif";
-import itconsultancy from "../assets/abt.avif";
+import itconsultancy from "../assets/image5.jpg";
 import startupinc from "../assets/startupinc.avif";
 import girlsInIt from "../assets/girlsinit.avif";
 
