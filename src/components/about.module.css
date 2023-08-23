@@ -100,6 +100,8 @@
   width: 587.05px;
   color: #fff;
   text-align: center;
+  line-height: 40px;
+  letter-spacing: 0.1rem;
 }
 
 .video p {
@@ -185,6 +187,14 @@ text-transform: capitalize;
 line-height: 1.2;
 font-weight: 700;
 }
+
+.experience .text_box a {
+text-decoration: underline;
+color: #f9af1a;
+}
+
+
+
 .experience .text_box p {
 max-width: 500px;
 font-size: 18px;
@@ -248,7 +258,8 @@ font-size: 18px;
     }
 
     .video h2 {
-      width: 408px;
+      width: 100%;
+      line-height: 34px;
     }
 
   .banner_text h1 {
@@ -260,3 +271,4 @@ font-size: 18px;
     text-align: center;
   }
 }
+

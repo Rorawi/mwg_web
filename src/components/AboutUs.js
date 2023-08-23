@@ -40,8 +40,7 @@ export default function AboutUs() {
             </h1>
           </div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+           In our journey so far, we've completed various <a href="/project">projects</a> and still counting :)
           </p>
 
           <div className={styles.experience_div}>
@@ -53,9 +52,9 @@ export default function AboutUs() {
             </div>
             <div className={styles.experience_status}>
               <h1>
-                200<span>+</span>
+                20<span></span>
               </h1>
-              <h4>Girls In I.C.T</h4>
+              <h4>In Progress</h4>
             </div>
           </div>
         </div>
