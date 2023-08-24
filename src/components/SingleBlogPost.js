@@ -1,36 +1,46 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./singleblog.module.css";
 import style from './recentblog.module.css';
-import profileImage from "../assets/profile.avif";
-import blogImage from "../assets/mcare.avif";
-import img1 from "../assets/mwg-swiper1.avif";
-import { FaGithub, FaInstagram, FaLinkedin,FaFacebookSquare,FaTwitter, FaSearch} from "react-icons/fa";
-import { Link } from "react-router-dom";
-import CommentBlock from "./Comment";
 
-const SingleBlogPost = ({topic,content,name,img,date,blogImg}) => {
+import CommentBlock from "./Comment";
+import {
+  FaFacebookSquare,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+  FaSearch,
+} from "react-icons/fa";
+import { Link,useLocation } from "react-router-dom";
+
+const SingleBlogPost = ({ blogPost,allPosts, recentPosts, moreBlogs }) => {
+  // Use the passed props as needed
+  const location = useLocation();
+  // const { blogPost } = location.state;
+
+  if (!blogPost) {
+    return null; // Render nothing if blogPost is not defined yet
+  }
+
 
   return (
-    <>
-
-      <div className={styles.flex_Div}>
+    <div className={styles.flex_Div}>
         <div className={styles.container}>
           <div className={styles.header}>
-            <h1 className={styles.title}>{topic}</h1>
+            <h1 className={styles.title}>{blogPost.topic}</h1>
             <div className={styles.author}>
               <img
-                src={img}
+                src={blogPost.img}
                 alt="Profile"
                 className={styles.profileImage}
               />
-              <span className={styles.authorName}>{name}</span>
+              <span className={styles.authorName}>{blogPost.name  || ""}</span>
             </div>
-            <p className={styles.date}>Published on {date}</p>
+            <p className={styles.date}>Published on {blogPost.date  || ""}</p>
           </div>
           <div className={styles.content}>
-            <img src={blogImg} alt="Blog" className={styles.blogImage} />
+            <img src={blogPost.blogImg} alt="Blog" className={styles.blogImage} />
             <p>
-              {content}
+              {blogPost.content  || ""}
             </p>
             <br/>
           </div>
@@ -59,106 +69,35 @@ const SingleBlogPost = ({topic,content,name,img,date,blogImg}) => {
         </div>
 
       
-        <RecentBlogSection />
+        <RecentBlogSection recentPosts={recentPosts}/>
       </div>
-    </>
   );
 };
 
 export default SingleBlogPost;
 
+export const RecentBlogSection = ({ recentPosts }) => {
+  // Use the passed props for recent posts
 
-
-
-export const RecentBlogSection = ({allPosts}) => {
-  const [search,setSearch] = useState("")
-  const input =document.querySelector("input")
-  // const value = input.value
-
-  console.log(allPosts);
-
-  const Search =()=> {
-    // {value== value.toLowerCase()? "Hi": "no"}
-    console.log("Hi");
-  }
-  const blogs = [
-    {
-      id: 1,
-      title: 'Blog Post 1',
-      date: 'June 10, 2023',
-      time: '12:30 PM'
-    },
-    {
-      id: 2,
-      title: 'Blog Post 2',
-      date: 'June 8, 2023',
-      time: '10:15 AM'
-    },
-    {
-      id: 3,
-      title: 'Blog Post 3',
-      date: 'June 5, 2023',
-      time: '4:45 PM'
-    },
-    // Add more blog objects here as needed
-  ];
+  console.log(recentPosts);
 
   return (
     <>
-    <div className={style.container}>
-      <div className={style.blogList}>
-          <div className={style.blogItem_search}>
-           <input type="text
-           " placeholder="Search..."/>
-           <FaSearch onClick={Search}/>
-          </div>
-      </div>
-      <h2 className={style.sectionTitle}>More Blogs</h2>
-      <div className={style.blogList}>
-        {blogs.map((blog) => (
-          <div key={blog.id} className={style.blogItem}>
-            <h3 className={style.blogTitle}>{blog.title}</h3>
-            <p className={style.blogSubtext}>
-              {blog.date} | {blog.time}
-            </p>
-          </div>
-        ))}
-      </div>
+      <div className={style.container}>
+        {/* Your recent blog section content */}
 
-      <h2 className={style.sectionTitle}>Recent Blogs</h2>
+        <h2 className={style.sectionTitle}>Recent Blogs</h2>
 
       <div className={style.blogList}>
           <div  className={style.blogItem}>
             <h3 className={style.blogTitle}>
-            Teaching Media Literacy
-            </h3>
-            <p className={style.blogSubtext}>
-            </p>
-          </div>
-          <div  className={style.blogItem}>
-            <h3 className={style.blogTitle}>
-            Partnering for Progress: Africa Digital Skills Conference 2023 Empowering Africa’s Digital Future.
+            {recentPosts.title}
             </h3>
             <p className={style.blogSubtext}>
             </p>
           </div>
       </div>
-
-      <h2 className={style.sectionTitle}>More Blogs</h2>
-
-      <div className={style.blogList}>
-        {blogs.map((blog) => (
-          <div key={blog.id} className={style.blogItem}>
-            <h3 className={style.blogTitle}>{blog.title}</h3>
-            <p className={style.blogSubtext}>
-              {blog.date} | {blog.time}
-            </p>
-          </div>
-        ))}
       </div>
-    </div>
     </>
   );
 };
-
-

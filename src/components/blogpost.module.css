@@ -49,6 +49,7 @@ overflow: hidden;
 
 .blog_post .text_box p {
   font-size: 16px;
+  color: rgb(15, 15, 15);
 }
 
 .blog_post .text_box .date {

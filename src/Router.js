@@ -43,6 +43,7 @@ const Router = () => {
           <Route path="/contact" element={<ContactUs/>} />
           <Route path="/career" element={<Career/>} />
           <Route path="/blog" element={<MainBlog/>}/>
+          <Route path="/singleblogpost" component={<SingleBlogPost/>} />
           <Route path="/blogapi" element={<BlogApi/>}/>
           <Route path="/donate" element={<Donate/>} />
           <Route path="/payment" element={<Payment/>} />

@@ -554,59 +554,32 @@
 
 // export default MainBlog;
 
+
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import BlogSection from "./BlogSection";
 import BlogPost from "./BlogPost";
 import styles from "../components/mainblog.module.css";
 import img1 from "../assets/blog.avif";
-import SingleBlogPost, { RecentBlogSection } from "./SingleBlogPost";
-const MainBlog = () => {
-  // const getAllblog = () => {
-  //   try{
-  //   const res =  axios.get('http://localhost:5000/blog/api/posts' )
-  //   console.log(res);
+import SingleBlogPost from "./SingleBlogPost";
+import { Link } from "react-router-dom"
 
-  // }catch(err){
-  //   console.log(err)
-  // }
-  // }
+const MainBlog = () => {
   const [selectedBlogPost, setSelectedBlogPost] = useState(null);
   const [search, setSearch] = useState("");
   const [allPosts, setAllPosts] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(null); // Add currentIndex state
-
-
-
-  console.log("allPosts:", allPosts);
-  console.log("selectedBlogPost:", selectedBlogPost);
-
-  const handleBlogPostClick = (blogPost, index) => {
-    setSelectedBlogPost(blogPost);
-    setCurrentIndex(index); // Update currentIndex when a blog post is clicked
-  };
-
-  function getRandomRecentPosts(allPosts, selectedBlogPost, numPosts = 3) {
-    const recentPosts = allPosts.filter(
-      (post) => post._id !== selectedBlogPost._id
-    );
-    const randomPosts = [];
-
-    for (let i = 0; i < numPosts; i++) {
-      const randomIndex = Math.floor(Math.random() * recentPosts.length);
-      randomPosts.push(recentPosts[randomIndex]);
-      recentPosts.splice(randomIndex, 1);
-    }
-
-    return randomPosts;
-  }
+  const [recentPosts, setRecentPosts] = useState([]);
+  const [moreBlogs, setMoreBlogs] = useState([]);
 
   useEffect(() => {
     const fetchBlog = async () => {
       try {
         const res = await axios.get("http://localhost:5000/blog/api/posts");
-        console.log(res);
         setAllPosts(res.data);
+        // Set recentPosts and moreBlogs initially
+        setRecentPosts(getRandomRecentPosts(res.data));
+        setMoreBlogs(getRandomMoreBlogs(res.data));
       } catch (err) {
         console.log(err);
       }
@@ -614,9 +587,46 @@ const MainBlog = () => {
     fetchBlog();
   }, []);
 
+  const handleBlogPostClick = (blogPost) => {
+    setSelectedBlogPost(blogPost);
+    // Move the selected blog post to recentPosts
+    setRecentPosts((prevRecentPosts) => [
+      blogPost,
+      ...prevRecentPosts.slice(0, 2),
+    ]);
+    // Move the remaining recent post to moreBlogs
+    setMoreBlogs((prevMoreBlogs) => [
+      ...recentPosts.slice(2),
+      ...prevMoreBlogs,
+    ]);
+  };
+
+  function getRandomRecentPosts(allPosts, numPosts = 3) {
+    const randomPosts = [];
+    const recentPosts = allPosts.slice().reverse(); // Reverse the array to get the most recent first
+
+    for (let i = 0; i < numPosts && i < recentPosts.length; i++) {
+      randomPosts.push(recentPosts[i]);
+    }
+
+    return randomPosts;
+  }
+
+  function getRandomMoreBlogs(allPosts, numPosts = 3) {
+    const randomPosts = [];
+    const recentPosts = allPosts.slice(); // Copy the array
+
+    for (let i = 0; i < numPosts && i < recentPosts.length; i++) {
+      randomPosts.push(recentPosts[i]);
+    }
+
+    return randomPosts;
+  }
+
   return (
     <div>
       <div className={styles.banner}>
+        {/* Your banner content */}
         <div className={styles.overlay}>
           <div className={styles.banner_text}>
             <h1>Mobile Web Ghana</h1>
@@ -629,24 +639,16 @@ const MainBlog = () => {
       </div>
 
       {selectedBlogPost ? (
-        <>
-          <SingleBlogPost
-            topic={selectedBlogPost.topic}
-            content={selectedBlogPost.content}
-            name={selectedBlogPost.name}
-            img={selectedBlogPost.img}
-            date={selectedBlogPost.date}
-            blogImg={selectedBlogPost.blogImg}
-          />
-
-          <RecentBlogSection
-            recentPosts={getRandomRecentPosts(allPosts, selectedBlogPost)}
-          />
-        </>
+        <SingleBlogPost
+          blogPost={selectedBlogPost}
+          allPosts={allPosts}
+          recentPosts={recentPosts}
+          moreBlogs={moreBlogs}
+        />
       ) : (
         <>
           <div className={styles.inputDiv}>
-            <h2>// Our Blogs</h2>
+          <h2>// Our Blogs</h2>
             <h1>Search for blog posts</h1>
             <input
               type="search"
@@ -662,7 +664,7 @@ const MainBlog = () => {
           <BlogSection>
             {allPosts
               .filter((blog) => {
-                if (search == "") {
+                if (search === "") {
                   return blog;
                 } else if (
                   blog.topic.toLowerCase().includes(search.toLowerCase())
@@ -671,38 +673,18 @@ const MainBlog = () => {
                 }
               })
               .map((post) => (
-                <BlogPost
-                  key={post._id}
-                  topic={post.topic}
-                  content={post.content}
-                  date={post.date}
-                  onClick={handleBlogPostClick(post)}
-                />
+                // <Link to="/singleblogpost">
+                  <BlogPost
+                    key={post._id}
+                    topic={post.topic}
+                    content={post.content}
+                    date={post.date}
+                    onClick={() => handleBlogPostClick(post)}
+                  />
+                // </Link>
               ))}
           </BlogSection>
         </>
-      )}
-
-      {currentIndex !== null && allPosts.length > 0 && (
-        <div className={styles.navigationButtons}>
-          <button
-            onClick={() => {
-              const newIndex =
-                (currentIndex - 1 + allPosts.length) % allPosts.length;
-              handleBlogPostClick(allPosts[newIndex], newIndex);
-            }}
-          >
-            Previous
-          </button>
-          <button
-            onClick={() => {
-              const newIndex = (currentIndex + 1) % allPosts.length;
-              handleBlogPostClick(allPosts[newIndex], newIndex);
-            }}
-          >
-            Next
-          </button>
-        </div>
       )}
     </div>
   );

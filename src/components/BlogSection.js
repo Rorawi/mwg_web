@@ -9,7 +9,7 @@ const BlogSection = ({ children }) => {
     {/* <Link to="/singleblog"> */}
       <div className={styles.blog_section} >
         {children}
-        </div>;
+        </div>
     {/* </Link> */}
 
     {/* <SingleBlogPost children={children} /> */}

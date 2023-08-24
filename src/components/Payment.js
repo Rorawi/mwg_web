@@ -171,7 +171,7 @@ function FormStep1({ amount, setAmount, setActive }) {
             </button>
           ))}
 
-          <input
+          {/* <input
             size="40"
             className={styles.form_control}
             aria-required="true"
@@ -181,7 +181,7 @@ function FormStep1({ amount, setAmount, setActive }) {
             type="text"
             onChange={(e) => setAmount(e.target.value)}
             required
-          />
+          /> */}
         </div>
         {/* <button
           className={styles.next_btn}
@@ -300,6 +300,8 @@ function Payment({ amount, firstName, lastName, email, onConfirm }) {
   // const [firstName, setFirstname] = useState("");
   // const [lastName, setLastname] = useState("");
   const publicKey = process.env.REACT_APP_PAYSTACK_PUBLIC_KEY;
+  
+  console.log(amount, firstName, lastName, email,publicKey);
 
   const paywithpaystack = (e) => {
     e.preventDefault();
