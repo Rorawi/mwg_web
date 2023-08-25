@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styles from "../components/blogpost.module.css";
 
-const BlogPost = ({ topic, content, onClick, blogImg,date, maxContent }) => {
+const BlogPost = ({ topic, content, onClick, blogImg,date, maxContent,image }) => {
   const [length, setLength] = useState(false);
+  console.log(image)
 
   const truncatedTopic = length ? topic : `${topic.slice(0, maxContent)}...`;
   const truncatedContent = length ? content : `${content.slice(0, maxContent)}...`;
@@ -10,7 +11,7 @@ const BlogPost = ({ topic, content, onClick, blogImg,date, maxContent }) => {
   return (
     <div className={styles.blog_post} onClick={onClick}>
       <div className={styles.img_div}>
-        <img src={blogImg} alt="Blog Image" />
+        <img src={image} alt="Blog Image" />
       </div>
 
       <div className={styles.text_box}>

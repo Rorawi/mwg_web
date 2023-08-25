@@ -1,4 +1,7 @@
 const blogModel = require("../models/blog");
+const multer = require("multer")
+
+
 
 const getAllBlog = async (req, res) => {
   try {
@@ -32,8 +35,33 @@ const createBlogController = async (req, res) => {
   }
 };
 
+const createBlog = async (req, res) => {
+  try {
+    const { topic, content, author, date } = req.body;
+    const imageData = req.file.buffer;
+    const imageContentType = req.file.mimetype;
+
+    // Create a new blog post with image data
+    const newBlog = new blogModel({
+      topic,
+      content,
+      author,
+      date,
+      imageData,
+      imageContentType,
+    });
+
+    await newBlog.save();
+    res.status(201).json(newBlog);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
 module.exports = {
   listBlogController,
   getAllBlog,
   createBlogController,
+  createBlog
 };

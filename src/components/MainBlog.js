@@ -554,8 +554,6 @@
 
 // export default MainBlog;
 
-
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import BlogSection from "./BlogSection";
@@ -563,7 +561,7 @@ import BlogPost from "./BlogPost";
 import styles from "../components/mainblog.module.css";
 import img1 from "../assets/blog.avif";
 import SingleBlogPost from "./SingleBlogPost";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const MainBlog = () => {
   const [selectedBlogPost, setSelectedBlogPost] = useState(null);
@@ -571,6 +569,7 @@ const MainBlog = () => {
   const [allPosts, setAllPosts] = useState([]);
   const [recentPosts, setRecentPosts] = useState([]);
   const [moreBlogs, setMoreBlogs] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -586,6 +585,8 @@ const MainBlog = () => {
     };
     fetchBlog();
   }, []);
+
+  console.log(allPosts);
 
   const handleBlogPostClick = (blogPost) => {
     setSelectedBlogPost(blogPost);
@@ -638,53 +639,60 @@ const MainBlog = () => {
         </div>
       </div>
 
-      {selectedBlogPost ? (
-        <SingleBlogPost
-          blogPost={selectedBlogPost}
-          allPosts={allPosts}
-          recentPosts={recentPosts}
-          moreBlogs={moreBlogs}
+      <div className={styles.inputDiv}>
+        <h2>// Our Blogs</h2>
+        <h1>Search for blog posts</h1>
+        <input
+          type="search"
+          value={search}
+          className={styles.input}
+          name="search"
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
         />
-      ) : (
-        <>
-          <div className={styles.inputDiv}>
-          <h2>// Our Blogs</h2>
-            <h1>Search for blog posts</h1>
-            <input
-              type="search"
-              value={search}
-              className={styles.input}
-              name="search"
-              onChange={(e) => {
-                setSearch(e.target.value);
-              }}
-            />
-          </div>
+      </div>
 
-          <BlogSection>
-            {allPosts
-              .filter((blog) => {
-                if (search === "") {
-                  return blog;
-                } else if (
-                  blog.topic.toLowerCase().includes(search.toLowerCase())
-                ) {
-                  return blog;
-                }
-              })
-              .map((post) => (
-                // <Link to="/singleblogpost">
-                  <BlogPost
-                    key={post._id}
-                    topic={post.topic}
-                    content={post.content}
-                    date={post.date}
-                    onClick={() => handleBlogPostClick(post)}
-                  />
-                // </Link>
-              ))}
-          </BlogSection>
+      {loading ? (
+        <>
+          {selectedBlogPost ? (
+            <SingleBlogPost
+              blogPost={selectedBlogPost}
+              allPosts={allPosts}
+              recentPosts={recentPosts}
+              moreBlogs={moreBlogs}
+            />
+          ) : (
+            <>
+              <BlogSection>
+                {allPosts
+                  .filter((blog) => {
+                    if (search === "") {
+                      return blog;
+                    } else if (
+                      blog.topic.toLowerCase().includes(search.toLowerCase())
+                    ) {
+                      return blog;
+                    }
+                  })
+                  .map((post) => (
+                    // <Link to="/singleblogpost">
+                    <BlogPost
+                      key={post._id}
+                      topic={post.topic}
+                      content={post.content}
+                      date={post.date}
+                      image={post.image}
+                      onClick={() => handleBlogPostClick(post)}
+                    />
+                    // </Link>
+                  ))}
+              </BlogSection>
+            </>
+          )}
         </>
+      ) : (
+        "Loading Blogs..."
       )}
     </div>
   );

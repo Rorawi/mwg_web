@@ -71,7 +71,7 @@ export const SwiperComp = () => {
               websites in HTML5, CSS3, JavaScript, Php and other known
               frameworks.
             </p>
-            <Link to="/about">
+            <Link to="/services">
               {" "}
               <button>Read More</button>
             </Link>
@@ -90,7 +90,7 @@ export const SwiperComp = () => {
               individuals to aid them their formative years up on till when they
               fully-fletched businesses.
             </p>
-            <Link to="/about">
+            <Link to="/services">
               {" "}
               <button>Read More</button>
             </Link>
@@ -109,7 +109,7 @@ export const SwiperComp = () => {
               analysis/visualization’ culture & build the capacity of open data
               enthusiasts.
             </p>
-            <Link to="/about">
+            <Link to="/services">
               <button>Read More</button>
             </Link>
           </div>
@@ -127,7 +127,7 @@ export const SwiperComp = () => {
               individuals to aid them their formative years up on till when they
               fully-fletched businesses.
             </p>
-            <Link to="/about">
+            <Link to="/services">
               {" "}
               <button>Read More</button>
             </Link>

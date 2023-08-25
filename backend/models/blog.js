@@ -7,8 +7,13 @@ const BlogSchema = new Schema({
     topic: String,
     content: String,
     author: String,
-    date: Date
-  });
+    date: Date,
+    imageData: Buffer,
+    imageContentType: String,
+  }, {
+    collection: "blogs"
+  }
+  );
 
  const BlogModel = mongoose.model("Blog",   BlogSchema)
 

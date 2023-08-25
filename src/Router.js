@@ -21,6 +21,7 @@ import Payment from "./components/Payment";
 import Completion from "./components/Completion";
 import BlogApi from "./components/BlogApi";
 import DonateBtn from "./components/donateBtn";
+import InputImage from "./components/InputImage";
 
 
 
@@ -48,7 +49,7 @@ const Router = () => {
           <Route path="/donate" element={<Donate/>} />
           <Route path="/payment" element={<Payment/>} />
           <Route path="/completion" element={<Completion/>} />
-            {/* <Route path="/steps" element={<DonateSteps/>} /> */}
+          <Route path="/imageinput" element={<InputImage/>} />
           <Route path="/singlepost" element={<SingleBlogPost/>} />
         </Routes>
       <DonateBtn />

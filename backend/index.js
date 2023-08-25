@@ -13,7 +13,7 @@ server.use(cors())
 
 //routes
 server.use("/blog",blogRoutes);
-server.use("/image",imageRoutes);
+// server.use("/image",imageRoutes);
 
 
 
