@@ -654,7 +654,7 @@ const MainBlog = () => {
         />
       </div>
 
-      {!modal ? "...Loading" : ""}
+      {/* {!modal ? "...Loading" : ""} */}
 
       {!loading ? (
         <>
