@@ -570,6 +570,7 @@ const MainBlog = () => {
   const [recentPosts, setRecentPosts] = useState([]);
   const [moreBlogs, setMoreBlogs] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [modal,setModal] = useState(false);
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -653,7 +654,9 @@ const MainBlog = () => {
         />
       </div>
 
-      {loading ? (
+      {!modal ? "...Loading" : ""}
+
+      {!loading ? (
         <>
           {selectedBlogPost ? (
             <SingleBlogPost
@@ -692,7 +695,10 @@ const MainBlog = () => {
           )}
         </>
       ) : (
-        "Loading Blogs..."
+        // "Loading Blogs..."
+        modal
+
+        // setModal(modal)
       )}
     </div>
   );

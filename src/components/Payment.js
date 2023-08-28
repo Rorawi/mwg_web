@@ -171,7 +171,7 @@ function FormStep1({ amount, setAmount, setActive }) {
             </button>
           ))}
 
-          {/* <input
+          <input
             size="40"
             className={styles.form_control}
             aria-required="true"
@@ -181,7 +181,7 @@ function FormStep1({ amount, setAmount, setActive }) {
             type="text"
             onChange={(e) => setAmount(e.target.value)}
             required
-          /> */}
+          />
         </div>
         {/* <button
           className={styles.next_btn}
