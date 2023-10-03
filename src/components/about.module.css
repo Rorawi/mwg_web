@@ -150,12 +150,14 @@
 width: 410px;
 height: 410px;
 
-border-radius: 100%;
+border-radius: 50%;
 overflow: hidden;
+background-color: #f9af1a;
 }
+
 .group_img_div img {
   width: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .experience {
@@ -255,6 +257,10 @@ font-size: 18px;
     align-self: center;
 
     margin-bottom: 50px;
+    }
+
+    .group_img_div img{
+object-fit: cover;
     }
 
     .video h2 {

@@ -553,7 +553,6 @@
 // };
 
 // export default MainBlog;
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import BlogSection from "./BlogSection";
@@ -570,7 +569,8 @@ const MainBlog = () => {
   const [recentPosts, setRecentPosts] = useState([]);
   const [moreBlogs, setMoreBlogs] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [modal,setModal] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(3);
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -588,6 +588,10 @@ const MainBlog = () => {
   }, []);
 
   console.log(allPosts);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = allPosts.slice(indexOfFirstPost, indexOfLastPost);
 
   const handleBlogPostClick = (blogPost) => {
     setSelectedBlogPost(blogPost);
@@ -625,6 +629,10 @@ const MainBlog = () => {
     return randomPosts;
   }
 
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <div>
       <div className={styles.banner}>
@@ -636,7 +644,7 @@ const MainBlog = () => {
           </div>
         </div>
         <div className={styles.img_div}>
-          <img src={img1} />
+          <img src={img1} alt="Banner" />
         </div>
       </div>
 
@@ -654,8 +662,6 @@ const MainBlog = () => {
         />
       </div>
 
-      {/* {!modal ? "...Loading" : ""} */}
-
       {!loading ? (
         <>
           {selectedBlogPost ? (
@@ -668,7 +674,7 @@ const MainBlog = () => {
           ) : (
             <>
               <BlogSection>
-                {allPosts
+                {currentPosts
                   .filter((blog) => {
                     if (search === "") {
                       return blog;
@@ -679,26 +685,38 @@ const MainBlog = () => {
                     }
                   })
                   .map((post) => (
-                    // <Link to="/singleblogpost">
                     <BlogPost
                       key={post._id}
                       topic={post.topic}
                       content={post.content}
                       date={post.date}
-                      image={post.image}
+                      image={post.imageData}
                       onClick={() => handleBlogPostClick(post)}
                     />
-                    // </Link>
                   ))}
               </BlogSection>
+
+              {/* Pagination */}
+              <div className={styles.pagination}>
+                {Array.from({
+                  length: Math.ceil(allPosts.length / postsPerPage),
+                }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => paginate(index + 1)}
+                    className={
+                      currentPage === index + 1 ? styles.active : ""
+                    }
+                  >
+                    {index + 1}
+                  </button>
+                ))}
+              </div>
             </>
           )}
         </>
       ) : (
-        // "Loading Blogs..."
-        modal
-
-        // setModal(modal)
+        "Loading Blogs..."
       )}
     </div>
   );

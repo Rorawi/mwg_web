@@ -1,17 +1,17 @@
 import React from "react";
 import styles from "../components/team.module.css";
 import {
-  FaGithub,
   FaInstagram,
   FaLinkedin,
   FaFacebookSquare,
   FaTwitter,
 } from "react-icons/fa";
-import img1 from "../assets/mwg-swiper1.avif";
+import talika from "../assets/talika.avif"
 import director from "../assets/director.avif";
-import profile from "../assets/profile.avif";
+import yao from "../assets/yao.avif";
+import estella from "../assets/estella.avif";
+import isaac from "../assets/isaac.avif";
 import { Link } from "react-router-dom";
-import {v4 as uuid} from "uuid";
 
 const TeamSection = () => {
   const team = [
@@ -28,7 +28,7 @@ const TeamSection = () => {
       facebook: "https://www.facebook.com/florencetoffa",
       twitter: "https://twitter.com/florencetoffa",
       name: "Prince Yaw Ameyedowo",
-      img: img1,
+      img: yao,
       title: "Financial Accountant",
     },
     {
@@ -36,15 +36,15 @@ const TeamSection = () => {
       facebook: "https://www.facebook.com/florencetoffa",
       twitter: "https://twitter.com/florencetoffa",
       name: "Talika Bernard",
-      img: director,
+      img: talika,
       title: "Graphic Designer",
     },
     {
       linkedIn: "https://www.linkedin.com/in/estella-hilda-anaman-b356a6151",
       facebook: "https://www.facebook.com/florencetoffa",
       twitter: "https://twitter.com/florencetoffa",
-      name: "Estella Anaman",
-      img: director,
+      name: "Estella Hilda Anaman",
+      img: estella,
       title: "Resource Manager",
     },
     {
@@ -106,6 +106,7 @@ const TeamSection = () => {
       })}
         </div>
       </section>
+
     </>
   );
 };

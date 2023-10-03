@@ -1,6 +1,4 @@
 .team_sec {
-  /* background-color: #ffc107; */
-  /* background-color: #d2d2d2; */
   padding: 50px;
   margin: 50px 0;
 }
@@ -37,106 +35,88 @@
 }
 
 /*Team*/
+/* Style for the team section */
 .wrapper {
-  /* width: 1000px;*/
+  margin-top: 50px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
-
-  margin-top: 60px;
+  justify-content: space-between;
+  gap: 20px;
 }
 
+/* Style for individual team member profiles */
 .profile {
-  width: 353.32px;
-  height: 546px;
-  /* display: grid;
-  justify-content: center;
-  align-content: center;
-  transition: 0.5s; */
-border-radius: 5px;
   position: relative;
-  overflow: hidden;
-  
+  width: 100%;
+  max-width: 300px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
 
+.profile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 2px 40px rgba(255, 187, 0, 0.532); /* Example shadow effect */
+  border: 1px solid #fff;
+
+}
+
+/* Style for profile images */
 .img_div {
-  overflow: hidden;
-  width: 353.32px;
-  height: 382.76px;
+  text-align: center;
 }
 
 .pro_img {
- width: 100%;
-  /* border: 5px solid #f9af1a; */
-  /* border-radius: 50%; */
-
-  transition: 0.3s;
-  transition-delay: 0.3s;
-  object-fit: cover;
-  
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  border-radius: 50%;
+  border: 3px solid #e69e21;
 }
 
+/* Style for profile details */
 .dtl {
-  box-shadow: 5px 5px 10px #45627d3a;
-  background-color: #fff;
-  border-radius: 5px;
-
-  position: absolute;
-  width: 252px;
-  height: 80px;
-  top: 351.36px;
-  left: 57px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
+  margin-top: 10px;
 }
 
 .name {
   font-size: 20px;
-  text-align: center;
-  color: #525151;
-}
-
-.bio {
-  font-size: 15px;
-  text-align: center;
-  margin-top: 5px;
+  font-weight: bold;
+  margin-bottom: 5px;
   color: #ffc107;
 }
 
-.overlay {
+.bio {
+  font-size: 16px;
+  color: #888;
+}
+
+/* Style for social icons */
+/* .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  left: 0;
-  bottom: 0;
-  object-fit: contain;
-  width: 100%;
-  background-color: #27251dba;
-  height: 386px;
-  opacity: 0;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
+  justify-content: space-between;
+} */
 
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  transition: 0.3s;
+.social a {
+  color: #333;
+  font-size: 25px;
+  margin-right: 10px;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 
-.profile:hover .overlay {
-  opacity: 1;
+.social a:hover {
+  color: #007bff; /* Change to your desired hover color */
 }
 
-.profile:hover .pro_img {
-  scale: 1.1;
-rotate: 5deg;
-}
 
 .social {
   background-color: #fff;
@@ -151,7 +131,7 @@ rotate: 5deg;
 
 .social svg {
   color: #232323;
-  font-size: 20px;
+  font-size: 25px;
   margin: 0 5px;
   transition: all 0.3s;
 }
@@ -159,6 +139,8 @@ rotate: 5deg;
 .social svg:hover {
   color: #e69e21;
 }
+
+
 
 /*Text Box*/
 .team_sec .text_box {
@@ -233,63 +215,6 @@ rotate: 5deg;
 } */
 
 
-.wrapper {
-  /* width: 1000px;*/
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-
-  margin-top: 60px;
-}
-
-.profile {
-  width: 353.32px;
-  height: 546px;
-  /* display: grid;
-  justify-content: center;
-  align-content: center;
-  transition: 0.5s; */
-border-radius: 5px;
-  position: relative;
-  overflow: hidden;
-  
-}
-
-.img_div {
-  overflow: hidden;
-  width: 353.32px;
-  height: 382.76px;
-}
-
-.pro_img {
- width: 100%;
-  /* border: 5px solid #f9af1a; */
-  /* border-radius: 50%; */
-
-  transition: 0.3s;
-  transition-delay: 0.3s;
-  object-fit: cover;
-  
-}
-
-.dtl {
-  box-shadow: 5px 5px 10px #45627d3a;
-  background-color: #fff;
-  border-radius: 5px;
-
-  position: absolute;
-  width: 152px;
-  height: 40px;
-  top: 351.36px;
-  left: 57px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
 
 }
 

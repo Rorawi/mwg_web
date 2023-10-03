@@ -3,24 +3,33 @@ import { Link } from "react-router-dom";
 import styles from "../components/project.module.css";
 import img1 from "../assets/image5.jpg";
 import youth from "../assets/Youth-Media.avif";
-import robotics from "../assets/Coding-and-Robotics.avif"
-import project_vfg from "../assets/project-vfg.avif"
-import cfg from "../assets/code-for-ghana.avif"
-import oca from "../assets/after-11.avif"
-import aca from "../assets/american-corner-agbogba.avif"
-import adsc from "../assets/ADSC-11.avif"
-import csa from "../assets/CSA.avif"
-import tawep from "../assets/image7.jpg"
-import microsoft from "../assets/apps-factory.avif"
-import mcare from "../assets/mcare.avif"
-import fime from "../assets/fime.avif"
-import advocacy from "../assets/advocacy.avif"
+import robotics from "../assets/Coding-and-Robotics.avif";
+import project_vfg from "../assets/project-vfg.avif";
+import cfg from "../assets/code-for-ghana.avif";
+import oca from "../assets/after-11.avif";
+import aca from "../assets/american-corner-agbogba.avif";
+import adsc from "../assets/ADSC-11.avif";
+import csa from "../assets/CSA.avif";
+import tawep from "../assets/image7.jpg";
+import microsoft from "../assets/apps-factory.avif";
+import mcare from "../assets/mcare.avif";
+import fime from "../assets/fime.avif";
+import advocacy from "../assets/advocacy.avif";
 import { FaPause } from "react-icons/fa";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 import Testimonial from "./Testimonial";
 
 const Projects = () => {
+  const projectsData = [
+    {
+      projectTitle: "Youth Media Literacy Program",
+      body: `his project is an initiative of Mobile Web Ghana 
+      and the U.S Embassy in Ghana which seeks to increase the 
+      capacity of youths to consume and disseminate media contents responsibly.`,
+      link: ""
+    },
+  ];
   return (
     <>
       <div className={styles.banner}>
@@ -61,14 +70,14 @@ const Projects = () => {
               consume and disseminate media contents responsibly.
             </p>
             <Link to="">
-          <button>
-            Read More
-            <div className={styles.svg_div}>
-              {" "}
-              <AiOutlineArrowRight />
-            </div>
-          </button>
-          </Link>
+              <button>
+                Read More
+                <div className={styles.svg_div}>
+                  {" "}
+                  <AiOutlineArrowRight />
+                </div>
+              </button>
+            </Link>
           </div>
 
           <div className={styles.project_div}>
@@ -81,14 +90,14 @@ const Projects = () => {
               & Mathematics) through robotics coding classes.
             </p>
             <Link to="https://africadigitalskillsconference.org/">
-          <button>
-            Read More
-            <div className={styles.svg_div}>
-              {" "}
-              <AiOutlineArrowRight />
-            </div>
-          </button>
-          </Link>
+              <button>
+                Read More
+                <div className={styles.svg_div}>
+                  {" "}
+                  <AiOutlineArrowRight />
+                </div>
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -103,14 +112,14 @@ const Projects = () => {
             </p>
 
             <Link to="http://www.visualsforgender.org/">
-          <button>
-            Read More
-            <div className={styles.svg_div}>
-              {" "}
-              <AiOutlineArrowRight />
-            </div>
-          </button>
-          </Link>
+              <button>
+                Read More
+                <div className={styles.svg_div}>
+                  {" "}
+                  <AiOutlineArrowRight />
+                </div>
+              </button>
+            </Link>
           </div>
 
           <div className={styles.project_div}>
@@ -124,14 +133,14 @@ const Projects = () => {
             </p>
 
             <Link to="http://code4ghana.org/">
-          <button>
-            Read More
-            <div className={styles.svg_div}>
-              {" "}
-              <AiOutlineArrowRight />
-            </div>
-          </button>
-          </Link>
+              <button>
+                Read More
+                <div className={styles.svg_div}>
+                  {" "}
+                  <AiOutlineArrowRight />
+                </div>
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -146,14 +155,14 @@ const Projects = () => {
               and Alajo
             </p>
             <Link to="https://opencitiesproject.org/accra/">
-          <button>
-            Read More
-            <div className={styles.svg_div}>
-              {" "}
-              <AiOutlineArrowRight />
-            </div>
-          </button>
-          </Link>
+              <button>
+                Read More
+                <div className={styles.svg_div}>
+                  {" "}
+                  <AiOutlineArrowRight />
+                </div>
+              </button>
+            </Link>
           </div>
 
           <div className={styles.project_div}>
@@ -166,14 +175,14 @@ const Projects = () => {
               events and activities for everyone.
             </p>
             <Link to="https://gh.usembassy.gov/education-culture/american-corners/">
-          <button>
-            Read More
-            <div className={styles.svg_div}>
-              {" "}
-              <AiOutlineArrowRight />
-            </div>
-          </button>
-          </Link>
+              <button>
+                Read More
+                <div className={styles.svg_div}>
+                  {" "}
+                  <AiOutlineArrowRight />
+                </div>
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -189,14 +198,14 @@ const Projects = () => {
               skills.
             </p>
             <Link to="https://africadigitalskillsconference.org/">
-          <button>
-            Read More
-            <div className={styles.svg_div}>
-              {" "}
-              <AiOutlineArrowRight />
-            </div>
-          </button>
-          </Link>
+              <button>
+                Read More
+                <div className={styles.svg_div}>
+                  {" "}
+                  <AiOutlineArrowRight />
+                </div>
+              </button>
+            </Link>
           </div>
 
           <div className={styles.project_div}>
@@ -207,14 +216,14 @@ const Projects = () => {
               assemblies and make Accra the cleanest city in Africa.
             </p>
             <Link to="https://africadigitalskillsconference.org/">
-          <button>
-            Read More
-            <div className={styles.svg_div}>
-              {" "}
-              <AiOutlineArrowRight />
-            </div>
-          </button>
-          </Link>
+              <button>
+                Read More
+                <div className={styles.svg_div}>
+                  {" "}
+                  <AiOutlineArrowRight />
+                </div>
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -230,14 +239,14 @@ const Projects = () => {
               careers and education and becoming great leaders.
             </p>
             <Link to="">
-          <button>
-            Read More
-            <div className={styles.svg_div}>
-              {" "}
-              <AiOutlineArrowRight />
-            </div>
-          </button>
-          </Link>
+              <button>
+                Read More
+                <div className={styles.svg_div}>
+                  {" "}
+                  <AiOutlineArrowRight />
+                </div>
+              </button>
+            </Link>
           </div>
 
           <div className={styles.project_div}>
@@ -290,7 +299,7 @@ const Projects = () => {
           </div>
 
           <div className={styles.project_div_soon}>
-           <h2 className={styles.soon}>COMING SOON...</h2>
+            <h2 className={styles.soon}>COMING SOON...</h2>
           </div>
         </div>
       </section>

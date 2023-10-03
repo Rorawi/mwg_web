@@ -15,9 +15,11 @@ const router = express.Router();
 // const upload = multer({ storage: storage });
 
 
+
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, '/tmp/my-uploads')
+    cb(null, './uploads')
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now();
@@ -26,9 +28,9 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer({ storage: storage })
-
 // Create a new blog post with an image
 router.post("/api/posts", upload.single("image"), createBlog);
+router.post("/api/posts", upload.array("image", 12), createBlog);
 
 // router.post("/api/posts", createBlogController);
 
